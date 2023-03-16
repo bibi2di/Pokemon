@@ -23,7 +23,7 @@ public class Vista_Juego extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Vista_Juego frame = new Vista_Juego("a", 1);
+					Vista_Juego frame = new Vista_Juego(2, 0, 2000, 3);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -35,8 +35,8 @@ public class Vista_Juego extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Vista_Juego(String pNom, int pPokemon) {
-		setTitle("Pokemon [Charged Attack] - ");
+	public Vista_Juego(int pJugador, int pNPCs, int pMilis, int pPokemos) {
+		setTitle("Pokemon [Charged Attack] - "+pJugador);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 800, 300);
 		setResizable(false);

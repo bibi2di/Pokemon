@@ -14,6 +14,9 @@ import java.awt.GridLayout;
 import javax.swing.JTextField;
 import java.awt.Toolkit;
 import javax.swing.JButton;
+import java.awt.SystemColor;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Pantalla_Inicio_del_Juego extends JFrame {
 
@@ -82,6 +85,7 @@ public class Pantalla_Inicio_del_Juego extends JFrame {
 		Panel_dech_superior.add(lblNewLabel_3);
 		
 		textMiliSec = new JTextField();
+		textMiliSec.setText("2000");
 		Panel_dech_superior.add(textMiliSec);
 		textMiliSec.setColumns(10);
 		
@@ -105,10 +109,25 @@ public class Pantalla_Inicio_del_Juego extends JFrame {
 		Panel_dech_inf.add(btnFree4all);
 		
 		JButton btnJugar = new JButton("Jugar");
+		btnJugar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				// Pasar de String a int
+				int jugadores = Integer.parseInt(textJugadores.getText());
+				int npc = Integer.parseInt(txtNPCs.getText());
+				int mili = Integer.parseInt(textMiliSec.getText());
+				int pokemon = Integer.parseInt(textPokemon.getText());
+				
+				Vista_Juego jug = new Vista_Juego(jugadores, npc, mili, pokemon);
+				jug.setVisible(true);
+			}
+			
+		});
 		btnJugar.setBounds(56, 89, 117, 25);
 		Panel_dech_inf.add(btnJugar);
 		
 		JPanel Panel_centro = new JPanel();
+		Panel_centro.setForeground(SystemColor.control);
 		Panel_centro.setBackground(new Color(255, 255, 255));
 		contentPane.add(Panel_centro, BorderLayout.CENTER);
 		
