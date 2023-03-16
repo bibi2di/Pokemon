@@ -11,9 +11,9 @@ public abstract class Pokemon {
 	 * 
 	 * @param pTipo
 	 */
-	public Pokemon(String pTipo) {
+	public Pokemon(String pTipo, String pTipoEfectivo, int pAtaque, int pDefensa, int pVida) {
 		// TODO - implement Pokemon.Pokemon
-		throw new UnsupportedOperationException();
+		
 	}
 
 	/**

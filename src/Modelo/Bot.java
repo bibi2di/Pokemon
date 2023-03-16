@@ -1,7 +1,11 @@
 package Modelo;
+
+import java.util.Collection;
+
 public class Bot extends Jugador {
 
 	public Bot() {
+		super(0);
 		throw new UnsupportedOperationException();
 	}
 

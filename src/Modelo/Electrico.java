@@ -8,6 +8,7 @@ public class Electrico extends Pokemon {
 	 * @param pTipoEfectivo
 	 */
 	public Electrico(String pTipoEfectivo) {
+		super(pTipoEfectivo, pTipoEfectivo, 0, 0, 0);
 		// TODO - implement Electrico.Electrico
 		
 	}

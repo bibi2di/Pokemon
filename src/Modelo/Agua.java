@@ -8,8 +8,8 @@ public class Agua extends Pokemon {
 	 * @param pTipoEfectivo
 	 */
 	public Agua(String pTipoEfectivo) {
+		super(pTipoEfectivo, pTipoEfectivo, 0, 0, 0);
 		// TODO - implement Agua.Agua
-		throw new UnsupportedOperationException();
 	}
 
 }
