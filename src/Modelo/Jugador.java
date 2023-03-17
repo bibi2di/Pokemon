@@ -22,12 +22,12 @@ public class Jugador {
 	 * 
 	 * @param cPoke
 	 */
-	public void realizarAtaques(Collection<Pokemon> cPoke) {
+	public void realizarAtaques(Collection<Pokemon> cPoke) { /*Hacer con Java8*/
 		// TODO - implement Jugador.realizarAtaques
 		throw new UnsupportedOperationException();
 	}
 
-	public void pasarTurno() {
+	public boolean pasarTurno() {
 		// TODO - implement Jugador.pasarTurno
 		throw new UnsupportedOperationException();
 	}

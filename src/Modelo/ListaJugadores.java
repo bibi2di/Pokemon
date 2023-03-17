@@ -36,25 +36,33 @@ public class ListaJugadores {
 	 * @param pNumPoke
 	 */
 	public void iniciarJuego(int pNumJug, int pNumBot, int pNumPoke) {
-		// TODO - implement ListaJugadores.iniciarJuego
-		throw new UnsupportedOperationException();
+		for(int i=0;i<pNumJug;i++) {
+			Jugador jugAct = new Jugador(pNumPoke);
+			miListaJugadores.anadirJugador(jugAct);
+		}
+		for(int j=0;j<pNumBot;j++) {
+			Bot botAct = new Bot(pNumPoke);
+			miListaJugadores.anadirBot(botAct);
+		}
 	}
 
 	/**
 	 * 
 	 * @param pNumJug
 	 */
-	public void anadirJugador(int pNumJug) {
-		// TODO - implement ListaJugadores.anadirJugador
-		throw new UnsupportedOperationException();
+	private void anadirJugador(Jugador pJugador) {
+		lJugadores.add(pJugador);
 	}
 
 	/**
 	 * 
 	 * @param pNumBot
 	 */
-	public void anadirBot(int pNumBot) {
-		// TODO - implement ListaJugadores.anadirBot
+	private void anadirBot(Bot pBot) {
+		lJugadores.add(pBot);
+	}
+	
+	private boolean finJuego() {
 		throw new UnsupportedOperationException();
 	}
 

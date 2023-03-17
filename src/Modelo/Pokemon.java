@@ -1,5 +1,5 @@
 package Modelo;
-public class Pokemon {
+public /*abstract*/ class Pokemon {
 
 	private int ataque;
 	private int defensa;
@@ -25,12 +25,12 @@ public class Pokemon {
 	 * 
 	 * @param pTipo
 	 */
-	public void atacar(String pTipo) {
-		
+	public void atacar(Pokemon pPokemon) {
+		int multiplicador = 1;
+		pPokemon.vida = pPokemon.vida -(this.ataque*multiplicador) - pPokemon.defensa;
 	}
 
 	public boolean seHaDebilitado() {
-		
 		boolean debilitado = false;
 		if (vida == 0)
 			debilitado = true;
