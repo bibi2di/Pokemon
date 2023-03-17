@@ -5,6 +5,7 @@ public abstract class Pokemon {
 	private int defensa;
 	private int vida;
 	private String tipo;
+	private String tipoEfectivo;
 
 	/**
 	 * 
