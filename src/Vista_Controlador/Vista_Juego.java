@@ -60,7 +60,7 @@ public class Vista_Juego extends JFrame {
 		Panel_Jugador.add(Panel_Jugador_Logo);
 		
 		JLabel label = new JLabel("");
-		label.setIcon(new ImageIcon("/home/asierla/git/Pokemon/sprites/trainer1.png"));
+		label.setIcon(new ImageIcon("sprites/trainer1.png"));
 		Panel_Jugador_Logo.add(label);
 		
 		JPanel Panel_Pokemons = new JPanel();
@@ -122,7 +122,7 @@ public class Vista_Juego extends JFrame {
 			Panel_Pokemon_jug.add(Pokemon_Img, BorderLayout.CENTER);
 			
 			JLabel label_4 = new JLabel("");
-			label_4.setIcon(new ImageIcon("/home/asierla/git/Pokemon/sprites/Electric/0pikachu.png"));
+			label_4.setIcon(new ImageIcon("sprites/Electric/0pikachu.png"));
 			Pokemon_Img.add(label_4);
 			
 			JPanel Pokemon_health = new JPanel();

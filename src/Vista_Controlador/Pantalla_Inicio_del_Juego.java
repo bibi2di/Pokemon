@@ -49,7 +49,8 @@ public class Pantalla_Inicio_del_Juego extends JFrame {
 	 * Create the frame.
 	 */
 	public Pantalla_Inicio_del_Juego() {
-		setIconImage(Toolkit.getDefaultToolkit().getImage("sprites/pokebol.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("sprit"
+				+ "es/pokebol.png"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setTitle("Pokemon - Charged Attack");
 		setBounds(100, 100, 800, 300);
