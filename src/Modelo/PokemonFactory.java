@@ -1,9 +1,6 @@
 package Modelo;
 public class PokemonFactory {
 	
-	//solo para prueba!
-	hago algo mal
-
 	private static PokemonFactory miPokemonFactory;
 
 	private PokemonFactory() {
