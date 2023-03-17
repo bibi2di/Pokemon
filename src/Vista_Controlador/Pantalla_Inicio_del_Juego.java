@@ -136,7 +136,6 @@ public class Pantalla_Inicio_del_Juego extends JFrame {
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setIcon(new ImageIcon("sprites/main.png"));
 		Panel_centro.add(lblNewLabel);
-		
 		System.out.println("a");
 		/*private Controlador getControlador() {
 			if(miControlador == null) {
