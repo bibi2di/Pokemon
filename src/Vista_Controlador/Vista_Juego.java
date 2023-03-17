@@ -25,19 +25,6 @@ public class Vista_Juego extends JFrame {
 
 	private JPanel contentPane;
 	
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Vista_Juego frame = new Vista_Juego(2, 0, 2000, 3);
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
 	/**
 	 * Create the frame.
 	 */
@@ -81,7 +68,7 @@ public class Vista_Juego extends JFrame {
 		contentPane.add(Panel_Pokemons);
 		Panel_Pokemons.setLayout(new GridLayout(1, 3, 0, 0));
 		
-		this.generarCasillaDePokemon(3, Panel_Pokemons);
+		this.generarCasillaDePokemon(pPokemos, Panel_Pokemons);
 		
 	}
 	
