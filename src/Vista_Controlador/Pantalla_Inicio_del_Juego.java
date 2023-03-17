@@ -5,6 +5,7 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.event.ListDataEvent;
 
 import Modelo.ListaJugadores;
 import java.awt.BorderLayout;
@@ -115,10 +116,12 @@ public class Pantalla_Inicio_del_Juego extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				
 				// Pasar de String a int
+				
 				int jugadores = Integer.parseInt(textJugadores.getText());
 				int npc = Integer.parseInt(txtNPCs.getText());
 				int mili = Integer.parseInt(textMiliSec.getText());
 				int pokemon = Integer.parseInt(textPokemon.getText());
+				
 				for(int i=1; i<=jugadores; i++) {
 					Vista_Juego jug = new Vista_Juego(i, npc, mili, pokemon);
 					jug.setVisible(true);
