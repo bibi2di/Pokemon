@@ -52,5 +52,9 @@ public class Jugador {
 		Pokemon p = PokemonFactory.getPokemonFactory().create();
 		return p;
 	}
+	
+	public boolean haPerdido() {
+		return lPokemon.stream().allMatch(p -> p.seHaDebilitado());
+	}
 
 }
