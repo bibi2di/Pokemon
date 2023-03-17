@@ -4,22 +4,23 @@ public class PokemonFactory {
 	private static PokemonFactory miPokemonFactory;
 
 	private PokemonFactory() {
-		// TODO - implement PokemonFactory.PokemonFactory
-		throw new UnsupportedOperationException();
+		
 	}
 
 	public static PokemonFactory getPokemonFactory() {
-		// TODO - implement PokemonFactory.getPokemonFactory
-		throw new UnsupportedOperationException();
+		if (miPokemonFactory==null) {
+			miPokemonFactory = new PokemonFactory();
+		}
+		return miPokemonFactory;
 	}
 
 	/**
 	 * 
 	 * @param tipo
 	 */
-	public Pokemon create(String tipo) {
-		// TODO - implement PokemonFactory.create
-		throw new UnsupportedOperationException();
+	public Pokemon create() {
+		Pokemon pokeAct = new Pokemon();
+		return pokeAct;
 	}
 
 }

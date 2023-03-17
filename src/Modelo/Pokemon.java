@@ -1,5 +1,5 @@
 package Modelo;
-public abstract class Pokemon {
+public class Pokemon {
 
 	private int ataque;
 	private int defensa;
@@ -26,8 +26,7 @@ public abstract class Pokemon {
 	 * @param pTipo
 	 */
 	public void atacar(String pTipo) {
-		// TODO - implement Pokemon.atacar
-		throw new UnsupportedOperationException();
+		
 	}
 
 	public boolean seHaDebilitado() {

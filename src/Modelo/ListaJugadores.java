@@ -1,5 +1,6 @@
 package Modelo;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 
@@ -9,18 +10,18 @@ public class ListaJugadores {
 	private Collection<Jugador> lJugadores;
 
 	private ListaJugadores() {
-		// TODO - implement ListaJugadores.ListaJugadores
-		throw new UnsupportedOperationException();
+		this.lJugadores = new ArrayList<Jugador>();
 	}
 
 	public static ListaJugadores getListaJugadores() {
-		// TODO - implement ListaJugadores.getListaJugadores
-		throw new UnsupportedOperationException();
+		if(miListaJugadores == null) {
+			miListaJugadores = new ListaJugadores();
+		}
+		return miListaJugadores;
 	}
 
 	private Iterator<Jugador> getIterador() {
-		// TODO - implement ListaJugadores.getIterador
-		throw new UnsupportedOperationException();
+		return lJugadores.iterator();
 	}
 
 	public void asignarTurnoAleatoriamente() {

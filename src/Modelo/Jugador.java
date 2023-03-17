@@ -12,8 +12,10 @@ public class Jugador {
 	 * @param pNumPoke
 	 */
 	public Jugador(int pNumPoke) {
-		// TODO - implement Jugador.Jugador
-		throw new UnsupportedOperationException();
+		for (int i=0;i<pNumPoke;i++) {
+			Pokemon pokeAct = this.createPokemon();
+			lPokemon.add(pokeAct);
+		}
 	}
 
 	/**
@@ -31,8 +33,7 @@ public class Jugador {
 	}
 
 	public Iterator<Pokemon> getIterador() {
-		// TODO - implement Jugador.getIterador
-		throw new UnsupportedOperationException();
+		return lPokemon.iterator();
 	}
 
 	/**
@@ -40,17 +41,16 @@ public class Jugador {
 	 * @param pPokemon
 	 */
 	private void anadirPokemon(Pokemon pPokemon) {
-		// TODO - implement Jugador.anadirPokemon
-		throw new UnsupportedOperationException();
+		lPokemon.add(pPokemon);
 	}
 
 	/**
 	 * 
 	 * @param tipo
 	 */
-	private Pokemon createPokemon(String tipo) {
-		// TODO - implement Jugador.createPokemon
-		throw new UnsupportedOperationException();
+	private Pokemon createPokemon() {
+		Pokemon p = PokemonFactory.getPokemonFactory().create();
+		return p;
 	}
 
 }
