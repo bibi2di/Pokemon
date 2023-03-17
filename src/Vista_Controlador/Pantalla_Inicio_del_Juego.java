@@ -46,7 +46,7 @@ public class Pantalla_Inicio_del_Juego extends JFrame {
 	 * Create the frame.
 	 */
 	public Pantalla_Inicio_del_Juego() {
-		setIconImage(Toolkit.getDefaultToolkit().getImage("/home/asierla/git/Pokemon/sprites/pokebol.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("sprites/pokebol.png"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setTitle("Pokemon - Charged Attack");
 		setBounds(100, 100, 800, 300);
@@ -132,7 +132,7 @@ public class Pantalla_Inicio_del_Juego extends JFrame {
 		contentPane.add(Panel_centro, BorderLayout.CENTER);
 		
 		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon("/home/asierla/git/Pokemon/sprites/main.png"));
+		lblNewLabel.setIcon(new ImageIcon("sprites/main.png"));
 		Panel_centro.add(lblNewLabel);
 	}
 }
