@@ -118,7 +118,7 @@ public class Pantalla_Inicio_del_Juego extends JFrame {
 		/*
 		 * Este botón es el que inicia el juego
 		 */
-		JButton btnJugar = new JButton("Jugar");
+		JButton btnJugar = new JButton("Jugar"); 
 		btnJugar.addActionListener(getControlador());
 		btnJugar.setBounds(56, 89, 117, 25);
 		Panel_dech_inf.add(btnJugar);
