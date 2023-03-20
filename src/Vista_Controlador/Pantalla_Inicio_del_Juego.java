@@ -28,6 +28,7 @@ public class Pantalla_Inicio_del_Juego extends JFrame {
 	private JTextField txtNPCs;
 	private JTextField textMiliSec;
 	private JTextField textPokemon;
+	private Controler miControlador = null;
 	//private Controlador controlador;
 	/**
 	 * Launch the application.
@@ -114,26 +115,11 @@ public class Pantalla_Inicio_del_Juego extends JFrame {
 		btnFree4all.setBounds(12, 33, 99, 25);
 		Panel_dech_inf.add(btnFree4all);
 		
+		/*
+		 * Este botón es el que inicia el juego
+		 */
 		JButton btnJugar = new JButton("Jugar");
-		btnJugar.addActionListener(/*getControlador());*/new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-				// Pasar de String a int
-				
-				int jugadores = Integer.parseInt(textJugadores.getText());
-				int npc = Integer.parseInt(txtNPCs.getText());
-				int mili = Integer.parseInt(textMiliSec.getText());
-				int pokemon = Integer.parseInt(textPokemon.getText());
-				
-				for(int i=1; i<=jugadores; i++) {
-					Vista_Juego jug = new Vista_Juego(i, npc, mili, pokemon);
-					jug.setVisible(true);
-				}
-				
-				
-			}
-			
-		});
+		btnJugar.addActionListener(getControlador());
 		btnJugar.setBounds(56, 89, 117, 25);
 		Panel_dech_inf.add(btnJugar);
 		
@@ -146,33 +132,55 @@ public class Pantalla_Inicio_del_Juego extends JFrame {
 		lblNewLabel.setIcon(new ImageIcon("sprites/main.png"));
 		Panel_centro.add(lblNewLabel);
 		
+	}
+	
+	/*
+	 * -----------------Propuesta 1 de Controlador-----------------------------------------------------------------------------------------------------
+	 * --------------- 
+	private Controlador getControlador() {
+		if(miControlador == null) {
+			miControlador = new Controlador();
+		}
+		return miControlador;
+	}
+	
+	
+	
+	private class Controlador implements ActionListener {
+		private static Controlador miControlador = null;
 		
-		/*
-		private Controlador getControlador() {
-			if(miControlador == null) {
-				miControlador = new Controlador();
-			}
-			return miControlador;
+
+		public void actionPerformed(ActionEvent e) {
+			if(e.getSource().equals(btnJugar)) {
+				int jugadores = Integer.parseInt(textJugadores.getText());
+				int npc = Integer.parseInt(txtNPCs.getText());
+				int mili = Integer.parseInt(textMiliSec.getText());
+				int pokemon = Integer.parseInt(textPokemon.getText());
+					
+				ListaJugadores.getListaJugadores().iniciarJuego(jugadores, npc, pokemon);
+				Vista_Juego jug = new VisaddActionListenerta_Juego(jugadores, npc, mili, pokemon);
+				jug.setVisible(true);
+			}			
 		}
 		
+		*
+		*-----------------------------------------------------------------------------------------------------------------------------------------------
+		*/
+	
+	
+	private Controler getControlador() {
+		if(miControlador == null) {
+			miControlador = new Controler();
+		}
+		return miControlador;
 		
-		
-		private class Controlador implements ActionListener {
-			private static Controlador miControlador = null;
-			
-
-			public void actionPerformed(ActionEvent e) {
-				if(e.getSource().equals(btnJugar)) {
-					int jugadores = Integer.parseInt(textJugadores.getText());
-					int npc = Integer.parseInt(txtNPCs.getText());
-					int mili = Integer.parseInt(textMiliSec.getText());
-					int pokemon = Integer.parseInt(textPokemon.getText());
-						
-					ListaJugadores.getListaJugadores().iniciarJuego(jugadores, npc, pokemon);
-					Vista_Juego jug = new Vista_Juego(jugadores, npc, mili, pokemon);
-					jug.setVisible(true);
-				}			
-			}*/
-		
+	}
+	
+	private class Controler implements ActionListener {
+		public void actionPerformed(ActionEvent e) {
+			if(e.getSource().equals(btnJugar)) {
+				System.out.println("bn");
+			}
+		}
 	}
 }

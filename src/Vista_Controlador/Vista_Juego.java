@@ -84,37 +84,9 @@ public class Vista_Juego extends JFrame {
 			Panel_Pokemon_jug.setLayout(new BorderLayout(0, 0));
 			
 			JPanel Pokemon_info = new JPanel();
-			Pokemon_info.setBackground(Color.WHITE);
 			Panel_Pokemon_jug.add(Pokemon_info, BorderLayout.NORTH);
-			Pokemon_info.setLayout(new GridLayout(4, 2, 0, 0));
+			this.generarCuadroPokemon(Pokemon_info);
 			
-			JLabel lblAtt = new JLabel("att:");
-			lblAtt.setHorizontalAlignment(SwingConstants.RIGHT);
-			Pokemon_info.add(lblAtt);
-			
-			JLabel label_1 = new JLabel("15+0");
-			Pokemon_info.add(label_1);
-			
-			JLabel lblDef = new JLabel("def: ");
-			lblDef.setHorizontalAlignment(SwingConstants.RIGHT);
-			Pokemon_info.add(lblDef);
-			
-			JLabel label_2 = new JLabel("6+0");
-			Pokemon_info.add(label_2);
-			
-			JLabel lblHealth = new JLabel("health:");
-			lblHealth.setHorizontalAlignment(SwingConstants.RIGHT);
-			Pokemon_info.add(lblHealth);
-			
-			JLabel label_3 = new JLabel("210/210");
-			Pokemon_info.add(label_3);
-			
-			JLabel lblType = new JLabel("type:");
-			lblType.setHorizontalAlignment(SwingConstants.RIGHT);
-			Pokemon_info.add(lblType);
-			
-			JLabel lblPsychic = new JLabel("psychic");
-			Pokemon_info.add(lblPsychic);
 			
 			JPanel Pokemon_Img = new JPanel();
 			Pokemon_Img.setBackground(Color.WHITE);
@@ -140,5 +112,42 @@ public class Vista_Juego extends JFrame {
 			JLabel lblChargedAttack = new JLabel("Charged attack");
 			Pokemon_charged_attack.add(lblChargedAttack);
 		}
+	}
+	
+	/**
+	 * Este metodo crea el panel del jugador
+	 * @param panelEstadoPokemon
+	 */
+	public void generarCuadroPokemon(JPanel panelEstadoPokemon) {
+		panelEstadoPokemon.setBackground(Color.WHITE);
+		panelEstadoPokemon.setLayout(new GridLayout(4, 2, 0, 0));
+		
+		JLabel lblAtt = new JLabel("att:");
+		lblAtt.setHorizontalAlignment(SwingConstants.RIGHT);
+		panelEstadoPokemon.add(lblAtt);
+		
+		JLabel label_1 = new JLabel("15+0");
+		panelEstadoPokemon.add(label_1);
+		
+		JLabel lblDef = new JLabel("def: ");
+		lblDef.setHorizontalAlignment(SwingConstants.RIGHT);
+		panelEstadoPokemon.add(lblDef);
+		
+		JLabel label_2 = new JLabel("6+0");
+		panelEstadoPokemon.add(label_2);
+		
+		JLabel lblHealth = new JLabel("health:");
+		lblHealth.setHorizontalAlignment(SwingConstants.RIGHT);
+		panelEstadoPokemon.add(lblHealth);
+		
+		JLabel label_3 = new JLabel("210/210");
+		panelEstadoPokemon.add(label_3);
+		
+		JLabel lblType = new JLabel("type:");
+		lblType.setHorizontalAlignment(SwingConstants.RIGHT);
+		panelEstadoPokemon.add(lblType);
+		
+		JLabel lblPsychic = new JLabel("psychic");
+		panelEstadoPokemon.add(lblPsychic);
 	}
 }
