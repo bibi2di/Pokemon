@@ -74,7 +74,7 @@ public class Pantalla_Inicio_del_Juego extends JFrame {
 		Panel_dech_superior.add(lblNewLabel_1);
 		
 		textJugadores = new JTextField();
-		textJugadores.setText("");
+		textJugadores.setText("2");
 		Panel_dech_superior.add(textJugadores);
 		textJugadores.setColumns(10);
 		
@@ -82,6 +82,7 @@ public class Pantalla_Inicio_del_Juego extends JFrame {
 		Panel_dech_superior.add(lblNewLabel_2);
 		
 		txtNPCs = new JTextField();
+		txtNPCs.setText("0");
 		Panel_dech_superior.add(txtNPCs);
 		txtNPCs.setColumns(10);
 		
@@ -97,6 +98,7 @@ public class Pantalla_Inicio_del_Juego extends JFrame {
 		Panel_dech_superior.add(lblPokemons);
 		
 		textPokemon = new JTextField();
+		textPokemon.setText("3");
 		Panel_dech_superior.add(textPokemon);
 		textPokemon.setColumns(10);
 		
@@ -143,37 +145,34 @@ public class Pantalla_Inicio_del_Juego extends JFrame {
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setIcon(new ImageIcon("sprites/main.png"));
 		Panel_centro.add(lblNewLabel);
-		System.out.println("a");
 		
-		/*private Controlador getControlador() {
+		
+		/*
+		private Controlador getControlador() {
 			if(miControlador == null) {
 				miControlador = new Controlador();
 			}
 			return miControlador;
 		}
 		
+		
+		
 		private class Controlador implements ActionListener {
 			private static Controlador miControlador = null;
 			
-			private Controlador() {
-				
-			}
-			
-			@Override
+
 			public void actionPerformed(ActionEvent e) {
 				if(e.getSource().equals(btnJugar)) {
 					int jugadores = Integer.parseInt(textJugadores.getText());
 					int npc = Integer.parseInt(txtNPCs.getText());
 					int mili = Integer.parseInt(textMiliSec.getText());
 					int pokemon = Integer.parseInt(textPokemon.getText());
-					
+						
 					ListaJugadores.getListaJugadores().iniciarJuego(jugadores, npc, pokemon);
 					Vista_Juego jug = new Vista_Juego(jugadores, npc, mili, pokemon);
 					jug.setVisible(true);
-				}
-				
-			}
-			
-		}*/
+				}			
+			}*/
+		
 	}
 }

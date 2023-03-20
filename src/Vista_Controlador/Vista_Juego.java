@@ -77,7 +77,6 @@ public class Vista_Juego extends JFrame {
 	 * @param nPok El numero de Pokemos que queremos.
 	 */
 	public void generarCasillaDePokemon(int nPok, JPanel Panel_Pokemons) {
-		
 		for(int i =1; i<=nPok; i++) {
 			JPanel Panel_Pokemon_jug = new JPanel();
 			Panel_Pokemon_jug.setBorder(new BevelBorder(BevelBorder.LOWERED, Color.BLACK, null, null, null));
