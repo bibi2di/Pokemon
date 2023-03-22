@@ -65,8 +65,27 @@ public class ListaJugadores {
 	
 	public Jugador asignarTurnoAleatoriamente() {
 		
-		// emplea pasaTurno() 
 		// TODO - implement ListaJugadores.asignarTurnoAleatoriamente
+		
+		int numJug = pNumJug + pNumBot;
+		
+		int turno = (int)(Math.random()*(numJug-1)+1); // Num aleatorio del listado de Jugadores
+		
+		Jugador jug = null;
+		
+		Iterator<Jugador> itr = this.getIterador();
+		
+		int act = 0;
+		
+		while (act < turno) {
+			act++;
+			jug=itr.next();
+		} 
+		
+		return jug; 
+			
+		// emplea pasaTurno() 
+		
 		throw new UnsupportedOperationException();
 	}
 
