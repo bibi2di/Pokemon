@@ -15,7 +15,7 @@ public class CampoDeBatalla {
 		return miCampoDeBatalla;
 	}
 	
-	public Boolean realizarAtaques(Pokemon pPokemonAtaka , Pokemon pPokemonAtacado  ){
+	public Boolean realizarAtaques(Pokemon pPokemonAtaka , Pokemon pPokemonAtacado){
 		
 		return true;
 	

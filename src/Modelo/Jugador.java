@@ -39,15 +39,6 @@ public class Jugador {
 	}
 
 
-
-	/**
-	 * 
-	 * @param pPokemon
-	 */
-	private void anadirPokemon(Pokemon pPokemon) {
-		lPokemon.add(pPokemon);
-	}
-
 	/**
 	 * 
 	 * @param tipo
