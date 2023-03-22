@@ -15,15 +15,13 @@ public class CampoDeBatalla {
 		return miCampoDeBatalla;
 	}
 	
-	public Boolean realizarAtaques(Pokemon pPokemonAtaka , Pokemon pPokemonAtacado){
-		
-		return true;
-	
+	public boolean realizarAtaques(Pokemon pPokemonAtaca, Pokemon pPokemonAtacado){
+		boolean haRealizadoAtaque = false;
+		if (!pPokemonAtaca.seHaDebilitado() && !pPokemonAtacado.seHaDebilitado()) {
+			pPokemonAtaca.atacar(pPokemonAtacado);
+			haRealizadoAtaque = true;
+		}
+		return haRealizadoAtaque;
 	}
 	
-	public void jugarUnaPartida() {
-		
-		// emplea jugador.haperdido() booblean
-		
-	}
 }

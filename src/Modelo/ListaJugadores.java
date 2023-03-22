@@ -33,16 +33,15 @@ public class ListaJugadores {
 	 */
 	public void iniciarJuego(int pNumJug, int pNumBot, int pNumPoke) {
 		for(int i=0;i<pNumJug;i++) {
-			Jugador jugAct = new Jugador(pNumPoke);
+			Jugador jugAct = new Jugador(pNumPoke,i);
 			miListaJugadores.anadirJugador(jugAct);
 		}
 		for(int j=0;j<pNumBot;j++) {
-			Bot botAct = new Bot(pNumPoke);
+			Bot botAct = new Bot(pNumPoke,j);
 			miListaJugadores.anadirBot(botAct);
 		}
 	}
 
-	
 	/**
 	 * 
 	 * @param pNumJug

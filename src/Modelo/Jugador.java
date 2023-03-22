@@ -4,7 +4,8 @@ import java.util.Collection;
 import java.util.Iterator;
 
 public class Jugador {
-
+	
+	private int id;
 	private Collection<Pokemon> lPokemon;
 
 	/**
@@ -12,7 +13,8 @@ public class Jugador {
 	 * @param pNumPoke
 	 */
 	
-	public Jugador(int pNumPoke) {
+	public Jugador(int pNumPoke, int pId) {
+		id = pId;
 		for (int i=0;i<pNumPoke;i++) {
 			Pokemon pokeAct = this.createPokemon();
 			lPokemon.add(pokeAct);
