@@ -202,8 +202,19 @@ public class Pantalla_De_Inicio extends JFrame {
 	private class Controler implements ActionListener{
 		public void actionPerformed(ActionEvent e) {
 			if(e.getSource().equals(btnJugar)) {
-				Vista_Jugador VistaJug = new Vista_Jugador(3);
-				VistaJug.setVisible(true);
+				int nJug = Integer.parseInt(txtNjuga.getText());
+				int nNPC = Integer.parseInt(txtNnpcs.getText());
+				int nPok = Integer.parseInt(txtNpokemosn.getText());
+				
+				for(int i=1;i<=nJug;i++) {
+					Vista_Jugador VistaJug = new Vista_Jugador(nPok);
+					VistaJug.setVisible(true);
+				}
+				
+				for(int i=1;i<=nNPC;i++) {
+					Vista_Jugador VistaJug = new Vista_Jugador(nPok);
+					VistaJug.setVisible(true);
+				}
 			}
 		}
 	}
