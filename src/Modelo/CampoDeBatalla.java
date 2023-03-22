@@ -1,6 +1,7 @@
 package Modelo;
 
 public class CampoDeBatalla {
+	
 	private static CampoDeBatalla miCampoDeBatalla;
 
 	private CampoDeBatalla() {
@@ -14,11 +15,15 @@ public class CampoDeBatalla {
 		return miCampoDeBatalla;
 	}
 	
-	public void realizarAtaques() {
+	public Boolean realizarAtaques(Pokemon pPokemonAtaka , Pokemon pPokemonAtacado  ){
 		
+		return true;
+	
 	}
 	
 	public void jugarUnaPartida() {
+		
+		// emplea jugador.haperdido() booblean
 		
 	}
 }

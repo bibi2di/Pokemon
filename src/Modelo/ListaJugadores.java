@@ -24,11 +24,7 @@ public class ListaJugadores {
 		return lJugadores.iterator();
 	}
 
-	public void asignarTurnoAleatoriamente() {
-		// TODO - implement ListaJugadores.asignarTurnoAleatoriamente
-		throw new UnsupportedOperationException();
-	}
-
+	
 	/**
 	 * 
 	 * @param pNumJug
@@ -46,6 +42,7 @@ public class ListaJugadores {
 		}
 	}
 
+	
 	/**
 	 * 
 	 * @param pNumJug
@@ -62,6 +59,20 @@ public class ListaJugadores {
 		lJugadores.add(pBot);
 	}
 	
+	private boolean pasaTurno() {
+		// TODO - implement Jugador.pasarTurno
+		throw new UnsupportedOperationException();
+	}
+	
+	public Jugador asignarTurnoAleatoriamente() {
+		
+		// emplea pasaTurno() 
+		// TODO - implement ListaJugadores.asignarTurnoAleatoriamente
+		throw new UnsupportedOperationException();
+	}
+
+
+
 	private boolean finJuego() {
 		throw new UnsupportedOperationException();
 	}

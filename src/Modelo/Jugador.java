@@ -11,6 +11,7 @@ public class Jugador {
 	 * 
 	 * @param pNumPoke
 	 */
+	
 	public Jugador(int pNumPoke) {
 		for (int i=0;i<pNumPoke;i++) {
 			Pokemon pokeAct = this.createPokemon();
@@ -18,23 +19,26 @@ public class Jugador {
 		}
 	}
 
+	
+	private Iterator<Pokemon> getIterador() {
+		return lPokemon.iterator();
+	}
+	
+	
 	/**
 	 * 
 	 * @param cPoke
 	 */
-	public void realizarAtaques(Collection<Pokemon> cPoke) { /*Hacer con Java8*/
+	
+	public void realizarAtaques(Pokemon pokJuega) { /*Hacer con Java8*/
 		// TODO - implement Jugador.realizarAtaques
+		
+		// comprobar que no ha jugado antes en su turno 
+		
 		throw new UnsupportedOperationException();
 	}
 
-	public boolean pasarTurno() {
-		// TODO - implement Jugador.pasarTurno
-		throw new UnsupportedOperationException();
-	}
 
-	public Iterator<Pokemon> getIterador() {
-		return lPokemon.iterator();
-	}
 
 	/**
 	 * 
