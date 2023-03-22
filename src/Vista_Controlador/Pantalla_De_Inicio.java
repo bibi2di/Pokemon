@@ -61,7 +61,7 @@ public class Pantalla_De_Inicio extends JFrame {
 		getContentPane().setLayout(new BorderLayout(0, 0));
 		getContentPane().add(getPanel_derecho(), BorderLayout.EAST);
 		getContentPane().add(getPanel_central(), BorderLayout.CENTER);
-
+		setResizable(false);
 	}
 
 	private JPanel getPanel_derecho() {
@@ -202,7 +202,8 @@ public class Pantalla_De_Inicio extends JFrame {
 	private class Controler implements ActionListener{
 		public void actionPerformed(ActionEvent e) {
 			if(e.getSource().equals(btnJugar)) {
-				System.out.println("funciona");
+				Vista_Jugador VistaJug = new Vista_Jugador(3);
+				VistaJug.setVisible(true);
 			}
 		}
 	}
