@@ -1,6 +1,7 @@
 package Modelo;
 
 public class CampoDeBatalla {
+	
 	private static CampoDeBatalla miCampoDeBatalla;
 
 	private CampoDeBatalla() {
@@ -14,11 +15,13 @@ public class CampoDeBatalla {
 		return miCampoDeBatalla;
 	}
 	
-	public void realizarAtaques() {
-		
+	public boolean realizarAtaques(Pokemon pPokemonAtaca, Pokemon pPokemonAtacado){
+		boolean haRealizadoAtaque = false;
+		if (!pPokemonAtaca.seHaDebilitado() && !pPokemonAtacado.seHaDebilitado()) {
+			pPokemonAtaca.atacar(pPokemonAtacado);
+			haRealizadoAtaque = true;
+		}
+		return haRealizadoAtaque;
 	}
 	
-	public void jugarUnaPartida() {
-		
-	}
 }

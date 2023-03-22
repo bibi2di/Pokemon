@@ -24,11 +24,7 @@ public class ListaJugadores {
 		return lJugadores.iterator();
 	}
 
-	public void asignarTurnoAleatoriamente() {
-		// TODO - implement ListaJugadores.asignarTurnoAleatoriamente
-		throw new UnsupportedOperationException();
-	}
-
+	
 	/**
 	 * 
 	 * @param pNumJug
@@ -37,11 +33,11 @@ public class ListaJugadores {
 	 */
 	public void iniciarJuego(int pNumJug, int pNumBot, int pNumPoke) {
 		for(int i=0;i<pNumJug;i++) {
-			Jugador jugAct = new Jugador(pNumPoke);
+			Jugador jugAct = new Jugador(pNumPoke,i);
 			miListaJugadores.anadirJugador(jugAct);
 		}
 		for(int j=0;j<pNumBot;j++) {
-			Bot botAct = new Bot(pNumPoke);
+			Bot botAct = new Bot(pNumPoke,j);
 			miListaJugadores.anadirBot(botAct);
 		}
 	}
@@ -62,6 +58,39 @@ public class ListaJugadores {
 		lJugadores.add(pBot);
 	}
 	
+	private boolean pasaTurno() {
+		// TODO - implement Jugador.pasarTurno
+		throw new UnsupportedOperationException();
+	}
+	
+	public Jugador asignarTurnoAleatoriamente() {
+		
+		// TODO - implement ListaJugadores.asignarTurnoAleatoriamente
+		
+		int numJug = pNumJug + pNumBot;
+		
+		int turno = (int)(Math.random()*(numJug-1)+1); // Num aleatorio del listado de Jugadores
+		
+		Jugador jug = null;
+		
+		Iterator<Jugador> itr = this.getIterador();
+		
+		int act = 0;
+		
+		while (act < turno) {
+			act++;
+			jug=itr.next();
+		} 
+		
+		return jug; 
+			
+		// emplea pasaTurno() 
+		
+		throw new UnsupportedOperationException();
+	}
+
+
+
 	private boolean finJuego() {
 		throw new UnsupportedOperationException();
 	}
