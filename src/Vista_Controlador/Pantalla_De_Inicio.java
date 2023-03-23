@@ -12,10 +12,15 @@ import java.awt.event.ActionListener;
 import javax.swing.JLabel;
 import javax.swing.JButton;
 import javax.swing.JTextField;
+
+import Modelo.ListaJugadores;
+
 import javax.swing.Action;
 import javax.swing.ImageIcon;
 import java.awt.Color;
-
+/*
+ * alks ashdlsad
+ */
 public class Pantalla_De_Inicio extends JFrame {
 	private JPanel Panel_derecho;
 	private JPanel panel_central;
@@ -219,13 +224,14 @@ public class Pantalla_De_Inicio extends JFrame {
 				int nNPC = Integer.parseInt(txtNnpcs.getText());
 				int nPok = Integer.parseInt(txtNpokemosn.getText());
 				if((nJug>=1 && nNPC>=1) || (nJug>=2)) {
-					for(int i=1;i<=nJug;i++) {
-						Vista_Jugador VistaJug = new Vista_Jugador(nPok, "Jugador"+i);
+					ListaJugadores.getListaJugadores().iniciarJuego(nJug, nNPC, nPok);
+					for(int i=0;i<nJug;i++) {
+						Vista_Jugador VistaJug = new Vista_Jugador(nPok, "Jugador "+i);
 						VistaJug.setVisible(true);
 					}
 					
-					for(int i=1;i<=nNPC;i++) {
-						Vista_Jugador VistaJug = new Vista_Jugador(nPok, "Bot"+i);
+					for(int j=nJug;j<nJug+nNPC-1;j++) {
+						Vista_Jugador VistaJug = new Vista_Jugador(nPok, "Bot "+j);
 						VistaJug.setVisible(true);
 					}
 				}else {
