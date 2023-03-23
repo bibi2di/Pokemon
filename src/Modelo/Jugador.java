@@ -36,8 +36,6 @@ public class Jugador extends Observable {
 	 */
 	
 	public boolean realizarAtaque(int numPoke,Pokemon pokJuega) { /*Hacer con Java8*/
-		// TODO - implement Jugador.realizarAtaques
-		// comprobar que no ha jugado antes en su turno 
 		Pokemon atacante = lPokemon.get(numPoke);
 		boolean haRealizadoAtaque = false;
 		if(atacante != null && !haRealizadoAtaque) {

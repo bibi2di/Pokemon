@@ -8,10 +8,4 @@ public class Bot extends Jugador {
 		super(pNumPoke,id);
 	}
 
-	/**
-	 * 
-	 * @param cPoke
-	 * @return 
-	 */
-
 }
