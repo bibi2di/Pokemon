@@ -1,5 +1,6 @@
 package Modelo;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.Observable;
@@ -8,7 +9,7 @@ import java.util.Observable;
 public class Jugador extends Observable {
 	
 	private int id;
-	private Collection<Pokemon> lPokemon;
+	private ArrayList<Pokemon> lPokemon;
 
 	/**
 	 * 
@@ -31,17 +32,20 @@ public class Jugador extends Observable {
 	
 	/**
 	 * 
-	 * @param cPoke
+	 * @param int numPoke,Pokemon pokJuega
 	 */
 	
-	public void realizarAtaques(Pokemon pokJuega) { /*Hacer con Java8*/
+	public void realizarAtaque(int numPoke,Pokemon pokJuega) { /*Hacer con Java8*/
 		// TODO - implement Jugador.realizarAtaques
-		
 		// comprobar que no ha jugado antes en su turno 
-		
-		throw new UnsupportedOperationException();
+		Pokemon atacante = lPokemon.get(numPoke);
+		boolean haRealizadoAtaque = false; /*DUDA*/
+		if(atacante != null && !haRealizadoAtaque) {
+			 haRealizadoAtaque = CampoDeBatalla.getCampoBatalla().realizarAtaques(atacante, pokJuega); /*DUDA*/
+		}
 	}
-
+	
+	/*REALIZAR ATAQUES*/
 
 	/**
 	 * 
