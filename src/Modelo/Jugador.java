@@ -22,6 +22,9 @@ public class Jugador extends Observable {
 			Pokemon pokeAct = this.createPokemon();
 			lPokemon.add(pokeAct);
 		}
+		
+		//setChanged();
+		//notifyObservers();
 	}
 
 	
