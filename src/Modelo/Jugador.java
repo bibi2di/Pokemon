@@ -8,8 +8,8 @@ import java.util.Observable;
 @SuppressWarnings("deprecation")
 public class Jugador extends Observable {
 	
-	private int id;
-	private ArrayList<Pokemon> lPokemon;
+	protected int id;
+	protected ArrayList<Pokemon> lPokemon;
 
 	/**
 	 * 

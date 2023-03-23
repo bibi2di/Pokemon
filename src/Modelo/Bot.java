@@ -12,8 +12,7 @@ public class Bot extends Jugador {
 	 * 
 	 * @param cPoke
 	 */
-	@Override
-	public void realizarAtaques(Pokemon pokJuega) {
+	public void realizarAtaques(int pNumPoke,Pokemon pokJuega) {
 		// TODO - implement Bot.realizarAtaques
 		throw new UnsupportedOperationException();
 	}
