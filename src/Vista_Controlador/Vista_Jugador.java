@@ -20,7 +20,7 @@ public class Vista_Jugador extends JFrame {
 	private JLabel lab_Jugador_estado;
 	private JLabel label;
 	private JPanel PanelPokemons;
-	private JPanel PanelPokemons_Vis;
+	private MiJPanelObserver PanelPokemons_Vis;
 	private JPanel Panel_Pokemons_Sup;
 	private JPanel Panel_Pokemons_Cen;
 	private JPanel Panel_Pokemons_Inf;
@@ -113,7 +113,7 @@ public class Vista_Jugador extends JFrame {
 	}
 	private JPanel getPanelPokemons_Vis(int nPok, JPanel panelPok) {
 		for(int i=1; i<=nPok; i++) {
-			PanelPokemons_Vis = new JPanel();
+			PanelPokemons_Vis = new MiJPanelObserver();
 			PanelPokemons_Vis.setLayout(new BorderLayout(0, 0));
 			PanelPokemons_Vis.add(getPanel_Pokemons_Sup(), BorderLayout.NORTH);
 			PanelPokemons_Vis.add(getPanel_Pokemons_Cen(), BorderLayout.CENTER);
