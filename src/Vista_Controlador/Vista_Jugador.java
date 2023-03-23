@@ -95,12 +95,13 @@ public class Vista_Jugador extends JFrame {
 		return btn_Jugador_estado;
 	}
 	private JLabel getLabel() {
-		label = new JLabel("Foto Entrenador");
+		String fotoEntr = "";
+		int r = (int)(Math.random()*7); 
+		fotoEntr = "sprites/trainer"+r+".png";
+		label = new JLabel("");
 		label.setHorizontalAlignment(SwingConstants.CENTER);
-			/*
-			 * TODO - Implimentar un random para eleguir al entrandor
-			 */
-		label.setIcon(new ImageIcon(""));
+		
+		label.setIcon(new ImageIcon(fotoEntr));
 		return label;
 	}
 	
