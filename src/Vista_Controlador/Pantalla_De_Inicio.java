@@ -229,7 +229,6 @@ public class Pantalla_De_Inicio extends JFrame {
 						Vista_Jugador VistaJug = new Vista_Jugador(nPok, "Jugador "+i);
 						VistaJug.setVisible(true);
 					}
-					
 					for(int j=nJug;j<nJug+nNPC-1;j++) {
 						Vista_Jugador VistaJug = new Vista_Jugador(nPok, "Bot "+j);
 						VistaJug.setVisible(true);
