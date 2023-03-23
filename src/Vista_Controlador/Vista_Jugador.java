@@ -16,7 +16,7 @@ import java.awt.event.ActionListener;
 
 public class Vista_Jugador extends JFrame {
 	private JPanel Panel_Jugador;
-	private JPanel Panel_Jugador_Estado;
+	private MiJPanelObserver Panel_Jugador_Estado;
 	private JLabel lab_Jugador_estado;
 	private JLabel label;
 	private JPanel PanelPokemons;
@@ -80,7 +80,7 @@ public class Vista_Jugador extends JFrame {
 	}
 	private JPanel getPanel_Jugador_Estado() {
 		if (Panel_Jugador_Estado == null) {
-			Panel_Jugador_Estado = new JPanel();
+			Panel_Jugador_Estado = new MiJPanelObserver();
 			Panel_Jugador_Estado.setBackground(Color.RED);
 			Panel_Jugador_Estado.add(getLab_Jugador_estado());
 		}
@@ -88,7 +88,7 @@ public class Vista_Jugador extends JFrame {
 	}
 	private JLabel getLab_Jugador_estado() {
 		if (lab_Jugador_estado == null) {
-			lab_Jugador_estado = new JLabel("Go!");
+			lab_Jugador_estado = new JLabel("No atacar");
 		}
 		return lab_Jugador_estado;
 	}
