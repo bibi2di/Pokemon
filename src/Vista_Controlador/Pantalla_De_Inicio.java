@@ -34,6 +34,7 @@ public class Pantalla_De_Inicio extends JFrame {
 	private JButton btnJugar;
 	private JLabel label;
 	private Controler controler = null;
+	private JLabel lblError;
 
 	/**
 	 * Launch the application.
@@ -55,6 +56,7 @@ public class Pantalla_De_Inicio extends JFrame {
 	 * Create the frame.
 	 */
 	public Pantalla_De_Inicio() {
+		setTitle("Pokemon");
 		getContentPane().setForeground(new Color(255, 255, 255));
 		setBounds(100, 100, 800, 300);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -78,6 +80,7 @@ public class Pantalla_De_Inicio extends JFrame {
 			panel_central = new JPanel();
 			panel_central.setBackground(new Color(255, 255, 255));
 			panel_central.setForeground(new Color(255, 255, 255));
+			panel_central.add(getLblTienesQueMeter());
 			panel_central.add(getLabel());
 		}
 		return panel_central;
@@ -158,6 +161,7 @@ public class Pantalla_De_Inicio extends JFrame {
 	private JTextField getTxtNpokemosn() {
 		if (txtNpokemosn == null) {
 			txtNpokemosn = new JTextField();
+			txtNpokemosn.setEditable(false);
 			txtNpokemosn.setText("3");
 			txtNpokemosn.setColumns(10);
 		}
@@ -174,6 +178,7 @@ public class Pantalla_De_Inicio extends JFrame {
 		if (btnNewButton_1 == null) {
 			btnNewButton_1 = new JButton("Cerrar");
 			btnNewButton_1.setBounds(123, 31, 93, 25);
+			btnNewButton_1.addActionListener(getControler());
 		}
 		return btnNewButton_1;
 	}
@@ -192,6 +197,14 @@ public class Pantalla_De_Inicio extends JFrame {
 		}
 		return label;
 	}
+	private JLabel getLblTienesQueMeter() {
+		if (lblError == null) {
+			lblError = new JLabel("Tienes que meter un nº de Jugadores y/o NPCs validos");
+			lblError.setForeground(Color.RED);
+			lblError.setVisible(false);
+		}
+		return lblError;
+	}
 	
 	private Controler getControler() {
 		if(controler == null) {
@@ -205,16 +218,22 @@ public class Pantalla_De_Inicio extends JFrame {
 				int nJug = Integer.parseInt(txtNjuga.getText());
 				int nNPC = Integer.parseInt(txtNnpcs.getText());
 				int nPok = Integer.parseInt(txtNpokemosn.getText());
-				
-				for(int i=1;i<=nJug;i++) {
-					Vista_Jugador VistaJug = new Vista_Jugador(nPok);
-					VistaJug.setVisible(true);
+				if((nJug>=1 && nNPC>=1) || (nJug>=2)) {
+					for(int i=1;i<=nJug;i++) {
+						Vista_Jugador VistaJug = new Vista_Jugador(nPok, "Jugador"+i);
+						VistaJug.setVisible(true);
+					}
+					
+					for(int i=1;i<=nNPC;i++) {
+						Vista_Jugador VistaJug = new Vista_Jugador(nPok, "Bot"+i);
+						VistaJug.setVisible(true);
+					}
+				}else {
+					lblError.setVisible(true);
 				}
-				
-				for(int i=1;i<=nNPC;i++) {
-					Vista_Jugador VistaJug = new Vista_Jugador(nPok);
-					VistaJug.setVisible(true);
-				}
+			}
+			if(e.getSource().equals(btnNewButton_1)) {
+				System.exit(0);
 			}
 		}
 	}

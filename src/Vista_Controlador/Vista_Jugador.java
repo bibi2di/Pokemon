@@ -47,7 +47,7 @@ public class Vista_Jugador extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Vista_Jugador frame = new Vista_Jugador(3);
+					Vista_Jugador frame = new Vista_Jugador(3, "Prueba");
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -59,7 +59,8 @@ public class Vista_Jugador extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Vista_Jugador(int nPok) {
+	public Vista_Jugador(int nPok, String nJug) {
+		setTitle("Pokemon - "+nJug);
 		setBounds(100, 100, 800, 300);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		getContentPane().setLayout(null);
