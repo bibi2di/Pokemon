@@ -1,5 +1,9 @@
 package Modelo;
-public /*abstract*/ class Pokemon {
+
+import java.util.Observable;
+
+@SuppressWarnings("deprecation")
+public /*abstract*/ class Pokemon extends Observable {
 
 	private int ataque;
 	private int defensa;
@@ -28,6 +32,8 @@ public /*abstract*/ class Pokemon {
 	public void atacar(Pokemon pPokemon) {
 		int multiplicador = 1;
 		pPokemon.vida = pPokemon.vida -(this.ataque*multiplicador) - pPokemon.defensa;
+		setChanged();
+		notifyObservers();
 	}
 
 	public boolean seHaDebilitado() {

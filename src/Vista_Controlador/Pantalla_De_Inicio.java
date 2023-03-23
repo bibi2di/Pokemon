@@ -188,7 +188,7 @@ public class Pantalla_De_Inicio extends JFrame {
 	private JLabel getLabel() {
 		if (label == null) {
 			label = new JLabel("");
-			label.setIcon(new ImageIcon("/home/asierla/git/Pokemon/sprites/main.png"));
+			label.setIcon(new ImageIcon("sprites/main.png"));
 		}
 		return label;
 	}

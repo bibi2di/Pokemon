@@ -2,8 +2,10 @@ package Modelo;
 
 import java.util.Collection;
 import java.util.Iterator;
+import java.util.Observable;
 
-public class Jugador {
+@SuppressWarnings("deprecation")
+public class Jugador extends Observable {
 	
 	private int id;
 	private Collection<Pokemon> lPokemon;

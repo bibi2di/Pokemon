@@ -9,6 +9,7 @@ import javax.swing.BoxLayout;
 import java.awt.BorderLayout;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.SwingConstants;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -17,7 +18,7 @@ import java.awt.event.ActionListener;
 public class Vista_Jugador extends JFrame {
 	private JPanel Panel_Jugador;
 	private MiJPanelObserver Panel_Jugador_Estado;
-	private JLabel lab_Jugador_estado;
+	private JButton btn_Jugador_estado;
 	private JLabel label;
 	private JPanel PanelPokemons;
 	private MiJPanelObserver PanelPokemons_Vis;
@@ -82,15 +83,16 @@ public class Vista_Jugador extends JFrame {
 		if (Panel_Jugador_Estado == null) {
 			Panel_Jugador_Estado = new MiJPanelObserver();
 			Panel_Jugador_Estado.setBackground(Color.RED);
-			Panel_Jugador_Estado.add(getLab_Jugador_estado());
+			Panel_Jugador_Estado.add(getButton_Jugador_estado());
 		}
 		return Panel_Jugador_Estado;
 	}
-	private JLabel getLab_Jugador_estado() {
-		if (lab_Jugador_estado == null) {
-			lab_Jugador_estado = new JLabel("No atacar");
+	private JButton getButton_Jugador_estado() {
+		if (btn_Jugador_estado == null) {
+			btn_Jugador_estado = new JButton("Espera");
+			btn_Jugador_estado.addActionListener(getControler());
 		}
-		return lab_Jugador_estado;
+		return btn_Jugador_estado;
 	}
 	private JLabel getLabel() {
 		label = new JLabel("Foto Entrenador");
@@ -217,7 +219,11 @@ public class Vista_Jugador extends JFrame {
 	private class Controler implements ActionListener{
 		@Override
 		public void actionPerformed(ActionEvent e) {
+			if (btn_Jugador_estado.getLabel()=="Ataca") {
+				btn_Jugador_estado.setLabel("Espera");
+			}
 			
 		}
 	}
+	
 }
