@@ -235,6 +235,10 @@ public class Pantalla_De_Inicio extends JFrame {
 			if(e.getSource().equals(btnNewButton_1)) {
 				System.exit(0);
 			}
+			if(e.getSource().equals(btnNewButton)) {
+				ReadMe readme = new ReadMe();
+				readme.setVisible(true);
+			}
 		}
 	}
 }
