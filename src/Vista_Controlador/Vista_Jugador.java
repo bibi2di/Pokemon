@@ -11,6 +11,9 @@ import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
+
+import Modelo.CampoDeBatalla;
+
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -223,6 +226,7 @@ public class Vista_Jugador extends JFrame {
 		public void actionPerformed(ActionEvent e) {
 			if (btn_Jugador_estado.getLabel()=="Ataca") {
 				btn_Jugador_estado.setLabel("Espera");
+				CampoDeBatalla.getCampoBatalla().pasarTurno();
 			}
 			
 		}

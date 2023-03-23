@@ -24,4 +24,8 @@ public class CampoDeBatalla {
 		return haRealizadoAtaque;
 	}
 	
+	public void pasarTurno() {
+		
+	}
+	
 }
