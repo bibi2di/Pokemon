@@ -18,7 +18,9 @@ import Modelo.ListaJugadores;
 import javax.swing.Action;
 import javax.swing.ImageIcon;
 import java.awt.Color;
-
+/*
+ * alks
+ */
 public class Pantalla_De_Inicio extends JFrame {
 	private JPanel Panel_derecho;
 	private JPanel panel_central;
