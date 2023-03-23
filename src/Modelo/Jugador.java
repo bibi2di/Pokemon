@@ -35,14 +35,15 @@ public class Jugador extends Observable {
 	 * @param int numPoke,Pokemon pokJuega
 	 */
 	
-	public void realizarAtaque(int numPoke,Pokemon pokJuega) { /*Hacer con Java8*/
+	public boolean realizarAtaque(int numPoke,Pokemon pokJuega) { /*Hacer con Java8*/
 		// TODO - implement Jugador.realizarAtaques
 		// comprobar que no ha jugado antes en su turno 
 		Pokemon atacante = lPokemon.get(numPoke);
-		boolean haRealizadoAtaque = false; /*DUDA*/
+		boolean haRealizadoAtaque = false;
 		if(atacante != null && !haRealizadoAtaque) {
-			 haRealizadoAtaque = CampoDeBatalla.getCampoBatalla().realizarAtaques(atacante, pokJuega); /*DUDA*/
+			 haRealizadoAtaque = CampoDeBatalla.getCampoBatalla().realizarAtaques(atacante, pokJuega); 
 		}
+		return haRealizadoAtaque;
 	}
 	
 	/*REALIZAR ATAQUES*/
