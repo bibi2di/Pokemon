@@ -81,7 +81,7 @@ public class Vista_Jugador extends JFrame {
 	private JPanel getPanel_Jugador_Estado() {
 		if (Panel_Jugador_Estado == null) {
 			Panel_Jugador_Estado = new JPanel();
-			Panel_Jugador_Estado.setBackground(Color.GREEN);
+			Panel_Jugador_Estado.setBackground(Color.RED);
 			Panel_Jugador_Estado.add(getLab_Jugador_estado());
 		}
 		return Panel_Jugador_Estado;
