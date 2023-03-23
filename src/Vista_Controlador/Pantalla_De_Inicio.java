@@ -29,8 +29,8 @@ public class Pantalla_De_Inicio extends JFrame {
 	private JTextField txtNmilis;
 	private JLabel lblPokmons;
 	private JTextField txtNpokemosn;
-	private JButton btnNewButton;
-	private JButton btnNewButton_1;
+	private JButton readme;
+	private JButton cerrar;
 	private JButton btnJugar;
 	private JLabel label;
 	private Controler controler = null;
@@ -168,19 +168,19 @@ public class Pantalla_De_Inicio extends JFrame {
 		return txtNpokemosn;
 	}
 	private JButton getBtnNewButton() {
-		if (btnNewButton == null) {
-			btnNewButton = new JButton("ReadMe");
-			btnNewButton.setBounds(24, 31, 93, 25);
+		if (readme == null) {
+			readme = new JButton("ReadMe");
+			readme.setBounds(24, 31, 93, 25);
 		}
-		return btnNewButton;
+		return readme;
 	}
 	private JButton getBtnNewButton_1() {
-		if (btnNewButton_1 == null) {
-			btnNewButton_1 = new JButton("Cerrar");
-			btnNewButton_1.setBounds(123, 31, 93, 25);
-			btnNewButton_1.addActionListener(getControler());
+		if (cerrar == null) {
+			cerrar = new JButton("Cerrar");
+			cerrar.setBounds(123, 31, 93, 25);
+			cerrar.addActionListener(getControler());
 		}
-		return btnNewButton_1;
+		return cerrar;
 	}
 	private JButton getBtnJugar() {
 		if (btnJugar == null) {
@@ -232,10 +232,10 @@ public class Pantalla_De_Inicio extends JFrame {
 					lblError.setVisible(true);
 				}
 			}
-			if(e.getSource().equals(btnNewButton_1)) {
+			if(e.getSource().equals(cerrar)) {
 				System.exit(0);
 			}
-			if(e.getSource().equals(btnNewButton)) {
+			if(e.getSource().equals(readme)) {
 				ReadMe readme = new ReadMe();
 				readme.setVisible(true);
 			}
