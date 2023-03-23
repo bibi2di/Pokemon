@@ -33,6 +33,10 @@ public class Jugador extends Observable {
 		return pId==this.id;
 	}
 	
+	public int getId() {
+		return this.id;
+	}
+	
 	
 	/**
 	 * 

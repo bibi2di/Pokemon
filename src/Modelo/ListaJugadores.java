@@ -68,7 +68,16 @@ public class ListaJugadores extends Observable{
 	}
 	
 	public boolean finJuego() {
-		return lJugadores.stream().anyMatch(p->!p.haPerdido());
+		return lJugadores.stream().filter(p->!p.haPerdido()).toList().size()==1;
+	}
+	
+	public int jugadorGanador() {
+		int id = -1;
+		if (miListaJugadores.finJuego()) {
+			//id = lJugadores.stream().filter(p->!p.haPerdido()).toList().get(0).getId();
+			id =  lJugadores.stream().filter(p->!p.haPerdido()).mapToInt(p->p.getId()).toArray()[0];
+		}
+		return id;
 	}
 	
 	public Jugador asignarTurnoAleatoriamente(int pNumJug, int pNumBot) {
