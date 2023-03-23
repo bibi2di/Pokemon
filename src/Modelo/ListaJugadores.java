@@ -3,8 +3,9 @@ package Modelo;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
+import java.util.Observable; 
 
-public class ListaJugadores {
+public class ListaJugadores extends Observable{
 
 	private static ListaJugadores miListaJugadores;
 	private Collection<Jugador> lJugadores;
@@ -40,6 +41,8 @@ public class ListaJugadores {
 			Bot botAct = new Bot(pNumPoke,j);
 			miListaJugadores.anadirBot(botAct);
 		}
+		setChanged();
+		notifyObservers();
 	}
 
 	/**
