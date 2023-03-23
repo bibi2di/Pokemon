@@ -11,10 +11,7 @@ public class Bot extends Jugador {
 	/**
 	 * 
 	 * @param cPoke
+	 * @return 
 	 */
-	public void realizarAtaques(int pNumPoke,Pokemon pokJuega) {
-		// TODO - implement Bot.realizarAtaques
-		throw new UnsupportedOperationException();
-	}
 
 }
