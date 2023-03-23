@@ -29,6 +29,10 @@ public class Jugador extends Observable {
 		return lPokemon.iterator();
 	}
 	
+	public boolean tieneElMismoId(int pId) {
+		return pId==this.id;
+	}
+	
 	
 	/**
 	 * 

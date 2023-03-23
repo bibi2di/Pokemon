@@ -53,6 +53,10 @@ public class Pantalla_De_Inicio extends JFrame {
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
+				boolean fin = ListaJugadores.getListaJugadores().finJuego();
+				while(!fin) {
+					//ListaJugadores.getListaJugadores().asignarTurnoAleatoriamente(, );
+				}
 			}
 		});
 	}

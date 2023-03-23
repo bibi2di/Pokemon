@@ -13,6 +13,7 @@ import javax.swing.JButton;
 import javax.swing.SwingConstants;
 
 import Modelo.CampoDeBatalla;
+import Modelo.ListaJugadores;
 
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -175,7 +176,6 @@ public class Vista_Jugador extends JFrame {
 	}
 	private JLabel getLabel_1() {
 		label_1 = new JLabel("Foto del Pokemon");
-		/*label_1.addActionListener(getControler());*/
 		label_1.setIcon(new ImageIcon(""));
 		return label_1;
 	}
@@ -213,7 +213,7 @@ public class Vista_Jugador extends JFrame {
 	}
 	 
 	/*
-	 * Controlador ,
+	 * Controlador
 	 */
 	
 	private Controler getControler() {
@@ -228,9 +228,6 @@ public class Vista_Jugador extends JFrame {
 			if (btn_Jugador_estado.getLabel()=="Ataca") {
 				btn_Jugador_estado.setLabel("Espera");
 				CampoDeBatalla.getCampoBatalla().pasarTurno();
-			}
-			if(e.getSource().equals(label_1)) {
-				
 			}
 			
 		}
