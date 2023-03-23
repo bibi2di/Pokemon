@@ -213,7 +213,7 @@ public class Vista_Jugador extends JFrame {
 	}
 	 
 	/*
-	 * Controlador
+	 * Controlador ,
 	 */
 	
 	private Controler getControler() {
