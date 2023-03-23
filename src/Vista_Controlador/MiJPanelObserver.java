@@ -20,8 +20,9 @@ public class MiJPanelObserver extends JPanel implements Observer {
 		if (arg0 instanceof Pokemon) {
 			//ataque
 			
+		}else if (arg0 instanceof Jugador) {
+			
 		}
-		else if (arg0 instanceof Jugador) {}
 
 	}
 
