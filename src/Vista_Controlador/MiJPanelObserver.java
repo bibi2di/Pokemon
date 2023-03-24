@@ -18,9 +18,12 @@ public class MiJPanelObserver extends JPanel implements Observer {
 	public void update(Observable arg0, Object arg1) {
 		// TODO Auto-generated method stub
 		if (arg0 instanceof Pokemon) {
-			//ataque
+			//actualizar valores
+			
+			//debilitado
 			
 		}else if (arg0 instanceof Jugador) {
+			//pasar turno
 			
 		}
 

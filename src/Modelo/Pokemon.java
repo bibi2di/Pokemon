@@ -50,4 +50,5 @@ public /*abstract*/ class Pokemon extends Observable {
 	public void estadoEuforia() {
 		
 	}
+	
 }

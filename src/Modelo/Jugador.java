@@ -6,6 +6,7 @@ import java.util.Iterator;
 import java.util.Observable;
 
 @SuppressWarnings("deprecation")
+
 public class Jugador extends Observable {
 	
 	protected int id;
@@ -22,7 +23,6 @@ public class Jugador extends Observable {
 			Pokemon pokeAct = this.createPokemon();
 			lPokemon.add(pokeAct);
 		}
-		
 		//setChanged();
 		//notifyObservers();
 	}
@@ -39,6 +39,14 @@ public class Jugador extends Observable {
 	public int getId() {
 		return this.id;
 	}
+	
+	/*public void anadirPokemon(int pNumPoke)
+	{
+		for (int i=0;i<pNumPoke;i++) {
+			Pokemon pokeAct = this.createPokemon();
+			lPokemon.add(pokeAct);
+		}
+	}*/
 	
 	
 	/**

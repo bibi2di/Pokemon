@@ -40,7 +40,7 @@ public class ListaJugadores extends Observable{
 			//miListaJugadores.anadirJugador(i,jugAct);
 			miListaJugadores.anadirJugador(jugAct);
 		}
-		for(int j=pNumJug;j<pNumJug+pNumBot;j++) {
+		for(int j=pNumJug;j<pNumJug+pNumBot-1;j++) {
 			Bot botAct = new Bot(pNumPoke,j);
 			//miListaJugadores.anadirBot(j,botAct);
 			miListaJugadores.anadirJugador(botAct);

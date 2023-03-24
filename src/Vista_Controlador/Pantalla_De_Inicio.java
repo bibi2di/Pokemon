@@ -53,10 +53,10 @@ public class Pantalla_De_Inicio extends JFrame {
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-				boolean fin = ListaJugadores.getListaJugadores().finJuego();
-				while(!fin) {
+				//boolean fin = ListaJugadores.getListaJugadores().finJuego();
+				//while(!fin) {
 					//ListaJugadores.getListaJugadores().asignarTurnoAleatoriamente(, );
-				}
+				//}
 			}
 		});
 	}
@@ -228,19 +228,20 @@ public class Pantalla_De_Inicio extends JFrame {
 				int nNPC = Integer.parseInt(txtNnpcs.getText());
 				int nPok = Integer.parseInt(txtNpokemosn.getText());
 				if((nJug>=1 && nNPC>=1) || (nJug>=2)) {
-					ListaJugadores.getListaJugadores().iniciarJuego(nJug, nNPC, nPok);
+					//ListaJugadores.getListaJugadores().iniciarJuego(nJug, nNPC, nPok);
 					for(int i=0;i<nJug;i++) {
 						Vista_Jugador VistaJug = new Vista_Jugador(nPok, "Jugador "+i);
 						VistaJug.setVisible(true);
 					}
 					
-					for(int j=nJug;j<nJug+nNPC-1;j++) {
+					for(int j=nJug;j<nJug+nNPC;j++) {
 						Vista_Jugador VistaJug = new Vista_Jugador(nPok, "Bot "+j);
 						VistaJug.setVisible(true);
 					}
 				}else {
 					lblError.setVisible(true);
 				}
+				
 			}
 			if(e.getSource().equals(cerrar)) {
 				System.exit(0);
