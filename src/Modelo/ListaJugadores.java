@@ -74,8 +74,8 @@ public class ListaJugadores extends Observable{
 	public int jugadorGanador() {
 		int id = -1;
 		if (miListaJugadores.finJuego()) {
-			//id = lJugadores.stream().filter(p->!p.haPerdido()).toList().get(0).getId();
-			id =  lJugadores.stream().filter(p->!p.haPerdido()).mapToInt(p->p.getId()).toArray()[0];
+			id = lJugadores.stream().filter(p->!p.haPerdido()).toList().get(0).getId();
+			//id =  lJugadores.stream().filter(p->!p.haPerdido()).mapToInt(p->p.getId()).toArray()[0];
 		}
 		return id;
 	}
