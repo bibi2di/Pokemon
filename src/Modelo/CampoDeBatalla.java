@@ -18,7 +18,7 @@ public class CampoDeBatalla {
 	public boolean realizarAtaques(Pokemon pPokemonAtaca, Pokemon pPokemonAtacado){
 		boolean haRealizadoAtaque = false;
 		if (!pPokemonAtaca.seHaDebilitado() && !pPokemonAtacado.seHaDebilitado()) {
-			pPokemonAtaca.atacar(pPokemonAtacado);
+			pPokemonAtaca.recibirAtaque(pPokemonAtaca);
 			haRealizadoAtaque = true;
 		}
 		return haRealizadoAtaque;

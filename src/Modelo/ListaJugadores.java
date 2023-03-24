@@ -68,13 +68,14 @@ public class ListaJugadores extends Observable{
 	}
 	
 	public boolean finJuego() {
-		return lJugadores.stream().filter(p->!p.haPerdido()).toList().size()==1;
+		//return lJugadores.stream().filter(p->!p.haPerdido()).toList().size()==1;
+		return true;
 	}
 	
 	public int jugadorGanador() {
 		int id = -1;
 		if (miListaJugadores.finJuego()) {
-			id = lJugadores.stream().filter(p->!p.haPerdido()).toList().get(0).getId();
+			//id = lJugadores.stream().filter(p->!p.haPerdido()).toList().get(0).getId();
 			//id =  lJugadores.stream().filter(p->!p.haPerdido()).mapToInt(p->p.getId()).toArray()[0];
 		}
 		return id;
@@ -93,7 +94,7 @@ public class ListaJugadores extends Observable{
 		return jug; 		
 	}
 	
-	private Jugador buscarJugador (int pId) {
+	public Jugador buscarJugador (int pId) {
 		boolean esta = false;
 		Iterator<Jugador> itr = this.getIterador();
 		Jugador jugador = null;

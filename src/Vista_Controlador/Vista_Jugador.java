@@ -18,8 +18,11 @@ import Modelo.ListaJugadores;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Observable;
+import java.util.Observer;
 
-public class Vista_Jugador extends JFrame {
+@SuppressWarnings("deprecation")
+public class Vista_Jugador extends JFrame implements Observer{
 	private JPanel Panel_Jugador;
 	private MiJPanelObserver Panel_Jugador_Estado;
 	private JButton btn_Jugador_estado;
@@ -71,6 +74,7 @@ public class Vista_Jugador extends JFrame {
 		getContentPane().add(getPanel_Jugador());
 		getContentPane().add(getPanelPokemons(nPok));
 		setResizable(false);
+		ListaJugadores.getListaJugadores().buscarJugador(Integer.parseInt(nJug)).addObserver(this);
 
 	}
 	private JPanel getPanel_Jugador() {
@@ -127,6 +131,7 @@ public class Vista_Jugador extends JFrame {
 			PanelPokemons_Vis.add(getPanel_Pokemons_Cen(), BorderLayout.CENTER);
 			PanelPokemons_Vis.add(getPanel_Pokemons_Inf(), BorderLayout.SOUTH);
 			panelPok.add(PanelPokemons_Vis);
+		
 			
 		}
 		return PanelPokemons_Vis;
@@ -231,6 +236,11 @@ public class Vista_Jugador extends JFrame {
 			}
 			
 		}
+	}
+	@Override
+	public void update(Observable o, Object arg) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }

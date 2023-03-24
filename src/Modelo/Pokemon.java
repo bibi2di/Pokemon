@@ -23,17 +23,18 @@ public /*abstract*/ class Pokemon extends Observable {
 		int r = (int)(Math.random()*5); 
 		String nombre = new String[] {"Agua", "Fuego", "Planta", "Electrico"}[r]; //tipo aleatorio
 		tipo = nombre;
+	
 	}
 
 	/**
 	 * 
 	 * @param pTipo
 	 */
-	public void atacar(Pokemon pPokemon) {
+	public void recibirAtaque(Pokemon pPokemon) {
 		int multiplicador = 1;
-		pPokemon.vida = pPokemon.vida -(this.ataque*multiplicador) - pPokemon.defensa;
+		this.vida = pPokemon.vida -(this.ataque*multiplicador) - pPokemon.defensa;
 		setChanged();
-		notifyObservers();
+		notifyObservers(new Object [] {this.vida,this.defensa,this.ataque,tipo});
 	}
 
 	public boolean seHaDebilitado() {

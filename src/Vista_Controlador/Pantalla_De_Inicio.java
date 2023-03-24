@@ -8,6 +8,8 @@ import javax.swing.JPanel;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Observable;
+import java.util.Observer;
 
 import javax.swing.JLabel;
 import javax.swing.JButton;
@@ -21,7 +23,8 @@ import java.awt.Color;
 /*
  * alks ashdlsad
  */
-public class Pantalla_De_Inicio extends JFrame {
+@SuppressWarnings("deprecation")
+public class Pantalla_De_Inicio extends JFrame implements Observer{
 	private JPanel Panel_derecho;
 	private JPanel panel_central;
 	private JPanel Panel_derecho_sup;
@@ -73,6 +76,7 @@ public class Pantalla_De_Inicio extends JFrame {
 		getContentPane().add(getPanel_derecho(), BorderLayout.EAST);
 		getContentPane().add(getPanel_central(), BorderLayout.CENTER);
 		setResizable(false);
+		ListaJugadores.getListaJugadores().addObserver(this);
 	}
 
 	private JPanel getPanel_derecho() {
@@ -228,16 +232,7 @@ public class Pantalla_De_Inicio extends JFrame {
 				int nNPC = Integer.parseInt(txtNnpcs.getText());
 				int nPok = Integer.parseInt(txtNpokemosn.getText());
 				if((nJug>=1 && nNPC>=1) || (nJug>=2)) {
-					//ListaJugadores.getListaJugadores().iniciarJuego(nJug, nNPC, nPok);
-					for(int i=0;i<nJug;i++) {
-						Vista_Jugador VistaJug = new Vista_Jugador(nPok, "Jugador "+i);
-						VistaJug.setVisible(true);
-					}
-					
-					for(int j=nJug;j<nJug+nNPC;j++) {
-						Vista_Jugador VistaJug = new Vista_Jugador(nPok, "Bot "+j);
-						VistaJug.setVisible(true);
-					}
+					ListaJugadores.getListaJugadores().iniciarJuego(nJug, nNPC, nPok);
 				}else {
 					lblError.setVisible(true);
 				}
@@ -251,5 +246,24 @@ public class Pantalla_De_Inicio extends JFrame {
 				readme.setVisible(true);
 			}
 		}
+	}
+	@Override
+	public void update(Observable o, Object arg) {
+		// TODO Auto-generated method stub
+		
+		int nJug = Integer.parseInt(txtNjuga.getText());
+		int nNPC = Integer.parseInt(txtNnpcs.getText());
+		int nPok = Integer.parseInt(txtNpokemosn.getText());
+
+		for(int i=0;i<nJug;i++) {
+			Vista_Jugador VistaJug = new Vista_Jugador(nPok, "Jugador "+i);
+			VistaJug.setVisible(true);
+		}
+		
+		for(int j=nJug;j<nJug+nNPC;j++) {
+			Vista_Jugador VistaJug = new Vista_Jugador(nPok, "Bot "+j);
+			VistaJug.setVisible(true);
+		}
+		
 	}
 }
