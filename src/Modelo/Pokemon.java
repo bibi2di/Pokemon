@@ -20,7 +20,7 @@ public /*abstract*/ class Pokemon extends Observable {
 		ataque = 11 + (int)(Math.random()*7+1); //11 + número aleatorio entre 1-10
 		defensa = 3 + (int)(Math.random()*4+1); //11 + número aleatorio entre 1-4
 		vida = 200 + (int)(Math.random()*20+1); //200 + número aleatorio entre 1-20
-		int r = (int)(Math.random()*5); 
+		int r = (int)(Math.random()*4); 
 		String nombre = new String[] {"Agua", "Fuego", "Planta", "Electrico"}[r]; //tipo aleatorio
 		tipo = nombre;
 	
@@ -32,7 +32,7 @@ public /*abstract*/ class Pokemon extends Observable {
 	 */
 	public void recibirAtaque(Pokemon pPokemon) {
 		int multiplicador = 1;
-		this.vida = pPokemon.vida -(this.ataque*multiplicador) - pPokemon.defensa;
+		this.vida = this.vida -(pPokemon.ataque*multiplicador) - this.defensa;
 		setChanged();
 		notifyObservers(new Object [] {this.vida,this.defensa,this.ataque,tipo});
 	}
@@ -42,6 +42,8 @@ public /*abstract*/ class Pokemon extends Observable {
 		if (vida == 0)
 			debilitado = true;
 		return debilitado;
+		/*setChanged();
+		notifyObservers(new Object[] {debilitado});*/
 	}
 	
 	public void evolucionar() {

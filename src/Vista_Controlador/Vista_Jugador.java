@@ -13,6 +13,7 @@ import javax.swing.JButton;
 import javax.swing.SwingConstants;
 
 import Modelo.CampoDeBatalla;
+import Modelo.Jugador;
 import Modelo.ListaJugadores;
 
 import java.awt.GridLayout;
@@ -54,7 +55,7 @@ public class Vista_Jugador extends JFrame implements Observer{
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Vista_Jugador frame = new Vista_Jugador(3, "Prueba");
+					Vista_Jugador frame = new Vista_Jugador(3, 0);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -66,7 +67,7 @@ public class Vista_Jugador extends JFrame implements Observer{
 	/**
 	 * Create the frame.
 	 */
-	public Vista_Jugador(int nPok, String nJug) {
+	public Vista_Jugador(int nPok, int nJug) {
 		setTitle("Pokemon - "+nJug);
 		setBounds(100, 100, 800, 300);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -74,7 +75,7 @@ public class Vista_Jugador extends JFrame implements Observer{
 		getContentPane().add(getPanel_Jugador());
 		getContentPane().add(getPanelPokemons(nPok));
 		setResizable(false);
-		ListaJugadores.getListaJugadores().buscarJugador(Integer.parseInt(nJug)).addObserver(this);
+		ListaJugadores.getListaJugadores().buscarJugador(nJug).addObserver(this);
 
 	}
 	private JPanel getPanel_Jugador() {
@@ -238,9 +239,11 @@ public class Vista_Jugador extends JFrame implements Observer{
 		}
 	}
 	@Override
-	public void update(Observable o, Object arg) {
+	public void update(Observable o, Object arg) { /*Este panel es solo para los jugadores*/
 		// TODO Auto-generated method stub
-		
+		if (arg instanceof Jugador) {
+			
+		}
 	}
 	
 }

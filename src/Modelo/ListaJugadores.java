@@ -91,7 +91,9 @@ public class ListaJugadores extends Observable{
 			act++;
 			jug=itr.next();
 		} 
-		return jug; 		
+		return jug;
+		/*setChanged();
+		notifyObservers();*/
 	}
 	
 	public Jugador buscarJugador (int pId) {

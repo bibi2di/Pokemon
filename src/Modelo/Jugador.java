@@ -18,6 +18,7 @@ public class Jugador extends Observable {
 	 */
 	
 	public Jugador(int pNumPoke, int pId) {
+		lPokemon = new ArrayList<>();
 		id = pId;
 		for (int i=0;i<pNumPoke;i++) {
 			Pokemon pokeAct = this.createPokemon();
@@ -54,7 +55,7 @@ public class Jugador extends Observable {
 	 * @param int numPoke,Pokemon pokJuega
 	 */
 	
-	public boolean realizarAtaque(int numPoke,Pokemon pokJuega) { /*Hacer con Java8*/
+	public boolean realizarAtaque(int numPoke,Pokemon pokJuega) { 
 		Pokemon atacante = lPokemon.get(numPoke);
 		boolean haRealizadoAtaque = false;
 		if(atacante != null && !haRealizadoAtaque) {

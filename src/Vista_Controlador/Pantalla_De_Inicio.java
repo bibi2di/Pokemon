@@ -256,12 +256,12 @@ public class Pantalla_De_Inicio extends JFrame implements Observer{
 		int nPok = Integer.parseInt(txtNpokemosn.getText());
 
 		for(int i=0;i<nJug;i++) {
-			Vista_Jugador VistaJug = new Vista_Jugador(nPok, "Jugador "+i);
+			Vista_Jugador VistaJug = new Vista_Jugador(nPok, i);
 			VistaJug.setVisible(true);
 		}
 		
 		for(int j=nJug;j<nJug+nNPC;j++) {
-			Vista_Jugador VistaJug = new Vista_Jugador(nPok, "Bot "+j);
+			Vista_Jugador VistaJug = new Vista_Jugador(nPok, j);
 			VistaJug.setVisible(true);
 		}
 		

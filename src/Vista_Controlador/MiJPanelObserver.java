@@ -1,5 +1,7 @@
 package Vista_Controlador;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.Observable;
 
 /*
@@ -9,24 +11,42 @@ import java.util.Observer;
 
 import javax.swing.JPanel;
 
+import Modelo.CampoDeBatalla;
 import Modelo.Jugador;
+import Modelo.ListaJugadores;
 import Modelo.Pokemon;
 
+@SuppressWarnings("deprecation")
 public class MiJPanelObserver extends JPanel implements Observer {
+	private Controler controler = null;
 
+	/*Hace falta meter en la constructora de este panel
+	 * ListaJugadores.getListaJugadores().get(nPoke).addObserver(this);
+	 */
+	
 	@Override
-	public void update(Observable arg0, Object arg1) {
+	public void update(Observable arg0, Object arg1) { /*Este panel es solo para los Pokemon*/
 		// TODO Auto-generated method stub
 		if (arg0 instanceof Pokemon) {
 			//actualizar valores
 			
 			//debilitado
 			
-		}else if (arg0 instanceof Jugador) {
-			//pasar turno
-			
 		}
 
 	}
-
-}
+	
+	private Controler getControler() {
+		if(controler == null) {
+			controler = new Controler();
+		}
+		return controler;
+	}
+	
+	private class Controler implements ActionListener{
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			
+			}
+		}
+	}
