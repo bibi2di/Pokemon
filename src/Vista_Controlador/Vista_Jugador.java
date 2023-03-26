@@ -68,7 +68,7 @@ public class Vista_Jugador extends JFrame implements Observer{
 	 * Create the frame.
 	 */
 	public Vista_Jugador(int nPok, int nJug) {
-		setTitle("Pokemon - "+nJug);
+		setTitle("Pokemon - Jugador "+nJug);
 		setBounds(100, 100, 800, 300);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		getContentPane().setLayout(null);
