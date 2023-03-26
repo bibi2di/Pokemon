@@ -233,6 +233,7 @@ public class Pantalla_De_Inicio extends JFrame implements Observer{
 				int nPok = Integer.parseInt(txtNpokemosn.getText());
 				if((nJug>=1 && nNPC>=1) || (nJug>=2)) {
 					ListaJugadores.getListaJugadores().iniciarJuego(nJug, nNPC, nPok);
+					//ListaJugadores.getListaJugadores().asignarTurnoAleatoriamente(nJug, nNPC);
 				}else {
 					lblError.setVisible(true);
 				}

@@ -10,7 +10,7 @@ public class ListaJugadores extends Observable{
 
 	private static ListaJugadores miListaJugadores;
 	//private HashMap<Integer,Jugador> lJugadores;
-	private Collection<Jugador> lJugadores;
+	private ArrayList<Jugador> lJugadores;
 
 	private ListaJugadores() {
 		this.lJugadores = new ArrayList<>();
@@ -43,7 +43,7 @@ public class ListaJugadores extends Observable{
 		for(int j=pNumJug;j<pNumJug+pNumBot-1;j++) {
 			Bot botAct = new Bot(pNumPoke,j);
 			//miListaJugadores.anadirBot(j,botAct);
-			miListaJugadores.anadirJugador(botAct);
+			miListaJugadores.anadirBot(botAct);
 		}
 		setChanged();
 		notifyObservers();
@@ -92,8 +92,7 @@ public class ListaJugadores extends Observable{
 			jug=itr.next();
 		} 
 		return jug;
-		/*setChanged();
-		notifyObservers();*/
+		
 	}
 	
 	public Jugador buscarJugador (int pId) {

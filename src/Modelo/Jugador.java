@@ -80,5 +80,6 @@ public class Jugador extends Observable {
 		}
 		return poke;
 	}
+	
 
 }

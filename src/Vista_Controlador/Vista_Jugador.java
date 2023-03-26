@@ -48,6 +48,7 @@ public class Vista_Jugador extends JFrame implements Observer{
 	private JLabel lab_type;
 	private Controler controler = null;
 
+
 	/**
 	 * Launch the application.
 	 */
@@ -55,7 +56,7 @@ public class Vista_Jugador extends JFrame implements Observer{
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Vista_Jugador frame = new Vista_Jugador(3, 0);
+					Vista_Jugador frame = new Vista_Jugador(3, 2);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -76,7 +77,7 @@ public class Vista_Jugador extends JFrame implements Observer{
 		getContentPane().add(getPanel_Jugador());
 		getContentPane().add(Vista_Pok.getPanelPokemons(nPok, nJug));
 		setResizable(false);
-		//ListaJugadores.getListaJugadores().buscarJugador(nJug).addObserver(this);
+		ListaJugadores.getListaJugadores().buscarJugador(nJug).addObserver(this);
 
 	}
 	private JPanel getPanel_Jugador() {
