@@ -29,7 +29,7 @@ public class Vista_Jugador extends JFrame implements Observer{
 	private JButton btn_Jugador_estado;
 	private JLabel label;
 	private JPanel PanelPokemons;
-	private MiJPanelObserver PanelPokemons_Vis;
+	private JPanel PanelPokemons_Vis;
 	private JPanel Panel_Pokemons_Sup;
 	private JPanel Panel_Pokemons_Cen;
 	private JPanel Panel_Pokemons_Inf;
@@ -68,14 +68,15 @@ public class Vista_Jugador extends JFrame implements Observer{
 	 * Create the frame.
 	 */
 	public Vista_Jugador(int nPok, int nJug) {
+		Vista_Pokemon Vista_Pok = new Vista_Pokemon(nPok);
 		setTitle("Pokemon - Jugador "+nJug);
 		setBounds(100, 100, 800, 300);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		getContentPane().setLayout(null);
 		getContentPane().add(getPanel_Jugador());
-		getContentPane().add(getPanelPokemons(nPok));
+		getContentPane().add(Vista_Pok.getPanelPokemons(nPok, nJug));
 		setResizable(false);
-		ListaJugadores.getListaJugadores().buscarJugador(nJug).addObserver(this);
+		//ListaJugadores.getListaJugadores().buscarJugador(nJug).addObserver(this);
 
 	}
 	private JPanel getPanel_Jugador() {
@@ -115,7 +116,7 @@ public class Vista_Jugador extends JFrame implements Observer{
 		return label;
 	}
 	
-	private JPanel getPanelPokemons(int nPok) {
+	/*private JPanel getPanelPokemons(int nPok, int nJug) {
 		PanelPokemons = new JPanel();
 		PanelPokemons.setForeground(Color.BLACK);
 		PanelPokemons.setBackground(Color.WHITE);
@@ -126,7 +127,7 @@ public class Vista_Jugador extends JFrame implements Observer{
 	}
 	private JPanel getPanelPokemons_Vis(int nPok, JPanel panelPok) {
 		for(int i=1; i<=nPok; i++) {
-			PanelPokemons_Vis = new MiJPanelObserver();
+			PanelPokemons_Vis = new JPanel();
 			PanelPokemons_Vis.setLayout(new BorderLayout(0, 0));
 			PanelPokemons_Vis.add(getPanel_Pokemons_Sup(), BorderLayout.NORTH);
 			PanelPokemons_Vis.add(getPanel_Pokemons_Cen(), BorderLayout.CENTER);
@@ -161,8 +162,9 @@ public class Vista_Jugador extends JFrame implements Observer{
 		Panel_Pokemons_Inf.add(getPanel_Pokemons_Inf_Health());
 		Panel_Pokemons_Inf.add(getPanel_Pokemons_Inf_ChargedAttack());
 		return Panel_Pokemons_Inf;
-	}
-	private JPanel getPanel_Pokemons_Inf_Health() {
+	}*/
+	
+	/*private JPanel getPanel_Pokemons_Inf_Health() {
 		Panel_Pokemons_Inf_Health = new JPanel();
 		Panel_Pokemons_Inf_Health.add(getLbl_Health_bar());
 		return Panel_Pokemons_Inf_Health;
@@ -216,7 +218,7 @@ public class Vista_Jugador extends JFrame implements Observer{
 	private JLabel getLab_type() {
 		lab_type = new JLabel("??");
 		return lab_type;
-	}
+	}*/
 	 
 	/*
 	 * Controlador

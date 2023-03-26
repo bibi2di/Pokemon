@@ -41,14 +41,6 @@ public class Jugador extends Observable {
 		return this.id;
 	}
 	
-	/*public void anadirPokemon(int pNumPoke)
-	{
-		for (int i=0;i<pNumPoke;i++) {
-			Pokemon pokeAct = this.createPokemon();
-			lPokemon.add(pokeAct);
-		}
-	}*/
-	
 	
 	/**
 	 * 
@@ -77,6 +69,16 @@ public class Jugador extends Observable {
 	
 	public boolean haPerdido() {
 		return lPokemon.stream().allMatch(p -> p.seHaDebilitado());
+	}
+	
+	public Pokemon getPokemon(int numPok) {
+		int i = 0;
+		Pokemon poke = null;
+		
+		while (i < numPok) {
+			poke = this.getIterador().next();
+		}
+		return poke;
 	}
 
 }
