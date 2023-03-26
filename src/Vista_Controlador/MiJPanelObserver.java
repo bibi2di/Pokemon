@@ -19,10 +19,16 @@ import Modelo.Pokemon;
 @SuppressWarnings("deprecation")
 public class MiJPanelObserver extends JPanel implements Observer {
 	private Controler controler = null;
-
+	private JPanel PanelObserver;
 	/*Hace falta meter en la constructora de este panel
 	 * ListaJugadores.getListaJugadores().get(nPoke).addObserver(this);
 	 */
+	
+	public MiJPanelObserver(/*int nPok*/) {
+		PanelObserver = new JPanel();
+		//ListaJugadores.getListaJugadores().buscarJugador(nJug).get(nPoke).addObserver(this);
+		
+	}
 	
 	@Override
 	public void update(Observable arg0, Object arg1) { /*Este panel es solo para los Pokemon*/

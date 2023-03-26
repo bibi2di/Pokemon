@@ -25,7 +25,7 @@ import java.util.Observer;
 @SuppressWarnings("deprecation")
 public class Vista_Jugador extends JFrame implements Observer{
 	private JPanel Panel_Jugador;
-	private MiJPanelObserver Panel_Jugador_Estado;
+	private JPanel Panel_Jugador_Estado;
 	private JButton btn_Jugador_estado;
 	private JLabel label;
 	private JPanel PanelPokemons;
@@ -91,7 +91,7 @@ public class Vista_Jugador extends JFrame implements Observer{
 	}
 	private JPanel getPanel_Jugador_Estado() {
 		if (Panel_Jugador_Estado == null) {
-			Panel_Jugador_Estado = new MiJPanelObserver();
+		    Panel_Jugador_Estado = new JPanel();
 			Panel_Jugador_Estado.setBackground(Color.RED);
 			Panel_Jugador_Estado.add(getButton_Jugador_estado());
 		}
