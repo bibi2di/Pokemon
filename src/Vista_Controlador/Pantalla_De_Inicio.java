@@ -233,7 +233,6 @@ public class Pantalla_De_Inicio extends JFrame implements Observer{
 				int nPok = Integer.parseInt(txtNpokemosn.getText());
 				if((nJug>=1 && nNPC>=1) || (nJug>=2)) {
 					ListaJugadores.getListaJugadores().iniciarJuego(nJug, nNPC, nPok);
-					//ListaJugadores.getListaJugadores().asignarTurnoAleatoriamente(nJug, nNPC);
 				}else {
 					lblError.setVisible(true);
 				}
@@ -256,15 +255,35 @@ public class Pantalla_De_Inicio extends JFrame implements Observer{
 		int nNPC = Integer.parseInt(txtNnpcs.getText());
 		int nPok = Integer.parseInt(txtNpokemosn.getText());
 
-		for(int i=0;i<nJug;i++) {
-			Vista_Jugador VistaJug = new Vista_Jugador(nPok, i);
+		for(int i=0;i<nJug+nNPC;i++) {
+			Vista_Jugador VistaJug;
+			//VistaJug.setVisible(true);
+			if (ListaJugadores.getListaJugadores().buscarJugador(i).esSuTurno())
+			{
+				VistaJug = new Vista_Jugador(nPok, i, true);
+				System.out.println("Es true");
+			}
+			else {
+				VistaJug = new Vista_Jugador(nPok, i, false);
+				System.out.println("Es false");
+			}
+				
 			VistaJug.setVisible(true);
 		}
-		
+		/*
 		for(int j=nJug;j<nJug+nNPC;j++) {
-			Vista_Jugador VistaJug = new Vista_Jugador(nPok, j);
+			Vista_Jugador VistaJug;
+			//Vista_Jugador VistaJug = new Vista_Jugador(nPok, j, false);
+			//VistaJug.setVisible(true);
+			if (ListaJugadores.getListaJugadores().buscarJugador(j).esSuTurno())
+			{
+				VistaJug = new Vista_Jugador(nPok, j, true);
+			}
+			else
+				VistaJug = new Vista_Jugador(nPok, j, false);
+				
 			VistaJug.setVisible(true);
 		}
-		
+		*/
 	}
 }

@@ -28,7 +28,7 @@ public class Vista_Jugador extends JFrame implements Observer{
 	private JPanel Panel_Jugador_Estado;
 	private JButton btn_Jugador_estado;
 	private JLabel label;
-	private JPanel PanelPokemons;
+	/*private JPanel PanelPokemons;
 	private JPanel PanelPokemons_Vis;
 	private JPanel Panel_Pokemons_Sup;
 	private JPanel Panel_Pokemons_Cen;
@@ -45,7 +45,7 @@ public class Vista_Jugador extends JFrame implements Observer{
 	private JLabel lblHealth_1;
 	private JLabel lab_health;
 	private JLabel lblType;
-	private JLabel lab_type;
+	private JLabel lab_type;*/
 	private Controler controler = null;
 
 
@@ -56,7 +56,7 @@ public class Vista_Jugador extends JFrame implements Observer{
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Vista_Jugador frame = new Vista_Jugador(3, 2);
+					Vista_Jugador frame = new Vista_Jugador(3, 2, false);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -68,40 +68,47 @@ public class Vista_Jugador extends JFrame implements Observer{
 	/**
 	 * Create the frame.
 	 */
-	public Vista_Jugador(int nPok, int nJug) {
+	public Vista_Jugador(int nPok, int nJug, boolean turno) {
 		Vista_Pokemon Vista_Pok = new Vista_Pokemon(nPok);
 		setTitle("Pokemon - Jugador "+nJug);
 		setBounds(100, 100, 800, 300);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		getContentPane().setLayout(null);
-		getContentPane().add(getPanel_Jugador());
+		getContentPane().add(getPanel_Jugador(turno));
 		getContentPane().add(Vista_Pok.getPanelPokemons(nPok, nJug));
 		setResizable(false);
 		ListaJugadores.getListaJugadores().buscarJugador(nJug).addObserver(this);
 
 	}
-	private JPanel getPanel_Jugador() {
+	private JPanel getPanel_Jugador(boolean turno) {
 		if (Panel_Jugador == null) {
 			Panel_Jugador = new JPanel();
 			Panel_Jugador.setBackground(new Color(255, 255, 255));
 			Panel_Jugador.setBounds(0, 0, 200, 263);
 			Panel_Jugador.setLayout(new BorderLayout(0, 0));
-			Panel_Jugador.add(getPanel_Jugador_Estado(), BorderLayout.NORTH);
+			Panel_Jugador.add(getPanel_Jugador_Estado(turno), BorderLayout.NORTH);
 			Panel_Jugador.add(getLabel(), BorderLayout.CENTER);
 		}
 		return Panel_Jugador;
 	}
-	private JPanel getPanel_Jugador_Estado() {
+	private JPanel getPanel_Jugador_Estado(boolean turno) {
 		if (Panel_Jugador_Estado == null) {
 		    Panel_Jugador_Estado = new JPanel();
 			Panel_Jugador_Estado.setBackground(Color.RED);
-			Panel_Jugador_Estado.add(getButton_Jugador_estado());
+			Panel_Jugador_Estado.add(getButton_Jugador_estado(turno));
 		}
 		return Panel_Jugador_Estado;
 	}
-	private JButton getButton_Jugador_estado() {
+	private JButton getButton_Jugador_estado(boolean turno) {
 		if (btn_Jugador_estado == null) {
-			btn_Jugador_estado = new JButton("Espera");
+			if (turno == false) {
+				btn_Jugador_estado = new JButton("Espera");
+				System.out.println("Me toca esperar");
+				}
+			else
+				{btn_Jugador_estado = new JButton("Ataca");
+				System.out.println("Me toca atacar");
+				}
 			btn_Jugador_estado.addActionListener(getControler());
 		}
 		return btn_Jugador_estado;
@@ -234,10 +241,7 @@ public class Vista_Jugador extends JFrame implements Observer{
 	private class Controler implements ActionListener{
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			if (btn_Jugador_estado.getLabel()=="Ataca") {
-				btn_Jugador_estado.setLabel("Espera");
 				CampoDeBatalla.getCampoBatalla().pasarTurno();
-			}
 			
 		}
 	}
@@ -245,7 +249,7 @@ public class Vista_Jugador extends JFrame implements Observer{
 	public void update(Observable o, Object arg) { /*Este panel es solo para los jugadores*/
 		// TODO Auto-generated method stub
 		if (arg instanceof Jugador) {
-			
+			//btn_Jugador_estado.setText("Ataca");
 		}
 	}
 	

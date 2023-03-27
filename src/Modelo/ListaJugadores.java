@@ -37,14 +37,13 @@ public class ListaJugadores extends Observable{
 	public void iniciarJuego(int pNumJug, int pNumBot, int pNumPoke) {
 		for(int i=0;i<pNumJug;i++) {
 			Jugador jugAct = new Jugador(pNumPoke,i);
-			//miListaJugadores.anadirJugador(i,jugAct);
 			miListaJugadores.anadirJugador(jugAct);
 		}
-		for(int j=pNumJug;j<pNumJug+pNumBot-1;j++) {
+		for(int j=pNumJug;j<pNumJug+pNumBot;j++) {
 			Bot botAct = new Bot(pNumPoke,j);
-			//miListaJugadores.anadirBot(j,botAct);
 			miListaJugadores.anadirBot(botAct);
 		}
+		this.asignarTurnoAleatoriamente(pNumJug, pNumBot);
 		setChanged();
 		notifyObservers();
 	}
@@ -81,17 +80,22 @@ public class ListaJugadores extends Observable{
 		return id;
 	}
 	
-	public Jugador asignarTurnoAleatoriamente(int pNumJug, int pNumBot) {
-		int numJug = pNumJug + pNumBot;
-		int turno = (int)(Math.random()*(numJug-1)+1); // Num aleatorio del listado de Jugadores
+	private void /*Jugador*/ asignarTurnoAleatoriamente(int pNumJug, int pNumBot) {
+		/*int numJug = pNumJug + pNumBot;
+		int turno = (int)(Math.random()*(numJug)*2+1); // Num aleatorio del listado de Jugadores
 		Jugador jug = null;
 		Iterator<Jugador> itr = this.getIterador();
-		int act = 0;
+		int act = 1;
 		while (act < turno) {
 			act++;
 			jug=itr.next();
-		} 
-		return jug;
+		} */
+		Jugador jug = null;
+		jug = this.buscarJugador(pNumJug);
+		jug.setTurno(true);
+		System.out.println("Turno asignado");
+		//return jug;
+		
 		
 	}
 	

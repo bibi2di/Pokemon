@@ -11,6 +11,7 @@ public class Jugador extends Observable {
 	
 	protected int id;
 	protected ArrayList<Pokemon> lPokemon;
+	private boolean turno;
 
 	/**
 	 * 
@@ -20,6 +21,7 @@ public class Jugador extends Observable {
 	public Jugador(int pNumPoke, int pId) {
 		lPokemon = new ArrayList<>();
 		id = pId;
+		turno = false;
 		for (int i=0;i<pNumPoke;i++) {
 			Pokemon pokeAct = this.createPokemon();
 			lPokemon.add(pokeAct);
@@ -41,11 +43,21 @@ public class Jugador extends Observable {
 		return this.id;
 	}
 	
+	public void setTurno(boolean pTurno) {
+		this.turno = pTurno;
+	}
+	
+	
 	
 	/**
 	 * 
 	 * @param int numPoke,Pokemon pokJuega
 	 */
+	
+	public boolean esSuTurno() {
+		return this.turno;
+		
+	}
 	
 	public boolean realizarAtaque(int numPoke,Pokemon pokJuega) { 
 		Pokemon atacante = lPokemon.get(numPoke);
