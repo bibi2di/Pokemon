@@ -26,8 +26,7 @@ public class Jugador extends Observable {
 			Pokemon pokeAct = this.createPokemon();
 			lPokemon.add(pokeAct);
 		}
-		//setChanged();
-		//notifyObservers();
+		
 	}
 
 	
@@ -45,6 +44,9 @@ public class Jugador extends Observable {
 	
 	public void setTurno(boolean pTurno) {
 		this.turno = pTurno;
+		setChanged();
+		notifyObservers();
+		System.out.println("Ha cambiado el turno");
 	}
 	
 	
@@ -55,7 +57,7 @@ public class Jugador extends Observable {
 	 */
 	
 	public boolean esSuTurno() {
-		return this.turno;
+		return this.turno;	
 		
 	}
 	

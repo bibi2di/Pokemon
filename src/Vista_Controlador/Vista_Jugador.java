@@ -249,9 +249,6 @@ public class Vista_Jugador extends JFrame implements Observer{
 	@Override
 	public void update(Observable o, Object arg) { /*Este panel es solo para los jugadores*/
 		// TODO Auto-generated method stub
-		if (arg instanceof Jugador) {
-			
 		}
-	}
 	
 }

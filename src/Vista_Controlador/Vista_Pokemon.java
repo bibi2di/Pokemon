@@ -120,8 +120,15 @@ public class Vista_Pokemon extends JPanel implements Observer {
 		return lblChargedAttack;
 	}
 	public JLabel getLabel_1() {
-		label_1 = new JLabel("Foto del Pokemon");
-		label_1.setIcon(new ImageIcon(""));
+		String imagenes[] = {"sprites/abra.png", "sprites/alakazam.png", "sprites/butterfree.png", "sprites/caterpie.png"
+				,"sprites/dragonair.png", "sprites/dragonite.png", "sprites/dratini.png", "sprites/gastly.png", "sprites/gengar.png"
+				,"sprites/geodude.png", "sprites/golem.png", "sprites/graveler.png", "sprites/haunter.png", "sprites/kadabra.png",
+				"sprites/machamp.png", "sprites/machoke.png", "sprites/machop.png", "sprites/metapod.png", "sprites/pidgeot.png",
+				"sprites/pidgeotto.png", "sprites/pidgey.png"};
+		label_1 = new JLabel("");
+		int r = (int)(Math.random()*21); 
+		String url = imagenes[r];
+		label_1.setIcon(new ImageIcon(url));
 		return label_1;
 	}
 	public JLabel getLblAtt() {
@@ -153,9 +160,11 @@ public class Vista_Pokemon extends JPanel implements Observer {
 		return lblType;
 	}
 	public JLabel getLab_type() {
-		lab_type = new JLabel("??");
+		lab_type = new JLabel("Normal");
 		return lab_type;
 	}
+	
+	
 
 	@Override
 	public void update(Observable arg0, Object arg1) { /*Este panel es solo para los Pokemon*/
