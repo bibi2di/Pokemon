@@ -43,7 +43,7 @@ public class ListaJugadores extends Observable{
 			Bot botAct = new Bot(pNumPoke,j);
 			miListaJugadores.anadirBot(botAct);
 		}
-		this.asignarTurnoAleatoriamente(pNumJug, pNumBot);
+		this.asignarTurnoAleatoriamente();
 		setChanged();
 		notifyObservers();
 	}
@@ -80,20 +80,21 @@ public class ListaJugadores extends Observable{
 		return id;
 	}
 	
-	private void /*Jugador*/ asignarTurnoAleatoriamente(int pNumJug, int pNumBot) {
-		/*int numJug = pNumJug + pNumBot;
-		int turno = (int)(Math.random()*(numJug)*2+1); // Num aleatorio del listado de Jugadores
+	public void /*Jugador*/ asignarTurnoAleatoriamente(/*int pNumJug, int pNumBot*/) {
+		int numJug = lJugadores.size(); //2
+		int turno = (int)(Math.random()*(numJug)+1); // Num aleatorio del listado de Jugadores del 1 al 2
 		Jugador jug = null;
 		Iterator<Jugador> itr = this.getIterador();
-		int act = 1;
+		int act = 0;
 		while (act < turno) {
 			act++;
 			jug=itr.next();
-		} */
-		Jugador jug = null;
+		} 
+		jug.setTurno(true);
+		/*Jugador jug = null;
 		jug = this.buscarJugador(pNumJug);
 		jug.setTurno(true);
-		System.out.println("Turno asignado");
+		System.out.println("Turno asignado");*/
 		//return jug;
 		
 		

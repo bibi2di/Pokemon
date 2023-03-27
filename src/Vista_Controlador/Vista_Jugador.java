@@ -241,7 +241,8 @@ public class Vista_Jugador extends JFrame implements Observer{
 	private class Controler implements ActionListener{
 		@Override
 		public void actionPerformed(ActionEvent e) {
-				CampoDeBatalla.getCampoBatalla().pasarTurno();
+				//CampoDeBatalla.getCampoBatalla().pasarTurno();
+				ListaJugadores.getListaJugadores().asignarTurnoAleatoriamente();
 			
 		}
 	}
@@ -249,7 +250,7 @@ public class Vista_Jugador extends JFrame implements Observer{
 	public void update(Observable o, Object arg) { /*Este panel es solo para los jugadores*/
 		// TODO Auto-generated method stub
 		if (arg instanceof Jugador) {
-			//btn_Jugador_estado.setText("Ataca");
+			
 		}
 	}
 	
