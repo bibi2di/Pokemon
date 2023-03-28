@@ -23,7 +23,19 @@ public /*abstract*/ class Pokemon extends Observable {
 		int r = (int)(Math.random()*4); 
 		String nombre = new String[] {"Agua", "Fuego", "Planta", "Electrico"}[r]; //tipo aleatorio
 		tipo = nombre;
+		
+	}
 	
+	public int getAtaque() {
+		return this.ataque;
+	}
+	
+	public int getDefensa() {
+		return this.defensa;
+	}
+	
+	public int getVida() {
+		return this.vida;
 	}
 
 	/**
@@ -33,8 +45,8 @@ public /*abstract*/ class Pokemon extends Observable {
 	public void recibirAtaque(Pokemon pPokemon) {
 		int multiplicador = 1;
 		this.vida = this.vida -(pPokemon.ataque*multiplicador) - this.defensa;
-		setChanged();
-		notifyObservers(new Object [] {this.vida,this.defensa,this.ataque,tipo});
+		//setChanged();
+		//notifyObservers(new Object [] {this.vida,this.defensa,this.ataque,tipo});
 	}
 
 	public boolean seHaDebilitado() {

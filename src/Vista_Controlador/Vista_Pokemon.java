@@ -5,6 +5,8 @@ import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.Observable;
 
 /*
@@ -20,6 +22,7 @@ import Modelo.CampoDeBatalla;
 import Modelo.Jugador;
 import Modelo.ListaJugadores;
 import Modelo.Pokemon;
+
 
 @SuppressWarnings("deprecation")
 public class Vista_Pokemon extends JPanel implements Observer {
@@ -48,8 +51,9 @@ public class Vista_Pokemon extends JPanel implements Observer {
 	 */
 	
 	
-	public Vista_Pokemon(int nPok) {
-		//ListaJugadores.getListaJugadores().buscarJugador(nJug).getPokemon(nPok).addObserver(this);
+	public Vista_Pokemon(int nPok, int nJug) {
+		ListaJugadores.getListaJugadores().buscarJugador(nJug).getPokemon(nPok).addObserver(this);
+
 	}
 
 	public JPanel getPanelPokemons(int nPok, int nJug) {
@@ -58,34 +62,38 @@ public class Vista_Pokemon extends JPanel implements Observer {
 		PanelPokemons.setBackground(Color.WHITE);
 		PanelPokemons.setBounds(201, 0, 599, 263);
 		PanelPokemons.setLayout(new GridLayout(1, 3, 0, 0));
-		PanelPokemons.add(getPanelPokemons_Vis(nPok, PanelPokemons));
+		PanelPokemons.add(getPanelPokemons_Vis(nPok, nJug, PanelPokemons));
+		
 		return PanelPokemons;
 	}
 	
-	private JPanel getPanelPokemons_Vis(int nPok, JPanel panelPok) {
+	private JPanel getPanelPokemons_Vis(int nPok, int nJug, JPanel panelPok) {
 		for(int i=1; i<=nPok; i++) {
-			PanelPokemons_Vis = new Vista_Pokemon(nPok);
+			PanelPokemons_Vis = new Vista_Pokemon(nPok, nJug);
 			PanelPokemons_Vis.setLayout(new BorderLayout(0, 0));
-			PanelPokemons_Vis.add(getPanel_Pokemons_Sup(), BorderLayout.NORTH);
+			PanelPokemons_Vis.add(getPanel_Pokemons_Sup(nPok, nJug), BorderLayout.NORTH);
 			PanelPokemons_Vis.add(getPanel_Pokemons_Cen(), BorderLayout.CENTER);
 			PanelPokemons_Vis.add(getPanel_Pokemons_Inf(), BorderLayout.SOUTH);
+			getControler().atributos(i, nJug);
+			
 			panelPok.add(PanelPokemons_Vis);
 		
 			
 		}
 		return PanelPokemons_Vis;
 	}
-	private JPanel getPanel_Pokemons_Sup() {
+	private JPanel getPanel_Pokemons_Sup(int nPok, int nJug) {
 		Panel_Pokemons_Sup = new JPanel();
 		Panel_Pokemons_Sup.setLayout(new GridLayout(4, 2, 0, 0));
 		Panel_Pokemons_Sup.add(getLblAtt());
-		Panel_Pokemons_Sup.add(getLab_att());
+		Panel_Pokemons_Sup.add(getLab_att(nPok, nJug));
 		Panel_Pokemons_Sup.add(getLblDef());
 		Panel_Pokemons_Sup.add(getLabel_2_1());
 		Panel_Pokemons_Sup.add(getLblHealth_1());
 		Panel_Pokemons_Sup.add(getLab_health());
 		Panel_Pokemons_Sup.add(getLblType());
 		Panel_Pokemons_Sup.add(getLab_type());
+		//getControler().atributos(nPok, nJug);
 		return Panel_Pokemons_Sup;
 	}
 	private JPanel getPanel_Pokemons_Cen() {
@@ -135,8 +143,9 @@ public class Vista_Pokemon extends JPanel implements Observer {
 		lblAtt = new JLabel("att: ");
 		return lblAtt;
 	}
-	public JLabel getLab_att() {
+	public JLabel getLab_att(int numPok, int nJug) {
 		lab_att = new JLabel("??");
+		
 		return lab_att;
 	}
 	public JLabel getLblDef() {
@@ -170,12 +179,7 @@ public class Vista_Pokemon extends JPanel implements Observer {
 	public void update(Observable arg0, Object arg1) { /*Este panel es solo para los Pokemon*/
 		// TODO Auto-generated method stub
 		if (arg0 instanceof Pokemon) {
-			//actualizar valores
-			
-			//debilitado
-			
 		}
-
 	}
 	
 	private Controler getControler() {
@@ -190,5 +194,12 @@ public class Vista_Pokemon extends JPanel implements Observer {
 		public void actionPerformed(ActionEvent e) {
 			
 			}
+		
+		
+		public void atributos(int numPok, int nJug) {
+				lab_att.setText(String.valueOf(ListaJugadores.getListaJugadores().buscarJugador(nJug).getPokemon(numPok).getAtaque()));
+				lab_Def.setText(String.valueOf(ListaJugadores.getListaJugadores().buscarJugador(nJug).getPokemon(numPok).getDefensa()));
+				lab_health.setText(String.valueOf(ListaJugadores.getListaJugadores().buscarJugador(nJug).getPokemon(numPok).getVida()));
+		}
 		}
 	}

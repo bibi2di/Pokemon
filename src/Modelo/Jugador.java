@@ -25,6 +25,7 @@ public class Jugador extends Observable {
 		for (int i=0;i<pNumPoke;i++) {
 			Pokemon pokeAct = this.createPokemon();
 			lPokemon.add(pokeAct);
+			System.out.println("el pokemon tiene "+ pokeAct.getAtaque()+ " de ataque");
 		}
 		
 	}
@@ -33,6 +34,15 @@ public class Jugador extends Observable {
 	private Iterator<Pokemon> getIterador() {
 		return lPokemon.iterator();
 	}
+	
+	/*public ArrayList<Integer> getAtaques()
+	{
+		ArrayList<Integer> ataques = new ArrayList<>();
+		while (this.getIterador().hasNext()) {
+			ataques.add(this.getIterador().next().getAtaque());
+		}
+		return ataques;
+	}*/
 	
 	public boolean tieneElMismoId(int pId) {
 		return pId==this.id;
@@ -80,18 +90,22 @@ public class Jugador extends Observable {
 		Pokemon p = PokemonFactory.getPokemonFactory().create();
 		return p;
 	}
+
 	
 	public boolean haPerdido() {
 		return lPokemon.stream().allMatch(p -> p.seHaDebilitado());
 	}
 	
 	public Pokemon getPokemon(int numPok) {
-		int i = 0;
+		/*int i = 0;
 		Pokemon poke = null;
 		
-		while (i < numPok) {
+		while (i != numPok) {
 			poke = this.getIterador().next();
-		}
+		}*/
+		Pokemon poke = null;
+		poke = lPokemon.get(numPok-1);
+		
 		return poke;
 	}
 	

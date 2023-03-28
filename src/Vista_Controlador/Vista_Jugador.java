@@ -69,7 +69,7 @@ public class Vista_Jugador extends JFrame implements Observer{
 	 * Create the frame.
 	 */
 	public Vista_Jugador(int nPok, int nJug, boolean turno) {
-		Vista_Pokemon Vista_Pok = new Vista_Pokemon(nPok);
+		Vista_Pokemon Vista_Pok = new Vista_Pokemon(nPok, nJug);
 		setTitle("Pokemon - Jugador "+nJug);
 		setBounds(100, 100, 800, 300);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -109,6 +109,7 @@ public class Vista_Jugador extends JFrame implements Observer{
 				{btn_Jugador_estado = new JButton("Ataca");
 				System.out.println("Me toca atacar");
 				}
+			btn_Jugador_estado.setBorderPainted( false );
 			btn_Jugador_estado.addActionListener(getControler());
 		}
 		return btn_Jugador_estado;

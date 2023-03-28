@@ -114,4 +114,5 @@ public class ListaJugadores extends Observable{
 		}
 		return jugador;
 	}
+	
 }
