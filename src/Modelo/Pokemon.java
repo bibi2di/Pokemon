@@ -45,8 +45,8 @@ public /*abstract*/ class Pokemon extends Observable {
 	public void recibirAtaque(Pokemon pPokemon) {
 		int multiplicador = 1;
 		this.vida = this.vida -(pPokemon.ataque*multiplicador) - this.defensa;
-		//setChanged();
-		//notifyObservers(new Object [] {this.vida,this.defensa,this.ataque,tipo});
+		setChanged();
+		notifyObservers(new Object [] {this.vida,this.defensa,this.ataque,tipo});
 	}
 
 	public boolean seHaDebilitado() {

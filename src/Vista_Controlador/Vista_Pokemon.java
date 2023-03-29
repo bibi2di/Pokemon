@@ -58,6 +58,8 @@ public class Vista_Pokemon extends JPanel implements Observer {
 		this.addMouseListener(getControler());
 		idJug = nJug;
 		idPok = nPok;
+		lab_health = new JLabel();
+		
 	}
 
 	public JPanel getPanelPokemons(int nPok, int nJug) {
@@ -183,6 +185,16 @@ public class Vista_Pokemon extends JPanel implements Observer {
 	public void update(Observable arg0, Object arg1) { /*Este panel es solo para los Pokemon*/
 		// TODO Auto-generated method stub
 		if (arg0 instanceof Pokemon) {
+			if (arg1 instanceof Object []) {
+				Object[] objecArray = (Object []) arg1;
+				int vida = (Integer)objecArray[0];
+				int defensa = (Integer)objecArray[1];
+				int ataque = (Integer)objecArray[2];
+				String tipo = (String)objecArray[3];
+				//lab_att.setText(String.valueOf(ataque));
+				//lab_Def.setText(String.valueOf(defensa));
+				lab_health.setText(String.valueOf(vida));
+			}
 		}
 	}
 	
