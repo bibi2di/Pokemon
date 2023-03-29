@@ -258,7 +258,8 @@ public class Vista_Jugador extends JFrame implements Observer{
 	public void update(Observable o, Object arg) { /*Este panel es solo para los jugadores*/
 		if (o instanceof Jugador) {
 			if (arg instanceof boolean[]) {
-				btn_Jugador_estado.setText("Ataca");			}
+				btn_Jugador_estado.setText("Ataca");
+				}
 		}
 	}
 	
