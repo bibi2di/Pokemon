@@ -53,7 +53,7 @@ public class Vista_Pokemon extends JPanel implements Observer {
 	
 	public Vista_Pokemon(int nPok, int nJug) {
 		ListaJugadores.getListaJugadores().buscarJugador(nJug).getPokemon(nPok).addObserver(this);
-
+		this.addMouseListener(getControler());
 	}
 
 	public JPanel getPanelPokemons(int nPok, int nJug) {
@@ -189,17 +189,45 @@ public class Vista_Pokemon extends JPanel implements Observer {
 		return controler;
 	}
 	
-	private class Controler implements ActionListener{
+	private class Controler implements MouseListener{
 		@Override
-		public void actionPerformed(ActionEvent e) {
-			
-			}
+		public void mouseClicked(MouseEvent e) {
+			System.out.println("a");
+		}
 		
 		
 		public void atributos(int numPok, int nJug) {
 				lab_att.setText(String.valueOf(ListaJugadores.getListaJugadores().buscarJugador(nJug).getPokemon(numPok).getAtaque()));
 				lab_Def.setText(String.valueOf(ListaJugadores.getListaJugadores().buscarJugador(nJug).getPokemon(numPok).getDefensa()));
 				lab_health.setText(String.valueOf(ListaJugadores.getListaJugadores().buscarJugador(nJug).getPokemon(numPok).getVida()));
+		}
+
+
+		@Override
+		public void mousePressed(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+
+
+		@Override
+		public void mouseReleased(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+
+
+		@Override
+		public void mouseEntered(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+
+
+		@Override
+		public void mouseExited(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
 		}
 		}
 	}
