@@ -45,6 +45,7 @@ public class Vista_Pokemon extends JPanel implements Observer {
 	private JPanel Panel_Pokemons_Sup;
 	private JPanel Panel_Pokemons_Cen;
 	private JPanel Panel_Pokemons_Inf;
+	private int idJug = -1;
 
 	/*Hace falta meter en la constructora de este panel
 	 * ListaJugadores.getListaJugadores().get(nPoke).addObserver(this);
@@ -54,6 +55,7 @@ public class Vista_Pokemon extends JPanel implements Observer {
 	public Vista_Pokemon(int nPok, int nJug) {
 		ListaJugadores.getListaJugadores().buscarJugador(nJug).getPokemon(nPok).addObserver(this);
 		this.addMouseListener(getControler());
+		idJug = nJug;
 	}
 
 	public JPanel getPanelPokemons(int nPok, int nJug) {
@@ -192,6 +194,7 @@ public class Vista_Pokemon extends JPanel implements Observer {
 	private class Controler implements MouseListener{
 		@Override
 		public void mouseClicked(MouseEvent e) {
+			CampoDeBatalla.getCampoBatalla().sePuedeAtacar();
 			System.out.println("a");
 		}
 		
