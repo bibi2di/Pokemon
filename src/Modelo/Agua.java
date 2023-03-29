@@ -7,8 +7,8 @@ public class Agua extends Pokemon {
 	 * 
 	 * @param pTipoEfectivo
 	 */
-	public Agua() {
-		super();
+	public Agua(int i) {
+		super(i);
 		// TODO - implement Agua.Agua
 	}
 

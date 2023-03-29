@@ -7,8 +7,8 @@ public class Fuego extends Pokemon {
 	 * 
 	 * @param pTipoEfectivo
 	 */
-	public Fuego() {
-		super();
+	public Fuego(int i) {
+		super(i);
 		// TODO - implement Fuego.Fuego
 		throw new UnsupportedOperationException();
 	}

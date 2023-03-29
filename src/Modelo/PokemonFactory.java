@@ -18,9 +18,9 @@ public class PokemonFactory {
 	 * 
 	 * @param tipo
 	 */
-	public Pokemon create() {
+	public Pokemon create(int i) {
 		
-		Pokemon pokeAct = new Pokemon();
+		Pokemon pokeAct = new Pokemon(i);
 		/*int r = (int)(Math.random()*5); 
 		String nombre = new String[] {"Agua", "Fuego", "Planta", "Electrico"}[r]; //tipo aleatorio
 		if (nombre == "Agua") {Pokemon pokeAct = new Agua();}

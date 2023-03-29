@@ -7,9 +7,9 @@ public class Planta extends Pokemon {
 	 * 
 	 * @param pTipoEfectivo
 	 */
-	public Planta() {
+	public Planta(int i) {
 		// TODO - implement Planta.Planta
-		super();
+		super(i);
 		throw new UnsupportedOperationException();
 	}
 

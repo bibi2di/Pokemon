@@ -5,6 +5,7 @@ import java.util.Observable;
 @SuppressWarnings("deprecation")
 public /*abstract*/ class Pokemon extends Observable {
 
+	private int id;
 	private int ataque;
 	private int defensa;
 	private int vida;
@@ -15,7 +16,7 @@ public /*abstract*/ class Pokemon extends Observable {
 	 * 
 	 * @param pTipo
 	 */
-	public Pokemon() {
+	public Pokemon(int pId) {
 		// TODO - implement Pokemon.Pokemon
 		ataque = 11 + (int)(Math.random()*7+1); //11 + número aleatorio entre 1-7
 		defensa = 3 + (int)(Math.random()*4+1); //11 + número aleatorio entre 1-4
@@ -23,6 +24,7 @@ public /*abstract*/ class Pokemon extends Observable {
 		int r = (int)(Math.random()*4); 
 		String nombre = new String[] {"Agua", "Fuego", "Planta", "Electrico"}[r]; //tipo aleatorio
 		tipo = nombre;
+		this.id = pId;
 		
 	}
 	
@@ -46,7 +48,7 @@ public /*abstract*/ class Pokemon extends Observable {
 		int multiplicador = 1;
 		this.vida = this.vida -(pPokemon.ataque*multiplicador) - this.defensa;
 		setChanged();
-		notifyObservers(new Object [] {this.vida,this.defensa,this.ataque,tipo});
+		notifyObservers(new Object [] {this.vida,this.defensa,this.ataque,tipo, this.id});
 	}
 
 	public boolean seHaDebilitado() {

@@ -23,7 +23,7 @@ public class Jugador extends Observable {
 		id = pId;
 		turno = false;
 		for (int i=0;i<pNumPoke;i++) {
-			Pokemon pokeAct = this.createPokemon();
+			Pokemon pokeAct = this.createPokemon(i);
 			lPokemon.add(pokeAct);
 			System.out.println("el pokemon tiene "+ pokeAct.getAtaque()+ " de ataque");
 		}
@@ -86,8 +86,8 @@ public class Jugador extends Observable {
 	 * 
 	 * @param tipo
 	 */
-	private Pokemon createPokemon() {
-		Pokemon p = PokemonFactory.getPokemonFactory().create();
+	private Pokemon createPokemon(int i) {
+		Pokemon p = PokemonFactory.getPokemonFactory().create(i);
 		return p;
 	}
 
