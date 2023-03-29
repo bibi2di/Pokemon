@@ -244,8 +244,10 @@ public class Vista_Jugador extends JFrame implements Observer{
 		public void actionPerformed(ActionEvent e) {
 				//CampoDeBatalla.getCampoBatalla().pasarTurno();
 				if(e.getSource().equals(btn_Jugador_estado)) {
-					btn_Jugador_estado.setText("Espera");
-					ListaJugadores.getListaJugadores().asignarTurnoAleatoriamente();
+					if(btn_Jugador_estado.getText().equals("Ataca")) {
+						btn_Jugador_estado.setText("Espera");
+						ListaJugadores.getListaJugadores().asignarTurnoAleatoriamente();
+					}
 				}
 		}
 		public void asignarTurno() {
