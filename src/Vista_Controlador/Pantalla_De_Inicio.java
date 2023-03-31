@@ -233,6 +233,12 @@ public class Pantalla_De_Inicio extends JFrame implements Observer{
 				int nPok = Integer.parseInt(txtNpokemosn.getText());
 				if((nJug>=1 && nNPC>=1) || (nJug>=2)) {
 					ListaJugadores.getListaJugadores().iniciarJuego(nJug, nNPC, nPok);
+					for (int i=0; i<nJug+nNPC; i++) {
+						for (int j=1; j<=nPok;j++) {
+							ListaJugadores.getListaJugadores().buscarJugador(i).getPokemon(j).establecerValores();
+							System.out.println("Pokemon ataque "+ ListaJugadores.getListaJugadores().buscarJugador(i).getPokemon(j).getAtaque());
+						}
+					}
 				}else {
 					lblError.setVisible(true);
 				}
@@ -256,6 +262,7 @@ public class Pantalla_De_Inicio extends JFrame implements Observer{
 		int nPok = Integer.parseInt(txtNpokemosn.getText());
 
 		for(int i=0;i<nJug+nNPC;i++) {
+			
 			Vista_Jugador VistaJug;
 			//VistaJug.setVisible(true);
 			if (ListaJugadores.getListaJugadores().buscarJugador(i).esSuTurno())
@@ -267,9 +274,9 @@ public class Pantalla_De_Inicio extends JFrame implements Observer{
 				VistaJug = new Vista_Jugador(nPok, i, false);
 				System.out.println("Es false");
 			}
-				
 			VistaJug.setVisible(true);
 		}
+	}
 		/*
 		for(int j=nJug;j<nJug+nNPC;j++) {
 			Vista_Jugador VistaJug;
@@ -285,5 +292,5 @@ public class Pantalla_De_Inicio extends JFrame implements Observer{
 			VistaJug.setVisible(true);
 		}
 		*/
-	}
+
 }

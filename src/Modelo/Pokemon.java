@@ -18,13 +18,25 @@ public /*abstract*/ class Pokemon extends Observable {
 	 */
 	public Pokemon(int pId) {
 		// TODO - implement Pokemon.Pokemon
+		ataque = 0;
+		defensa = 0;
+		vida = 0;
+		tipo = "Nada";
+		//establecerValores();
+		this.id = pId;
+		
+	}
+	
+	public void establecerValores() {
 		ataque = 11 + (int)(Math.random()*7+1); //11 + número aleatorio entre 1-7
 		defensa = 3 + (int)(Math.random()*4+1); //11 + número aleatorio entre 1-4
 		vida = 200 + (int)(Math.random()*20+1); //200 + número aleatorio entre 1-20
 		int r = (int)(Math.random()*4); 
 		String nombre = new String[] {"Agua", "Fuego", "Planta", "Electrico"}[r]; //tipo aleatorio
 		tipo = nombre;
-		this.id = pId;
+		setChanged();
+		notifyObservers(new Object [] {this.vida,this.defensa,this.ataque,this.tipo});
+		System.out.println("Se han inicializado valores");
 		
 	}
 	

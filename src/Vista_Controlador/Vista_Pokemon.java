@@ -7,12 +7,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.util.Observable;
+//import java.util.Observable;
 
 /*
  * Clase del Observer
  */
-import java.util.Observer;
+//import java.util.Observer;
 
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -24,8 +24,8 @@ import Modelo.ListaJugadores;
 import Modelo.Pokemon;
 
 
-@SuppressWarnings("deprecation")
-public class Vista_Pokemon extends JPanel implements Observer {
+//@SuppressWarnings("deprecation")
+public class Vista_Pokemon extends JPanel /*implements Observer */{
 	private Controler controler = null;
 	private JPanel PanelPokemons;
 	private JPanel PanelPokemons_Vis;
@@ -47,6 +47,7 @@ public class Vista_Pokemon extends JPanel implements Observer {
 	private JPanel Panel_Pokemons_Inf;
 	private int idJug = -1;
 	private int idPok = -1;
+	private Panel_Pokemon Panel_Pok;
 
 	/*Hace falta meter en la constructora de este panel
 	 * ListaJugadores.getListaJugadores().get(nPoke).addObserver(this);
@@ -54,7 +55,7 @@ public class Vista_Pokemon extends JPanel implements Observer {
 	
 	
 	public Vista_Pokemon(int nPok, int nJug) {
-		ListaJugadores.getListaJugadores().buscarJugador(nJug).getPokemon(nPok).addObserver(this);
+		//ListaJugadores.getListaJugadores().buscarJugador(nJug).getPokemon(nPok).addObserver(this);
 		this.addMouseListener(getControler());
 		idJug = nJug;
 		idPok = nPok;
@@ -76,11 +77,13 @@ public class Vista_Pokemon extends JPanel implements Observer {
 	private JPanel getPanelPokemons_Vis(int nPok, int nJug, JPanel panelPok) {
 		for(int i=1; i<=nPok; i++) {
 			PanelPokemons_Vis = new Vista_Pokemon(nPok, nJug);
+			Panel_Pok = new Panel_Pokemon(nPok, nJug);
 			PanelPokemons_Vis.setLayout(new BorderLayout(0, 0));
-			PanelPokemons_Vis.add(getPanel_Pokemons_Sup(nPok, nJug), BorderLayout.NORTH);
-			PanelPokemons_Vis.add(getPanel_Pokemons_Cen(), BorderLayout.CENTER);
-			PanelPokemons_Vis.add(getPanel_Pokemons_Inf(), BorderLayout.SOUTH);
-			getControler().atributos(i, nJug);
+			PanelPokemons_Vis.add(getPanel_Pokemons_Sup(Panel_Pok), BorderLayout.NORTH);
+			PanelPokemons_Vis.add(getPanel_Pokemons_Cen(Panel_Pok), BorderLayout.CENTER);
+			PanelPokemons_Vis.add(getPanel_Pokemons_Inf(Panel_Pok), BorderLayout.SOUTH);
+			//getControler().atributos(i, nJug);
+			
 			
 			panelPok.add(PanelPokemons_Vis);
 		
@@ -88,34 +91,34 @@ public class Vista_Pokemon extends JPanel implements Observer {
 		}
 		return PanelPokemons_Vis;
 	}
-	private JPanel getPanel_Pokemons_Sup(int nPok, int nJug) {
+	private JPanel getPanel_Pokemons_Sup(Panel_Pokemon pPok) {
+		
 		Panel_Pokemons_Sup = new JPanel();
 		Panel_Pokemons_Sup.setLayout(new GridLayout(4, 2, 0, 0));
-		Panel_Pokemons_Sup.add(getLblAtt());
-		Panel_Pokemons_Sup.add(getLab_att(nPok, nJug));
-		Panel_Pokemons_Sup.add(getLblDef());
-		Panel_Pokemons_Sup.add(getLabel_2_1());
-		Panel_Pokemons_Sup.add(getLblHealth_1());
-		Panel_Pokemons_Sup.add(getLab_health());
-		Panel_Pokemons_Sup.add(getLblType());
-		Panel_Pokemons_Sup.add(getLab_type());
-		//getControler().atributos(nPok, nJug);
+		Panel_Pokemons_Sup.add(pPok.getLblAtt());
+		Panel_Pokemons_Sup.add(pPok.getLab_att());
+		Panel_Pokemons_Sup.add(pPok.getLblDef());
+		Panel_Pokemons_Sup.add(pPok.getLabel_2_1());
+		Panel_Pokemons_Sup.add(pPok.getLblHealth_1());
+		Panel_Pokemons_Sup.add(pPok.getLab_health());
+		Panel_Pokemons_Sup.add(pPok.getLblType());
+		Panel_Pokemons_Sup.add(pPok.getLab_type());
 		return Panel_Pokemons_Sup;
 	}
-	private JPanel getPanel_Pokemons_Cen() {
+	private JPanel getPanel_Pokemons_Cen(Panel_Pokemon pPok) {
 		Panel_Pokemons_Cen = new JPanel();
-		Panel_Pokemons_Cen.add(getLabel_1());
+		Panel_Pokemons_Cen.add(pPok.getLabel_1());
 		return Panel_Pokemons_Cen;
 	}
-	private JPanel getPanel_Pokemons_Inf() {
+	private JPanel getPanel_Pokemons_Inf(Panel_Pokemon pPok) {
 		Panel_Pokemons_Inf = new JPanel();
 		Panel_Pokemons_Inf.setLayout(new GridLayout(2, 1, 0, 0));
-		Panel_Pokemons_Inf.add(getPanel_Pokemons_Inf_Health());
-		Panel_Pokemons_Inf.add(getPanel_Pokemons_Inf_ChargedAttack());
+		Panel_Pokemons_Inf.add(pPok.getPanel_Pokemons_Inf_Health());
+		Panel_Pokemons_Inf.add(pPok.getPanel_Pokemons_Inf_ChargedAttack());
 		return Panel_Pokemons_Inf;
 	}
 	
-	public JPanel getPanel_Pokemons_Inf_Health() {
+	/*public JPanel getPanel_Pokemons_Inf_Health() {
 		Panel_Pokemons_Inf_Health = new JPanel();
 		Panel_Pokemons_Inf_Health.add(getLbl_Health_bar());
 		return Panel_Pokemons_Inf_Health;
@@ -149,7 +152,7 @@ public class Vista_Pokemon extends JPanel implements Observer {
 		lblAtt = new JLabel("att: ");
 		return lblAtt;
 	}
-	public JLabel getLab_att(int numPok, int nJug) {
+	public JLabel getLab_att() {
 		lab_att = new JLabel("??");
 		
 		return lab_att;
@@ -178,26 +181,9 @@ public class Vista_Pokemon extends JPanel implements Observer {
 		lab_type = new JLabel("Normal");
 		return lab_type;
 	}
-	
+	*/
 	
 
-	@Override
-	public void update(Observable arg0, Object arg1) { /*Este panel es solo para los Pokemon*/
-		// TODO Auto-generated method stub
-		if (arg0 instanceof Pokemon) {
-			if (arg1 instanceof Object []) {
-				Object[] objecArray = (Object []) arg1;
-				int vida = (Integer)objecArray[0];
-				int defensa = (Integer)objecArray[1];
-				int ataque = (Integer)objecArray[2];
-				String tipo = (String)objecArray[3];
-				//lab_att.setText(String.valueOf(ataque));
-				//lab_Def.setText(String.valueOf(defensa));
-				lab_health.setText(String.valueOf(vida));
-			}
-		}
-	}
-	
 	private Controler getControler() {
 		if(controler == null) {
 			controler = new Controler();
@@ -213,12 +199,12 @@ public class Vista_Pokemon extends JPanel implements Observer {
 		}
 		
 		
-		public void atributos(int numPok, int nJug) {
+		/*public void atributos(int numPok, int nJug) {
 				lab_att.setText(String.valueOf(ListaJugadores.getListaJugadores().buscarJugador(nJug).getPokemon(numPok).getAtaque()));
 				lab_Def.setText(String.valueOf(ListaJugadores.getListaJugadores().buscarJugador(nJug).getPokemon(numPok).getDefensa()));
 				lab_health.setText(String.valueOf(ListaJugadores.getListaJugadores().buscarJugador(nJug).getPokemon(numPok).getVida()));
 		}
-
+*/
 
 		@Override
 		public void mousePressed(MouseEvent e) {

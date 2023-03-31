@@ -37,7 +37,7 @@ public class ListaJugadores extends Observable{
 	public void iniciarJuego(int pNumJug, int pNumBot, int pNumPoke) {
 		for(int i=0;i<pNumJug;i++) {
 			Jugador jugAct = new Jugador(pNumPoke,i);
-			miListaJugadores.anadirJugador(jugAct);
+			miListaJugadores.anadirJugador(jugAct);	
 		}
 		for(int j=pNumJug;j<pNumJug+pNumBot;j++) {
 			Bot botAct = new Bot(pNumPoke,j);
