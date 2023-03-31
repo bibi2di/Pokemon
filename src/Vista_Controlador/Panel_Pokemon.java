@@ -2,6 +2,8 @@ package Vista_Controlador;
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.Observable;
@@ -148,6 +150,16 @@ public class Panel_Pokemon extends JPanel implements Observer {
 				lab_health.setText(String.valueOf(vida));
 				System.out.println("Observer actualizado");
 			}
+			if (arg1 instanceof int[]) {
+				int[] intArray = (int []) arg1;
+				int vida = (Integer)intArray[0];
+				int defensa = (Integer)intArray[1];
+				int ataque = (Integer)intArray[2];
+				lab_att.setText(String.valueOf(ataque));
+				lab_Def.setText(String.valueOf(defensa));
+				lab_health.setText(String.valueOf(vida));
+				System.out.println("Ataque realizado");
+			}
 		}
 	}
 	
@@ -163,8 +175,10 @@ public class Panel_Pokemon extends JPanel implements Observer {
 
 		@Override
 		public void mouseClicked(MouseEvent e) {
-			CampoDeBatalla.getCampoBatalla().sePuedeAtacar(idPok, idJug);
-			System.out.println(" Se ha clickado el pokemon" + idPok + "del jugador" + idJug);
+			if (e.getSource().equals(this)) {
+				CampoDeBatalla.getCampoBatalla().sePuedeAtacar(idPok, idJug);
+				System.out.println(" Se ha clickado el pokemon" + idPok + "del jugador" + idJug);
+			}
 		}
 		
 		

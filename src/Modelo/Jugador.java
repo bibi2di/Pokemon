@@ -74,7 +74,7 @@ public class Jugador extends Observable {
 	public boolean realizarAtaque(int numPoke,Pokemon pokJuega) { 
 		Pokemon atacante = lPokemon.get(numPoke);
 		boolean haRealizadoAtaque = false;
-		if(atacante != null && !haRealizadoAtaque) {
+		if(atacante != null && !haRealizadoAtaque && turno) {
 			 haRealizadoAtaque = CampoDeBatalla.getCampoBatalla().realizarAtaques(atacante, pokJuega); 
 		}
 		return haRealizadoAtaque;
