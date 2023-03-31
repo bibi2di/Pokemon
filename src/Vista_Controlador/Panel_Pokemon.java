@@ -15,6 +15,7 @@ import Modelo.CampoDeBatalla;
 import Modelo.ListaJugadores;
 import Modelo.Pokemon;
 
+@SuppressWarnings("deprecation")
 public class Panel_Pokemon extends JPanel implements Observer {
 
 	private Controler controler;
@@ -34,11 +35,11 @@ public class Panel_Pokemon extends JPanel implements Observer {
 	private int idJug = -1;
 	private int idPok = -1;
 	
-
-	@SuppressWarnings("deprecation")
 	public Panel_Pokemon(int nPok, int nJug) {
 		ListaJugadores.getListaJugadores().buscarJugador(nJug).getPokemon(nPok).addObserver(this);
 		this.addMouseListener(getControler());
+		idJug = nJug;
+		idPok = nPok;
 	}
 	
 	/*public JPanel getPanel_Pokemons_Sup() {
@@ -163,7 +164,7 @@ public class Panel_Pokemon extends JPanel implements Observer {
 		@Override
 		public void mouseClicked(MouseEvent e) {
 			CampoDeBatalla.getCampoBatalla().sePuedeAtacar(idPok, idJug);
-			System.out.println("a");
+			System.out.println(" Se ha clickado el pokemon" + idPok + "del jugador" + idJug);
 		}
 		
 		

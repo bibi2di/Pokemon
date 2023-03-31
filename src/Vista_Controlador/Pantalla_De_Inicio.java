@@ -276,6 +276,7 @@ public class Pantalla_De_Inicio extends JFrame implements Observer{
 			}
 			VistaJug.setVisible(true);
 		}
+		
 	}
 		/*
 		for(int j=nJug;j<nJug+nNPC;j++) {
