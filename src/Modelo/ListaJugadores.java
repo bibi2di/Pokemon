@@ -83,17 +83,16 @@ public class ListaJugadores extends Observable{
 	public void /*Jugador*/ asignarTurnoAleatoriamente(/*int pNumJug, int pNumBot*/) {
 		int numJug = lJugadores.size(); //2
 		int turno = (int)(Math.random()*(numJug)); // Num aleatorio del listado de Jugadores del 0 al 1
-	    /*Jugador jug = null;
-
-		Iterator<Jugador> itr = this.getIterador();
-		int act = 0;
-		while (act < turno) {
-			jug=itr.next();
-			act++;
-		} 
-		jug.setTurno(true);*/
 		
+		//Primero inicializamos los turnos de todos los jugadores a 0
 		Jugador jug = null;
+		Iterator<Jugador> itr = getIterador();
+		while (itr.hasNext())
+		{
+			jug = itr.next();
+			jug.setTurno(false);
+		}
+		//Finalmente, elegimos un jugador al azar y le ponemos el turno a true
 		jug = this.buscarJugador(turno);
 		jug.setTurno(true);
 		System.out.println("Turno asignado");
