@@ -18,9 +18,6 @@ import Modelo.Pokemon;
 public class Panel_Pokemon extends JPanel implements Observer {
 
 	private Controler controler;
-	private JPanel Panel_Pokemons_Sup;
-	private JPanel Panel_Pokemons_Cen;
-	private JPanel Panel_Pokemons_Inf;
 	private JPanel Panel_Pokemons_Inf_Health;
 	private JPanel Panel_Pokemons_Inf_ChargedAttack;
 	private JLabel lbl_Health_bar;
