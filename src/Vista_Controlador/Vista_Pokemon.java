@@ -77,7 +77,7 @@ public class Vista_Pokemon extends JPanel /*implements Observer */{
 	private JPanel getPanelPokemons_Vis(int nPok, int nJug, JPanel panelPok) {
 		for(int i=1; i<=nPok; i++) {
 			PanelPokemons_Vis = new JPanel();
-			Panel_Pok = new Panel_Pokemon(nPok, nJug);
+			Panel_Pok = new Panel_Pokemon(i, nJug);
 			PanelPokemons_Vis.setLayout(new BorderLayout(0, 0));
 			PanelPokemons_Vis.add(getPanel_Pokemons_Sup(Panel_Pok), BorderLayout.NORTH);
 			PanelPokemons_Vis.add(getPanel_Pokemons_Cen(Panel_Pok), BorderLayout.CENTER);
