@@ -171,23 +171,11 @@ public class Panel_Pokemon extends JPanel implements Observer {
 	}
 	
 	private class Controler implements MouseListener{
-
-
 		@Override
 		public void mouseClicked(MouseEvent e) {
-			if (e.getSource().equals(this)) {
 				CampoDeBatalla.getCampoBatalla().sePuedeAtacar(idPok, idJug);
 				System.out.println(" Se ha clickado el pokemon" + idPok + "del jugador" + idJug);
 			}
-		}
-		
-		
-		public void atributos(int numPok, int nJug) {
-				//lab_att.setText(String.valueOf(ListaJugadores.getListaJugadores().buscarJugador(nJug).getPokemon(numPok).getAtaque()));
-				//lab_Def.setText(String.valueOf(ListaJugadores.getListaJugadores().buscarJugador(nJug).getPokemon(numPok).getDefensa()));
-				//lab_health.setText(String.valueOf(ListaJugadores.getListaJugadores().buscarJugador(nJug).getPokemon(numPok).getVida()));
-		}
-
 
 		@Override
 		public void mousePressed(MouseEvent e) {
@@ -195,13 +183,11 @@ public class Panel_Pokemon extends JPanel implements Observer {
 			
 		}
 
-
 		@Override
 		public void mouseReleased(MouseEvent e) {
 			// TODO Auto-generated method stub
 			
 		}
-
 
 		@Override
 		public void mouseEntered(MouseEvent e) {
@@ -209,11 +195,17 @@ public class Panel_Pokemon extends JPanel implements Observer {
 			
 		}
 
-
 		@Override
 		public void mouseExited(MouseEvent e) {
 			// TODO Auto-generated method stub
 			
 		}
+		}
+		
+		
+		public void atributos(int numPok, int nJug) {
+				//lab_att.setText(String.valueOf(ListaJugadores.getListaJugadores().buscarJugador(nJug).getPokemon(numPok).getAtaque()));
+				//lab_Def.setText(String.valueOf(ListaJugadores.getListaJugadores().buscarJugador(nJug).getPokemon(numPok).getDefensa()));
+				//lab_health.setText(String.valueOf(ListaJugadores.getListaJugadores().buscarJugador(nJug).getPokemon(numPok).getVida()));
 		}
 }

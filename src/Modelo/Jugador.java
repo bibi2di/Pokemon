@@ -12,6 +12,7 @@ public class Jugador extends Observable {
 	protected int id;
 	protected ArrayList<Pokemon> lPokemon;
 	private boolean turno;
+	private boolean bot;
 
 	/**
 	 * 
@@ -22,6 +23,7 @@ public class Jugador extends Observable {
 		lPokemon = new ArrayList<>();
 		id = pId;
 		turno = false;
+		bot = this instanceof Bot;
 		for (int i=0;i<pNumPoke;i++) {
 			Pokemon pokeAct = this.createPokemon(i);
 			lPokemon.add(pokeAct);
@@ -107,6 +109,10 @@ public class Jugador extends Observable {
 		poke = lPokemon.get(numPok-1);
 		
 		return poke;
+	}
+	
+	public boolean esBot() {
+		return this.bot;
 	}
 	
 
