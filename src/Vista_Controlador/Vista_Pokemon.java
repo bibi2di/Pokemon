@@ -70,7 +70,6 @@ public class Vista_Pokemon extends JPanel /*implements Observer */{
 		PanelPokemons.setBounds(201, 0, 599, 263);
 		PanelPokemons.setLayout(new GridLayout(1, 3, 0, 0));
 		PanelPokemons.add(getPanelPokemons_Vis(nPok, nJug, PanelPokemons));
-		
 		return PanelPokemons;
 	}
 	

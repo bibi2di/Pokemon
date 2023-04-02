@@ -256,7 +256,6 @@ public class Pantalla_De_Inicio extends JFrame implements Observer{
 	@Override
 	public void update(Observable o, Object arg) {
 		// TODO Auto-generated method stub
-		
 		int nJug = Integer.parseInt(txtNjuga.getText());
 		int nNPC = Integer.parseInt(txtNnpcs.getText());
 		int nPok = Integer.parseInt(txtNpokemosn.getText());

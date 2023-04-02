@@ -193,7 +193,6 @@ public class Panel_Pokemon extends JPanel implements Observer {
 		@Override
 		public void mousePressed(MouseEvent e) {
 			// TODO Auto-generated method stub
-			
 		}
 
 		@Override
