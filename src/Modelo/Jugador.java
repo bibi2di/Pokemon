@@ -95,6 +95,8 @@ public class Jugador extends Observable {
 	
 	public boolean haPerdido() {
 		boolean haPerdido = lPokemon.stream().allMatch(p -> p.seHaDebilitado());
+		setChanged();
+		notifyObservers(new boolean[] {haPerdido});
 		return haPerdido;
 	}
 	

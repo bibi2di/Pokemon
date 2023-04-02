@@ -272,6 +272,13 @@ public class Vista_Jugador extends JFrame implements Observer{
 					btn_Jugador_estado.setText("Espera");
 				}
 			}
+			if (arg instanceof boolean[]) {
+				boolean[] arrayBool = (boolean[])arg;
+				boolean perdido = (boolean)arrayBool[0];
+				if (perdido) {
+					System.out.println("El jugador: "+ idJug+ " ha perdido");
+				}
+			}
 		}
 	}
 	
