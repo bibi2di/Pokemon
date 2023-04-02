@@ -268,9 +268,10 @@ public class Vista_Jugador extends JFrame implements Observer{
 				if (turno == true) {
 					btn_Jugador_estado.setText("Ataca");
 				}
-				else
+				else {
 					btn_Jugador_estado.setText("Espera");
 				}
+			}
 		}
 	}
 	

@@ -279,6 +279,13 @@ public class Pantalla_De_Inicio extends JFrame implements Observer{
 					VistaJug.setVisible(true);
 				}
 			}
+			if (arg instanceof int[]) {
+				int[] ganador = (int[])arg;
+				int jugGana = ganador[0];
+				if(jugGana!=-1) {
+					System.out.println("Ha ganado el jugador: "+ jugGana);
+				}
+			}
 		}
 		
 	}
