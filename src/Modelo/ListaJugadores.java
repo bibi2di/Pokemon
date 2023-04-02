@@ -7,6 +7,7 @@ import java.util.Iterator;
 import java.util.Observable;
 import java.util.stream.Collectors; 
 
+
 public class ListaJugadores extends Observable{
 
 	private static ListaJugadores miListaJugadores;
@@ -47,7 +48,7 @@ public class ListaJugadores extends Observable{
 		this.asignarTurnoAleatoriamente();
 		boolean[] turnos = new boolean[pNumJug+pNumBot];
 		for(int k=0;k<pNumJug+pNumBot;k++) {
-			turnos[k] = buscarJugador(k).esBot();
+			turnos[k] = buscarJugador(k).esSuTurno();
 		}
 		setChanged();
 		notifyObservers(new boolean[] {turnos[0],turnos[1]});
