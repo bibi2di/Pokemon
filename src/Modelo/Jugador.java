@@ -73,14 +73,14 @@ public class Jugador extends Observable {
 		
 	}
 	
-	public boolean realizarAtaque(int numPoke,Pokemon pokJuega) { 
+	/*public boolean realizarAtaque(int numPoke,Pokemon pokJuega) { 
 		Pokemon atacante = lPokemon.get(numPoke);
 		boolean haRealizadoAtaque = false;
 		if(atacante != null && !haRealizadoAtaque && turno) {
 			 haRealizadoAtaque = CampoDeBatalla.getCampoBatalla().realizarAtaques(atacante, pokJuega); 
 		}
 		return haRealizadoAtaque;
-	}
+	}*/
 	
 	/*REALIZAR ATAQUES*/
 
@@ -92,7 +92,6 @@ public class Jugador extends Observable {
 		Pokemon p = PokemonFactory.getPokemonFactory().create(i);
 		return p;
 	}
-
 	
 	public boolean haPerdido() {
 		return lPokemon.stream().allMatch(p -> p.seHaDebilitado());
@@ -113,6 +112,10 @@ public class Jugador extends Observable {
 	
 	public boolean esBot() {
 		return this.bot;
+	}
+	
+	public void resetearPokemon() {
+		lPokemon.stream().forEach(p-> p.haAtacadoYa(false));
 	}
 	
 

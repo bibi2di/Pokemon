@@ -10,6 +10,7 @@ public /*abstract*/ class Pokemon extends Observable {
 	private int defensa;
 	private int vida;
 	private String tipo;
+	private boolean yaHaAtacado;
 	protected String tipoEfectivo;
 
 	/**
@@ -33,6 +34,7 @@ public /*abstract*/ class Pokemon extends Observable {
 		vida = 200 + (int)(Math.random()*20+1); //200 + número aleatorio entre 1-20
 		int r = (int)(Math.random()*4); 
 		String nombre = new String[] {"Agua", "Fuego", "Planta", "Electrico"}[r]; //tipo aleatorio
+		yaHaAtacado = false;
 		tipo = nombre;
 		setChanged();
 		notifyObservers(new Object [] {this.vida,this.defensa,this.ataque,this.tipo});
@@ -74,6 +76,14 @@ public /*abstract*/ class Pokemon extends Observable {
 	
 	public void evolucionar() {
 		
+	}
+	
+	public boolean haAtacado () {
+		return this.yaHaAtacado;
+	}
+	
+	public void haAtacadoYa (boolean pHaAtacado) {
+		this.yaHaAtacado = pHaAtacado;
 	}
 	
 	public void estadoEuforia() {

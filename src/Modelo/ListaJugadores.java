@@ -91,6 +91,7 @@ public class ListaJugadores extends Observable{
 		{
 			jug = itr.next();
 			jug.setTurno(false);
+			jug.resetearPokemon();
 		}
 		//Finalmente, elegimos un jugador al azar y le ponemos el turno a true
 		jug = this.buscarJugador(turno);

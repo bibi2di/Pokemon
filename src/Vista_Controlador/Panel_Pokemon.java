@@ -175,10 +175,6 @@ public class Panel_Pokemon extends JPanel implements Observer {
 	}
 	
 	private class Controler implements MouseListener{
-		private void syso() {
-			System.out.println("Ha entrado aqui");
-
-		}
 		@Override
 		public void mouseClicked(MouseEvent e) {
 			if(e.getSource().equals(this)) {
@@ -201,7 +197,6 @@ public class Panel_Pokemon extends JPanel implements Observer {
 
 		@Override
 		public void mouseEntered(MouseEvent e) {
-			System.out.println("Ha entrado en la pantalla");
 			
 		}
 
