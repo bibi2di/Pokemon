@@ -56,7 +56,7 @@ public class Vista_Pokemon extends JPanel /*implements Observer */{
 	
 	public Vista_Pokemon(int nPok, int nJug) {
 		//ListaJugadores.getListaJugadores().buscarJugador(nJug).getPokemon(nPok).addObserver(this);
-		this.addMouseListener(getControler());
+		//this.addMouseListener(getControler());
 		idJug = nJug;
 		idPok = nPok;
 		lab_health = new JLabel();

@@ -103,6 +103,7 @@ public class Panel_Pokemon extends JPanel implements Observer {
 		int r = (int)(Math.random()*21); 
 		String url = imagenes[r];
 		label_1.setIcon(new ImageIcon(url));
+		label_1.addMouseListener(getControler());
 		return label_1;
 	}
 	public JLabel getLblAtt() {
@@ -177,10 +178,10 @@ public class Panel_Pokemon extends JPanel implements Observer {
 	private class Controler implements MouseListener{
 		@Override
 		public void mouseClicked(MouseEvent e) {
-			if(e.getSource().equals(this)) {
+			//if(e.getSource().equals(this)) {
 				CampoDeBatalla.getCampoBatalla().sePuedeAtacar(idPok, idJug);
 				System.out.println(" Se ha clickado el pokemon" + idPok + "del jugador" + idJug);
-			}
+			//}
 		}
 
 		@Override
