@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.Observable; 
+import java.util.Observable;
+import java.util.stream.Collectors; 
 
 public class ListaJugadores extends Observable{
 
@@ -71,16 +72,17 @@ public class ListaJugadores extends Observable{
 	}
 	
 	public boolean finJuego() {
-		//return lJugadores.stream().filter(p->!p.haPerdido()).toList().size()==1;
-		return true;
+		return lJugadores.stream().filter(p->!p.haPerdido()).collect(Collectors.toList()).size()==1;
 	}
 	
 	public int jugadorGanador() {
 		int id = -1;
 		if (miListaJugadores.finJuego()) {
-			//id = lJugadores.stream().filter(p->!p.haPerdido()).toList().get(0).getId();
+			id = lJugadores.stream().filter(p->!p.haPerdido()).collect(Collectors.toList()).get(0).getId();
 			//id =  lJugadores.stream().filter(p->!p.haPerdido()).mapToInt(p->p.getId()).toArray()[0];
 		}
+		setChanged();
+		notifyObservers(new int[] {id});
 		return id;
 	}
 	
