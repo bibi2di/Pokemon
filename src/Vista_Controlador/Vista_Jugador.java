@@ -46,6 +46,7 @@ public class Vista_Jugador extends JFrame implements Observer{
 	private JLabel lab_health;
 	private JLabel lblType;
 	private JLabel lab_type;*/
+	private int idJug;
 	private Controler controler = null;
 
 
@@ -70,6 +71,7 @@ public class Vista_Jugador extends JFrame implements Observer{
 	 */
 	public Vista_Jugador(int nPok, int nJug, boolean turno) {
 		Vista_Pokemon Vista_Pok = new Vista_Pokemon(nPok, nJug);
+		idJug = nJug;
 		setTitle("Pokemon - Jugador "+nJug);
 		setBounds(100, 100, 800, 300);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -94,7 +96,12 @@ public class Vista_Jugador extends JFrame implements Observer{
 	private JPanel getPanel_Jugador_Estado(boolean turno) {
 		if (Panel_Jugador_Estado == null) {
 		    Panel_Jugador_Estado = new JPanel();
-			Panel_Jugador_Estado.setBackground(Color.RED);
+		    if(turno) {
+				Panel_Jugador_Estado.setBackground(Color.GREEN);
+		    }
+		    else {
+				Panel_Jugador_Estado.setBackground(Color.RED);
+		    }
 			Panel_Jugador_Estado.add(getButton_Jugador_estado(turno));
 		}
 		return Panel_Jugador_Estado;
@@ -244,7 +251,7 @@ public class Vista_Jugador extends JFrame implements Observer{
 		public void actionPerformed(ActionEvent e) {
 				//CampoDeBatalla.getCampoBatalla().pasarTurno();
 				if(e.getSource().equals(btn_Jugador_estado)) {
-					if(btn_Jugador_estado.getText().equals("Ataca")) {
+					if(btn_Jugador_estado.getText().equals("Ataca") && !esBot()) {
 						asignarTurno();
 					}
 					
@@ -252,6 +259,9 @@ public class Vista_Jugador extends JFrame implements Observer{
 		}
 		public void asignarTurno() {
 			ListaJugadores.getListaJugadores().asignarTurnoAleatoriamente();
+		}
+		public boolean esBot() {
+			return ListaJugadores.getListaJugadores().buscarJugador(idJug).esBot();
 		}
 	}
 	@Override
