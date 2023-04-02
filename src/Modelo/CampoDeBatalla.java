@@ -24,7 +24,7 @@ public class CampoDeBatalla extends Observable{
 		System.out.println("juagdor"+nJug);
 		System.out.println("pokemon"+nPok);
 		Pokemon pPok = ListaJugadores.getListaJugadores().buscarJugador(nJug).getPokemon(nPok);
-		boolean sePuedeAacar = false;
+		boolean sePuedeAtacar = false;
 		if(batalla[0]==null) {
 			batalla[0]=pPok;
 		}else {
@@ -33,11 +33,11 @@ public class CampoDeBatalla extends Observable{
 		if(batalla[0]!=null && batalla[1]!=null) {
 			realizarAtaques(batalla[0], batalla[1]);
 			batalla = new Pokemon[2];
-			sePuedeAacar=true;
+			sePuedeAtacar=true;
 		}
 		setChanged();
 		notifyObservers();
-		return sePuedeAacar;
+		return sePuedeAtacar;
 		
 	}
 	

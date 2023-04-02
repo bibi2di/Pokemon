@@ -44,6 +44,10 @@ public class Panel_Pokemon extends JPanel implements Observer {
 		idPok = nPok;
 	}
 	
+	public int getIdPok() {
+		return this.idPok;
+	}
+	
 	/*public JPanel getPanel_Pokemons_Sup() {
 		
 		Panel_Pokemons_Sup = new JPanel();
@@ -171,11 +175,17 @@ public class Panel_Pokemon extends JPanel implements Observer {
 	}
 	
 	private class Controler implements MouseListener{
+		private void syso() {
+			System.out.println("Ha entrado aqui");
+
+		}
 		@Override
 		public void mouseClicked(MouseEvent e) {
+			if(e.getSource().equals(this)) {
 				CampoDeBatalla.getCampoBatalla().sePuedeAtacar(idPok, idJug);
 				System.out.println(" Se ha clickado el pokemon" + idPok + "del jugador" + idJug);
 			}
+		}
 
 		@Override
 		public void mousePressed(MouseEvent e) {
@@ -191,7 +201,7 @@ public class Panel_Pokemon extends JPanel implements Observer {
 
 		@Override
 		public void mouseEntered(MouseEvent e) {
-			// TODO Auto-generated method stub
+			System.out.println("Ha entrado en la pantalla");
 			
 		}
 

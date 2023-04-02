@@ -34,7 +34,7 @@ public class Vista_Pokemon extends JPanel /*implements Observer */{
 	private JLabel lbl_Health_bar;
 	private JLabel lblChargedAttack;
 	private JLabel label_1;
-	private JLabel lblAtt;
+	private JLabel lblAtt; 
 	private JLabel lab_att;
 	private JLabel lblDef;
 	private JLabel lab_Def;
