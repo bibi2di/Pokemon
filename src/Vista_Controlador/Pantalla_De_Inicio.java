@@ -264,7 +264,7 @@ public class Pantalla_De_Inicio extends JFrame implements Observer{
 			
 			Vista_Jugador VistaJug;
 			//VistaJug.setVisible(true);
-			if (ListaJugadores.getListaJugadores().buscarJugador(i).esSuTurno())
+			if (ListaJugadores.getListaJugadores().buscarJugador(i).esSuTurno()) /*ESTO HAY QUE CAMBIAR*/
 			{
 				VistaJug = new Vista_Jugador(nPok, i, true);
 				System.out.println("Es true");
