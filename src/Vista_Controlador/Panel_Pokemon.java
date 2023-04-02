@@ -1,4 +1,7 @@
 package Vista_Controlador;
+/*
+ * A
+ */
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
