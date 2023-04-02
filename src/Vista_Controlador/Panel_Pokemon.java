@@ -22,7 +22,6 @@ import Modelo.Pokemon;
 
 @SuppressWarnings("deprecation")
 public class Panel_Pokemon extends JPanel implements Observer {
-
 	private Controler controler;
 	private JPanel Panel_Pokemons_Inf_Health;
 	private JPanel Panel_Pokemons_Inf_ChargedAttack;
