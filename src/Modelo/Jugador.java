@@ -126,5 +126,8 @@ public class Jugador extends Observable {
 		return hanAtacadoTodos;
 	}
 	
+	public boolean terminarTurno() {
+	 return ((esSuTurno() && hanAtacadoTodos()));
+	}
 
 }

@@ -115,4 +115,13 @@ public class ListaJugadores extends Observable{
 		return jugador;
 	}
 	
+	public void terminarTurno() {
+		Jugador jug = null;
+		Iterator<Jugador> itr = getIterador();
+		while (itr.hasNext()) {
+			jug = itr.next();
+			if (jug.terminarTurno())
+				asignarTurnoAleatoriamente();
+		}
+	}
 }
