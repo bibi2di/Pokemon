@@ -259,12 +259,13 @@ public class Pantalla_De_Inicio extends JFrame implements Observer{
 		int nJug = Integer.parseInt(txtNjuga.getText());
 		int nNPC = Integer.parseInt(txtNnpcs.getText());
 		int nPok = Integer.parseInt(txtNpokemosn.getText());
-
+		boolean [] turnos = (boolean[]) arg;
 		for(int i=0;i<nJug+nNPC;i++) {
 			
 			Vista_Jugador VistaJug;
 			//VistaJug.setVisible(true);
-			if (ListaJugadores.getListaJugadores().buscarJugador(i).esSuTurno()) /*ESTO HAY QUE CAMBIAR*/
+			//if (ListaJugadores.getListaJugadores().buscarJugador(i).esSuTurno()) /*ESTO HAY QUE CAMBIAR*/
+			if(turnos[i])
 			{
 				VistaJug = new Vista_Jugador(nPok, i, true);
 				System.out.println("Es true");

@@ -44,8 +44,12 @@ public class ListaJugadores extends Observable{
 			miListaJugadores.anadirBot(botAct);
 		}
 		this.asignarTurnoAleatoriamente();
+		boolean[] turnos = new boolean[pNumJug+pNumBot];
+		for(int k=0;k<pNumJug+pNumBot;k++) {
+			turnos[k] = buscarJugador(k).esBot();
+		}
 		setChanged();
-		notifyObservers();
+		notifyObservers(new boolean[] {turnos[0],turnos[1]});
 	}
 
 	/**
