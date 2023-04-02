@@ -34,7 +34,7 @@ public class CampoDeBatalla extends Observable{
 			batalla[1]=pPok;
 			System.out.println("Ha entrado en el if 2. El id del jugador es "+ jugadorAtacante);
 		}
-		if (ListaJugadores.getListaJugadores().buscarJugador(jugadorAtacante).esSuTurno()) {
+		if (ListaJugadores.getListaJugadores().buscarJugador(jugadorAtacante).esSuTurno() && (nJug!=jugadorAtacante)) {
 			System.out.println("Ha entrado en if 3. Es su turno");
 			if(batalla[0]!=null && batalla[1]!=null && !batalla[0].haAtacado()) {
 				System.out.println("Ha entrado en el if 4. Va a atacar");
