@@ -22,12 +22,13 @@ public class CampoDeBatalla extends Observable{
 	
 	public boolean sePuedeAtacar(int nPok, int nJug) {
 		//TODO Falta comprobar si es el turno del Jugador
-		System.out.println("juagdor"+nJug);
-		System.out.println("pokemon"+nPok);
+		System.out.println("jugador "+nJug);
+		System.out.println("pokemon "+nPok);
 		Pokemon pPok = ListaJugadores.getListaJugadores().buscarJugador(nJug).getPokemon(nPok);
 		boolean sePuedeAtacar = false;
+		//primero se comprueba que batalla[0] está vacío -> pokemon atacante
 		if(batalla[0]==null) {
-			batalla[0]=pPok;
+			batalla[0]=pPok; //se introduce 
 			jugadorAtacante = nJug;
 			System.out.println("Ha entrado en el if 1. El id del jugador es "+ jugadorAtacante);
 		}else {
