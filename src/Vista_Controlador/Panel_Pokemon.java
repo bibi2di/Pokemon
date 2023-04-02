@@ -185,6 +185,7 @@ public class Panel_Pokemon extends JPanel implements Observer {
 		public void mouseClicked(MouseEvent e) {
 			//if(e.getSource().equals(this)) {
 				CampoDeBatalla.getCampoBatalla().sePuedeAtacar(idPok, idJug);
+		
 				System.out.println(" Se ha clickado el pokemon" + idPok + "del jugador" + idJug);
 			//}
 		}

@@ -45,6 +45,10 @@ public /*abstract*/ class Pokemon extends Observable {
 		
 	}
 	
+	public int getId() {
+		return this.id;
+	}
+	
 	public int getAtaque() {
 		return this.ataque;
 	}

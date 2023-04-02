@@ -8,6 +8,7 @@ public class CampoDeBatalla extends Observable{
 	private static CampoDeBatalla miCampoDeBatalla;
 	private Pokemon[] batalla;
 	private int jugadorAtacante;
+	private int jugadorAtacado;
 	
 	private CampoDeBatalla() {
 		batalla = new Pokemon[2];
@@ -26,26 +27,35 @@ public class CampoDeBatalla extends Observable{
 		System.out.println("pokemon "+nPok);
 		Pokemon pPok = ListaJugadores.getListaJugadores().buscarJugador(nJug).getPokemon(nPok);
 		boolean sePuedeAtacar = false;
-		//primero se comprueba que batalla[0] está vacío -> pokemon atacante
-		if(batalla[0]==null) {
+		//primero metemos el jugador atacante y su pokemon en batalla[0] 
+		if(ListaJugadores.getListaJugadores().buscarJugador(nJug).esSuTurno() && batalla[0]==null) {
 			batalla[0]=pPok; //se introduce 
 			jugadorAtacante = nJug;
-			System.out.println("Ha entrado en el if 1. El id del jugador es "+ jugadorAtacante);
-		}else {
+			System.out.println("Ha entrado en el if 1. El jugador atacante es "+ jugadorAtacante);
+		//metemos el jugador atacado y su pokemon en batalla[1]
+		}else if (!ListaJugadores.getListaJugadores().buscarJugador(nJug).esSuTurno() && batalla[1] == null){
 			batalla[1]=pPok;
-			System.out.println("Ha entrado en el if 2. El id del jugador es "+ jugadorAtacante);
+			jugadorAtacado = nJug;
+			System.out.println("Ha entrado en el if 2. El id del jugador atacante es "+ jugadorAtacante + "Y el jugador atacado "
+					+ jugadorAtacado);
 		}
-		if (ListaJugadores.getListaJugadores().buscarJugador(jugadorAtacante).esSuTurno() && (nJug!=jugadorAtacante) 
-				&& !ListaJugadores.getListaJugadores().buscarJugador(jugadorAtacante).terminarTurno()) {
-			System.out.println("Ha entrado en if 3. Es su turno");
-			if(batalla[0]!=null && batalla[1]!=null && !batalla[0].haAtacado()) {
-				System.out.println("Ha entrado en el if 4. Va a atacar");
-				realizarAtaques(batalla[0], batalla[1]);
-				batalla[0].haAtacadoYa(true);
-				batalla = new Pokemon[2];
-				sePuedeAtacar=true;
+			if(batalla[0]!=null && batalla[1]!=null) {
+				//si ambos pokemons son aptos, entra
+				if (!batalla[0].haAtacado() && !batalla[0].seHaDebilitado() && !batalla[1].seHaDebilitado()) {
+					//si el pokemon atacante no ha atacado y ninguno esta debilitado -> ataca
+					System.out.println("Ha entrado en el if 4. Va a atacar");
+					realizarAtaques(batalla[0], batalla[1]);
+					batalla[0].haAtacadoYa(true);
+					batalla = new Pokemon[2];
+					sePuedeAtacar=true;
+				}
+				else 
+				{
+					//si el pokemon ha atacado con anterioridad, reestablece los valores
+					batalla[0] = null;
+					batalla[1] = null;
+				}
 			}
-		}
 		if (ListaJugadores.getListaJugadores().buscarJugador(jugadorAtacante).terminarTurno())
 			ListaJugadores.getListaJugadores().terminarTurno();
 		setChanged();
@@ -63,6 +73,12 @@ public class CampoDeBatalla extends Observable{
 		setChanged();
 		notifyObservers();
 		return haRealizadoAtaque;
+	}
+	
+	
+	public void teminarTurno(int pJug) {
+		if (ListaJugadores.getListaJugadores().buscarJugador(pJug).terminarTurno())
+			ListaJugadores.getListaJugadores().terminarTurno();
 	}
 	
 	
