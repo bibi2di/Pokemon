@@ -245,10 +245,10 @@ public class Vista_Jugador extends JFrame implements Observer{
 				//CampoDeBatalla.getCampoBatalla().pasarTurno();
 				if(e.getSource().equals(btn_Jugador_estado)) {
 					if(btn_Jugador_estado.getText().equals("Ataca")) {
-						btn_Jugador_estado.setText("Espera");
-						ListaJugadores.getListaJugadores().asignarTurnoAleatoriamente();
+						asignarTurno();
 					}
-				}
+					
+		}
 		}
 		public void asignarTurno() {
 			ListaJugadores.getListaJugadores().asignarTurnoAleatoriamente();
@@ -257,8 +257,14 @@ public class Vista_Jugador extends JFrame implements Observer{
 	@Override
 	public void update(Observable o, Object arg) { /*Este panel es solo para los jugadores*/
 		if (o instanceof Jugador) {
-			if (arg instanceof boolean[]) {
-				btn_Jugador_estado.setText("Ataca");
+			if (arg instanceof Object[]) {
+				Object[] oArray = (Object[])arg;
+				boolean turno = (boolean)oArray[0];
+				if (turno == true) {
+					btn_Jugador_estado.setText("Ataca");
+				}
+				else
+					btn_Jugador_estado.setText("Espera");
 				}
 		}
 	}

@@ -57,8 +57,8 @@ public class Jugador extends Observable {
 	public void setTurno(boolean pTurno) {
 		this.turno = pTurno;
 		setChanged();
-		notifyObservers(new boolean[] {pTurno});
-		System.out.println("Ha cambiado el turno");
+		notifyObservers(new Object[] {pTurno});
+		System.out.println("Ha cambiado el turno a" + pTurno);
 	}
 	
 	
