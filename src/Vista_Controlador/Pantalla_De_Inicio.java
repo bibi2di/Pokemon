@@ -278,6 +278,7 @@ public class Pantalla_De_Inicio extends JFrame implements Observer{
 					}
 					VistaJug.setVisible(true);
 				}
+				this.setVisible(false);
 			}
 			if (arg instanceof int[]) {
 				int[] ganador = (int[])arg;

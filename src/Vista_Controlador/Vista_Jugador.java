@@ -277,6 +277,7 @@ public class Vista_Jugador extends JFrame implements Observer{
 				boolean perdido = (boolean)arrayBool[0];
 				if (perdido) {
 					System.out.println("El jugador: "+ idJug+ " ha perdido");
+					this.setVisible(false);
 				}
 			}
 		}
