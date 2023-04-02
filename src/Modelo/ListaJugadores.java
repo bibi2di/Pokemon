@@ -98,8 +98,6 @@ public class ListaJugadores extends Observable{
 		jug.setTurno(true);
 		System.out.println("Turno asignado");
 		//return jug;
-		
-		
 	}
 	
 	public Jugador buscarJugador (int pId) {

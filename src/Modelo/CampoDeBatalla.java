@@ -7,6 +7,7 @@ public class CampoDeBatalla extends Observable{
 	
 	private static CampoDeBatalla miCampoDeBatalla;
 	private Pokemon[] batalla;
+	private int jugadorAtacante;
 	
 	private CampoDeBatalla() {
 		batalla = new Pokemon[2];
@@ -24,16 +25,19 @@ public class CampoDeBatalla extends Observable{
 		System.out.println("juagdor"+nJug);
 		System.out.println("pokemon"+nPok);
 		Pokemon pPok = ListaJugadores.getListaJugadores().buscarJugador(nJug).getPokemon(nPok);
-		int idJug = -1;
 		boolean sePuedeAtacar = false;
 		if(batalla[0]==null) {
 			batalla[0]=pPok;
-			idJug = nJug;
+			jugadorAtacante = nJug;
+			System.out.println("Ha entrado en el if 1. El id del jugador es "+ jugadorAtacante);
 		}else {
 			batalla[1]=pPok;
+			System.out.println("Ha entrado en el if 2. El id del jugador es "+ jugadorAtacante);
 		}
-		if (ListaJugadores.getListaJugadores().buscarJugador(idJug).esSuTurno()) {
+		if (ListaJugadores.getListaJugadores().buscarJugador(jugadorAtacante).esSuTurno()) {
+			System.out.println("Ha entrado en if 3. Es su turno");
 			if(batalla[0]!=null && batalla[1]!=null && !batalla[0].haAtacado()) {
+				System.out.println("Ha entrado en el if 4. Va a atacar");
 				realizarAtaques(batalla[0], batalla[1]);
 				batalla[0].haAtacadoYa(true);
 				batalla = new Pokemon[2];
