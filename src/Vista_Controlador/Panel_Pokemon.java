@@ -180,12 +180,11 @@ public class Panel_Pokemon extends JPanel implements Observer {
 		return controler;
 	}
 	
-	private class Controler implements MouseListener{
+	private class Controler implements MouseListener {
 		@Override
 		public void mouseClicked(MouseEvent e) {
 			//if(e.getSource().equals(this)) {
 				CampoDeBatalla.getCampoBatalla().sePuedeAtacar(idPok, idJug);
-		
 				System.out.println(" Se ha clickado el pokemon" + idPok + "del jugador" + idJug);
 			//}
 		}

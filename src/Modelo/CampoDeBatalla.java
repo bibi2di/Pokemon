@@ -58,9 +58,7 @@ public class CampoDeBatalla extends Observable{
 					batalla[1] = null;
 				}
 			}
-		if (ListaJugadores.getListaJugadores().buscarJugador(jugadorAtacante).terminarTurno()){
-			ListaJugadores.getListaJugadores().terminarTurno();
-		}
+		this.terminarTurno(jugadorAtacante);
 		
 		setChanged();
 		notifyObservers();
@@ -80,8 +78,8 @@ public class CampoDeBatalla extends Observable{
 		return haRealizadoAtaque;
 	}
 	
-	
-	public void teminarTurno(int pJug) {
+	//Esto hay que gestionarlo desde Jugador con el Observer
+	public void terminarTurno(int pJug) {
 		if (ListaJugadores.getListaJugadores().buscarJugador(pJug).terminarTurno())
 			ListaJugadores.getListaJugadores().terminarTurno();
 	}

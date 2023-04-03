@@ -93,7 +93,9 @@ public /*abstract*/ class Pokemon extends Observable {
 	}
 	
 	public boolean haAtacado () {
+		System.out.println("El pokemon " + this.id + " ya ha atacado");
 		return this.yaHaAtacado;
+		
 	}
 	
 	public void haAtacadoYa (boolean pHaAtacado) {
