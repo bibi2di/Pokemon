@@ -252,6 +252,8 @@ public class Pantalla_De_Inicio extends JFrame implements Observer{
 				readme.setVisible(true);
 			}
 		}
+		
+		// hacer llamada de jugadorGanador -> int
 	}
 	@Override
 	public void update(Observable o, Object arg) {
