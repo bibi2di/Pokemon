@@ -27,6 +27,7 @@ public class CampoDeBatalla extends Observable{
 		System.out.println("pokemon "+nPok);
 		Pokemon pPok = ListaJugadores.getListaJugadores().buscarJugador(nJug).getPokemon(nPok);
 		boolean sePuedeAtacar = false;
+		
 		//primero metemos el jugador atacante y su pokemon en batalla[0] 
 		if(ListaJugadores.getListaJugadores().buscarJugador(nJug).esSuTurno() && batalla[0]==null) {
 			batalla[0]=pPok; //se introduce 
@@ -39,7 +40,8 @@ public class CampoDeBatalla extends Observable{
 			System.out.println("Ha entrado en el if 2. El id del jugador atacante es "+ jugadorAtacante + "Y el jugador atacado "
 					+ jugadorAtacado);
 		}
-			if(batalla[0]!=null && batalla[1]!=null) {
+		
+		if(batalla[0]!=null && batalla[1]!=null) {
 				//si ambos pokemons son aptos, entra
 				if (!batalla[0].haAtacado() && !batalla[0].seHaDebilitado() && !batalla[1].seHaDebilitado()) {
 					//si el pokemon atacante no ha atacado y ninguno esta debilitado -> ataca
@@ -56,15 +58,18 @@ public class CampoDeBatalla extends Observable{
 					batalla[1] = null;
 				}
 			}
-		if (ListaJugadores.getListaJugadores().buscarJugador(jugadorAtacante).terminarTurno())
+		if (ListaJugadores.getListaJugadores().buscarJugador(jugadorAtacante).terminarTurno()){
 			ListaJugadores.getListaJugadores().terminarTurno();
+		}
+		
 		setChanged();
 		notifyObservers();
+		
 		return sePuedeAtacar;
 		
 	}
 	
-	public boolean realizarAtaques(Pokemon pPokemonAtaca, Pokemon pPokemonAtacado){
+	private boolean realizarAtaques(Pokemon pPokemonAtaca, Pokemon pPokemonAtacado){
 		boolean haRealizadoAtaque = false;
 		if (!pPokemonAtaca.seHaDebilitado() && !pPokemonAtacado.seHaDebilitado()) {
 			pPokemonAtacado.recibirAtaque(pPokemonAtaca);
@@ -87,10 +92,10 @@ public class CampoDeBatalla extends Observable{
 				batalla[0]=ListaJugadores.getListaJugadores().buscarJugador(id).getPokemon(i);
 				/*int numJug = ListaJugadores.getListaJugadores().tamainoLista();
 				int jugadorAtac = (int)(Math.random()*(numJug));*/
-				int jugadorAtacado = 0;
+				int jugadorAtacado = 0; // aki tendríamos que hacer una adjudicación con random && !bot
 				int numPok = ListaJugadores.getListaJugadores().buscarJugador(jugadorAtacado).tamainoLista();
 				int pokAtacado = (int)(Math.random()*(numPok));
-				if (jugadorAtacado != id) {
+				if (jugadorAtacado != id) { // esto desaparece cuando se adjudique el nº random de nobot
 					batalla[1] = ListaJugadores.getListaJugadores().buscarJugador(jugadorAtacado).getPokemon(pokAtacado);
 					if (!batalla[0].haAtacado() && !batalla[0].seHaDebilitado() && !batalla[1].seHaDebilitado()) {
 						realizarAtaques(batalla[0], batalla[1]);
