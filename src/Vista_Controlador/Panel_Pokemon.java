@@ -147,7 +147,7 @@ public class Panel_Pokemon extends JPanel implements Observer {
 	@Override
 	public void update(Observable arg0, Object arg1) { /*Este panel es solo para los Pokemon*/
 		// TODO Auto-generated method stub
-		this.vidaIni = ListaJugadores.getListaJugadores().buscarJugador(idJug).getPokemon(idPok).getVidaIni();
+		//this.vidaIni = ListaJugadores.getListaJugadores().buscarJugador(idJug).getPokemon(idPok).getVidaIni();
 		if (arg0 instanceof Pokemon) {
 			if (arg1 instanceof Object []) {
 				Object[] objecArray = (Object []) arg1;

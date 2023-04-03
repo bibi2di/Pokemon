@@ -3,7 +3,9 @@ package Modelo;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Observable;
+import java.util.stream.Collectors;
 
 @SuppressWarnings("deprecation")
 
@@ -124,12 +126,26 @@ public class Jugador extends Observable {
 	}
 	
 	public boolean hanAtacadoTodos() {
+		this.eliminarPokemon();
 		boolean hanAtacadoTodos = lPokemon.stream().allMatch(p->p.haAtacado());
 		return hanAtacadoTodos;
 	}
 	
 	public boolean terminarTurno() {
 	 return ((esSuTurno() && hanAtacadoTodos()));
+	}
+	
+	public void eliminarPokemon() {
+		ArrayList<Pokemon> lpDebilitados = (ArrayList<Pokemon>) lPokemon.stream().filter(p->p.seHaDebilitado()).collect(Collectors.toList());
+		if (lpDebilitados.size()>=1) {
+			for (int i=0;i<lpDebilitados.size();i++) {
+				lPokemon.remove(lpDebilitados.get(i));
+			}
+			
+		}
+	}
+	public int tamainoLista () {
+		return lPokemon.size();
 	}
 
 }

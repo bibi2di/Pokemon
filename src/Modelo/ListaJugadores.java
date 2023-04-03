@@ -131,4 +131,8 @@ public class ListaJugadores extends Observable{
 				asignarTurnoAleatoriamente();
 		}
 	}
+	
+	public int tamainoLista() {
+		return lJugadores.size();
+	}
 }
