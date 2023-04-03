@@ -24,6 +24,7 @@ import java.awt.Color;
  * alks ashdlsad
  */
 @SuppressWarnings("deprecation")
+
 public class Pantalla_De_Inicio extends JFrame implements Observer{
 	private JPanel Panel_derecho;
 	private JPanel panel_central;
