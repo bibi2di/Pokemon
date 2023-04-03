@@ -252,7 +252,7 @@ public class Vista_Jugador extends JFrame implements Observer{
 					
 		}
 		}
-		public void asignarTurno() {
+		private void asignarTurno() {
 			ListaJugadores.getListaJugadores().asignarTurnoAleatoriamente();
 		}
 		public boolean esBot() {

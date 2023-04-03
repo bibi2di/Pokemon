@@ -12,19 +12,24 @@ public class Bot extends Jugador {
 	public void setTurno(boolean pTurno) {
 		this.turno = pTurno;
 
+		setChanged();
+		notifyObservers(new Object[] {pTurno}); 
+		//poner en verde
+		
 		System.out.println("Ha cambiado el turno a" + pTurno);
 		if (this.turno) {
-			atacarBot();
-		}
-		
-		setChanged();
-		notifyObservers(new Object[] {pTurno});
+			ataquedeBot();
+			
+			// atacarBot elige atacante aleatorio que no sea this
+			ListaJugadores.getListaJugadores().asignarTurnoAleatoriamente();
 
-		// atacarBot elige atacante aleatorio que no sea this
+		}
+	
+
 	
 	}
 	
-	private void atacarBot(){
+	private void ataquedeBot(){
 		{
 			for(int i=1;i<=this.tamainoLista();i++) {
 				Pokemon pokAtaque= this.getPokemon(i);
