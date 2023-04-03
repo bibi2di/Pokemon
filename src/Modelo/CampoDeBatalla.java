@@ -48,7 +48,7 @@ public class CampoDeBatalla extends Observable{
 					System.out.println("Ha entrado en el if 4. Va a atacar");
 					realizarAtaques(batalla[0], batalla[1]);
 					batalla[0].haAtacadoYa(true);
-					batalla = new Pokemon[2];
+					eliminarBatalla();
 					sePuedeAtacar=true;
 				}
 				else 
@@ -69,7 +69,7 @@ public class CampoDeBatalla extends Observable{
 		
 	}
 	
-	private boolean realizarAtaques(Pokemon pPokemonAtaca, Pokemon pPokemonAtacado){
+	public boolean realizarAtaques(Pokemon pPokemonAtaca, Pokemon pPokemonAtacado){
 		boolean haRealizadoAtaque = false;
 		if (!pPokemonAtaca.seHaDebilitado() && !pPokemonAtacado.seHaDebilitado()) {
 			pPokemonAtacado.recibirAtaque(pPokemonAtaca);
@@ -84,6 +84,10 @@ public class CampoDeBatalla extends Observable{
 	public void teminarTurno(int pJug) {
 		if (ListaJugadores.getListaJugadores().buscarJugador(pJug).terminarTurno())
 			ListaJugadores.getListaJugadores().terminarTurno();
+	}
+	
+	public void eliminarBatalla() {
+		batalla = new Pokemon[2];
 	}
 	
 	

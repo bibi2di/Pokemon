@@ -13,7 +13,9 @@ public class Bot extends Jugador {
 		this.turno = pTurno;
 
 		System.out.println("Ha cambiado el turno a" + pTurno);
-
+		if (this.turno) {
+			atacarBot();
+		}
 		
 		setChanged();
 		notifyObservers(new Object[] {pTurno});
@@ -24,19 +26,20 @@ public class Bot extends Jugador {
 	
 	private void atacarBot(){
 		{
-			for(int i=1;i<=ListaJugadores.getListaJugadores().buscarJugador(id).tamainoLista();i++) {
-				batalla[0]=ListaJugadores.getListaJugadores().buscarJugador(id).getPokemon(i);
+			for(int i=1;i<=this.tamainoLista();i++) {
+				Pokemon pokAtaque= this.getPokemon(i);
 				/*int numJug = ListaJugadores.getListaJugadores().tamainoLista();
 				int jugadorAtac = (int)(Math.random()*(numJug));*/
 				int jugadorAtacado = 0; // aki tendríamos que hacer una adjudicación con random && !bot
-				int numPok = ListaJugadores.getListaJugadores().buscarJugador(jugadorAtacado).tamainoLista();
+				int numPok = this.tamainoLista();
 				int pokAtacado = (int)(Math.random()*(numPok));
+				pokAtacado++;
 				if (jugadorAtacado != id) { // esto desaparece cuando se adjudique el nº random de nobot
-					batalla[1] = ListaJugadores.getListaJugadores().buscarJugador(jugadorAtacado).getPokemon(pokAtacado);
-					if (!batalla[0].haAtacado() && !batalla[0].seHaDebilitado() && !batalla[1].seHaDebilitado()) {
-						realizarAtaques(batalla[0], batalla[1]);
-						batalla[0].haAtacadoYa(true);
-						batalla = new Pokemon[2];
+					Pokemon pokDefensa = ListaJugadores.getListaJugadores().buscarJugador(jugadorAtacado).getPokemon(pokAtacado);
+					if (!pokAtaque.haAtacado() && !pokAtaque.seHaDebilitado() && !pokDefensa.seHaDebilitado()) {
+						CampoDeBatalla.getCampoBatalla().realizarAtaques(pokAtaque, pokDefensa);
+						pokAtaque.haAtacadoYa(true);
+						CampoDeBatalla.getCampoBatalla().eliminarBatalla();
 					}
 				}
 			}

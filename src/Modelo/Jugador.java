@@ -13,7 +13,7 @@ public class Jugador extends Observable {
 	
 	protected int id;
 	protected ArrayList<Pokemon> lPokemon;
-	private boolean turno;
+	protected boolean turno;
 	private boolean bot;
 
 	/**
