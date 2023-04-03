@@ -252,6 +252,9 @@ public class Pantalla_De_Inicio extends JFrame implements Observer{
 				readme.setVisible(true);
 			}
 		}
+		public void ganador() {
+			ListaJugadores.getListaJugadores().jugadorGanador();
+		}
 		
 		// hacer llamada de jugadorGanador -> int
 	}
