@@ -96,7 +96,12 @@ public class Vista_Jugador extends JFrame implements Observer{
 	private JPanel getPanel_Jugador_Estado(boolean turno) {
 		if (Panel_Jugador_Estado == null) {
 		    Panel_Jugador_Estado = new JPanel();
-			Panel_Jugador_Estado.setBackground(Color.RED);
+		    if (turno) {
+				Panel_Jugador_Estado.setBackground(Color.GREEN);
+		    }
+		    else {
+				Panel_Jugador_Estado.setBackground(Color.RED);
+		    }
 			Panel_Jugador_Estado.add(getButton_Jugador_estado(turno));
 		}
 		return Panel_Jugador_Estado;
@@ -267,9 +272,11 @@ public class Vista_Jugador extends JFrame implements Observer{
 				boolean turno = (boolean)oArray[0];
 				if (turno == true) {
 					btn_Jugador_estado.setText("Ataca");
+					Panel_Jugador_Estado.setBackground(Color.GREEN);
 				}
 				else {
 					btn_Jugador_estado.setText("Espera");
+					Panel_Jugador_Estado.setBackground(Color.RED);
 				}
 			}
 			if (arg instanceof boolean[]) {
