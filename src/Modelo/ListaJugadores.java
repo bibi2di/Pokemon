@@ -72,7 +72,7 @@ public class ListaJugadores extends Observable{
 		lJugadores.add(pBot);
 	}
 	
-	public boolean finJuego() {
+	private boolean finJuego() {
 		return lJugadores.stream().filter(p->!p.haPerdido()).collect(Collectors.toList()).size()==1;
 	}
 	
