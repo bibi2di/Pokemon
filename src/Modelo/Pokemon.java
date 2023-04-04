@@ -12,7 +12,7 @@ public /*abstract*/ class Pokemon extends Observable {
 	private int vidaIni;
 	private String tipo;
 	private boolean yaHaAtacado;
-	protected String tipoEfectivo;
+	protected String tipoEfectivo; /*Si no se pueden meter en visibilidad protected se mete como privado*/
 
 	/**
 	 * 
