@@ -127,7 +127,8 @@ public class Jugador extends Observable {
 	
 	public boolean hanAtacadoTodos() {
 		//this.eliminarPokemon();
-		boolean hanAtacadoTodos = lPokemon.stream().allMatch(p->p.haAtacado());
+		//boolean hanAtacadoTodos = lPokemon.stream().allMatch(p->p.haAtacado());
+		boolean hanAtacadoTodos = lPokemon.stream().filter(p->!p.seHaDebilitado()).allMatch(p->p.haAtacado());
 		return hanAtacadoTodos;
 	}
 	
