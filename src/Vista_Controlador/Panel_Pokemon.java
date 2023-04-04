@@ -176,7 +176,7 @@ public class Panel_Pokemon extends JPanel implements Observer {
 				if(vida==0) {
 					System.out.println("COLOR CAMBIADO POR PALMATORIA");
 					Panel_Pokemons_Inf_ChargedAttack.setBackground(Color.RED);
-					lblChargedAttack.setText("DEVILITADO");
+					lblChargedAttack.setText("DEBILITADO");
 					
 				}
 			}
