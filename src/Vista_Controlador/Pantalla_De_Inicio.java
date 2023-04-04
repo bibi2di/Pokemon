@@ -237,7 +237,7 @@ public class Pantalla_De_Inicio extends JFrame implements Observer{
 					for (int i=0; i<nJug+nNPC; i++) {
 						for (int j=1; j<=nPok;j++) {
 							ListaJugadores.getListaJugadores().buscarJugador(i).getPokemon(j).establecerValores();
-							System.out.println("Pokemon ataque "+ ListaJugadores.getListaJugadores().buscarJugador(i).getPokemon(j).getAtaque());
+							//System.out.println("Pokemon ataque "+ ListaJugadores.getListaJugadores().buscarJugador(i).getPokemon(j).getAtaque());
 						}
 					}
 				}else {
@@ -276,11 +276,11 @@ public class Pantalla_De_Inicio extends JFrame implements Observer{
 					if(turnos[i])
 					{
 						VistaJug = new Vista_Jugador(nPok, i, true);
-						System.out.println("Es true");
+					    //System.out.println("Es true");
 					}
 					else {
 						VistaJug = new Vista_Jugador(nPok, i, false);
-						System.out.println("Es false");
+						//System.out.println("Es false");
 					}
 					VistaJug.setVisible(true);
 				}

@@ -23,8 +23,8 @@ public class CampoDeBatalla extends Observable{
 	
 	public boolean sePuedeAtacar(int nPok, int nJug) {
 		//TODO Falta comprobar si es el turno del Jugador
-		System.out.println("jugador "+nJug);
-		System.out.println("pokemon "+nPok);
+		//System.out.println("jugador "+nJug);
+		//System.out.println("pokemon "+nPok);
 		Pokemon pPok = ListaJugadores.getListaJugadores().buscarJugador(nJug).getPokemon(nPok);
 		boolean sePuedeAtacar = false;
 		

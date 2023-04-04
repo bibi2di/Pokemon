@@ -41,7 +41,7 @@ public /*abstract*/ class Pokemon extends Observable {
 		tipo = nombre;
 		setChanged();
 		notifyObservers(new Object [] {this.vida,this.defensa,this.ataque,this.tipo});
-		System.out.println("Se han inicializado valores");
+		//System.out.println("Se han inicializado valores");
 		
 	}
 	
@@ -93,7 +93,7 @@ public /*abstract*/ class Pokemon extends Observable {
 	}
 	
 	public boolean haAtacado () {
-		System.out.println("El pokemon " + this.id + " ya ha atacado");
+		//System.out.println("El pokemon " + this.id + " ya ha atacado");
 		return this.yaHaAtacado;
 		
 	}

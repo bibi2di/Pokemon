@@ -161,7 +161,7 @@ public class Panel_Pokemon extends JPanel implements Observer {
 				lab_att.setText(String.valueOf(ataque));
 				lab_Def.setText(String.valueOf(defensa));
 				lab_health.setText(String.valueOf(vida));
-				System.out.println("Observer actualizado");
+				//System.out.println("Observer actualizado");
 			}
 			if (arg1 instanceof int[]) {
 				int[] intArray = (int []) arg1;
@@ -171,10 +171,10 @@ public class Panel_Pokemon extends JPanel implements Observer {
 				lab_att.setText(String.valueOf(ataque));
 				lab_Def.setText(String.valueOf(defensa));
 				lab_health.setText(String.valueOf(vida));
-				System.out.println("Ataque realizado");
+				//System.out.println("Ataque realizado");
 				Panel_Pokemons_Inf_ChargedAttack.setBackground(Color.GRAY);
 				if(vida==0) {
-					System.out.println("COLOR CAMBIADO");
+					System.out.println("COLOR CAMBIADO POR PALMATORIA");
 					Panel_Pokemons_Inf_ChargedAttack.setBackground(Color.RED);
 					lblChargedAttack.setText("DEVILITADO");
 					

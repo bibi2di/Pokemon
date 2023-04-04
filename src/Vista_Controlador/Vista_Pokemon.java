@@ -194,7 +194,7 @@ public class Vista_Pokemon extends JPanel /*implements Observer */{
 		@Override
 		public void mouseClicked(MouseEvent e) {
 			CampoDeBatalla.getCampoBatalla().sePuedeAtacar(idPok, idJug);
-			System.out.println("a");
+			//System.out.println("a");
 		}
 		
 		

@@ -29,7 +29,7 @@ public class Jugador extends Observable {
 		for (int i=0;i<pNumPoke;i++) {
 			Pokemon pokeAct = this.createPokemon(i);
 			lPokemon.add(pokeAct);
-			System.out.println("el pokemon tiene "+ pokeAct.getAtaque()+ " de ataque");
+			//System.out.println("el pokemon tiene "+ pokeAct.getAtaque()+ " de ataque");
 		}
 		
 	}
