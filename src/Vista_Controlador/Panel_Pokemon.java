@@ -173,6 +173,12 @@ public class Panel_Pokemon extends JPanel implements Observer {
 				lab_health.setText(String.valueOf(vida));
 				System.out.println("Ataque realizado");
 				Panel_Pokemons_Inf_ChargedAttack.setBackground(Color.GRAY);
+				if(vida==0) {
+					System.out.println("COLOR CAMBIADO");
+					Panel_Pokemons_Inf_ChargedAttack.setBackground(Color.RED);
+					lblChargedAttack.setText("DEVILITADO");
+					
+				}
 			}
 		}
 	}
@@ -196,12 +202,18 @@ public class Panel_Pokemon extends JPanel implements Observer {
 
 		@Override
 		public void mousePressed(MouseEvent e) {
-			Panel_Pokemons_Inf_ChargedAttack.setBackground(Color.YELLOW);
+			int vida = Integer.parseInt(lab_health.getText());
+			if(vida!=0) {
+				Panel_Pokemons_Inf_ChargedAttack.setBackground(Color.YELLOW);
+			}
 		}
 
 		@Override
 		public void mouseReleased(MouseEvent e) {
-			Panel_Pokemons_Inf_ChargedAttack.setBackground(Color.GRAY);	
+			int vida = Integer.parseInt(lab_health.getText());
+			if(vida!=0) {
+				Panel_Pokemons_Inf_ChargedAttack.setBackground(Color.GRAY);	
+			}
 		}
 
 		@Override
