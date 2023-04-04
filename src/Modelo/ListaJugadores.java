@@ -88,6 +88,8 @@ public class ListaJugadores extends Observable{
 	}
 	
 	public void /*Jugador*/ asignarTurnoAleatoriamente(/*int pNumJug, int pNumBot*/) {
+		int jugadorGanador = jugadorGanador();
+		if (jugadorGanador==-1) {
 		int numJug = lJugadores.size(); //2
 		int turno = (int)(Math.random()*(numJug)); // Num aleatorio del listado de Jugadores del 0 al 1
 		
@@ -104,6 +106,7 @@ public class ListaJugadores extends Observable{
 		jug = this.buscarJugador(turno);
 		jug.setTurno(true);
 		System.out.println("El turno es de "+ jug.getId());
+		}
 		//setChanged();
 		//notifyObservers(new Object[] {jug});
 		//return jug;
