@@ -4,6 +4,7 @@ package Vista_Controlador;
  */
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -81,12 +82,14 @@ public class Panel_Pokemon extends JPanel implements Observer {
 	public JPanel getPanel_Pokemons_Inf_Health() {
 		Panel_Pokemons_Inf_Health = new JPanel();
 		Panel_Pokemons_Inf_Health.add(getLbl_Health_bar());
+		Panel_Pokemons_Inf_Health.setBackground(Color.GRAY);
 		return Panel_Pokemons_Inf_Health;
 	}
 	
 	public JPanel getPanel_Pokemons_Inf_ChargedAttack() {
 		Panel_Pokemons_Inf_ChargedAttack = new JPanel();
 		Panel_Pokemons_Inf_ChargedAttack.add(getLblChargedAttack());
+		Panel_Pokemons_Inf_ChargedAttack.setBackground(Color.GRAY);
 		return Panel_Pokemons_Inf_ChargedAttack;
 	}
 	public JLabel getLbl_Health_bar() {
@@ -169,6 +172,7 @@ public class Panel_Pokemon extends JPanel implements Observer {
 				lab_Def.setText(String.valueOf(defensa));
 				lab_health.setText(String.valueOf(vida));
 				System.out.println("Ataque realizado");
+				Panel_Pokemons_Inf_ChargedAttack.setBackground(Color.GRAY);
 			}
 		}
 	}
@@ -186,29 +190,26 @@ public class Panel_Pokemon extends JPanel implements Observer {
 			//if(e.getSource().equals(this)) {
 				CampoDeBatalla.getCampoBatalla().sePuedeAtacar(idPok, idJug);
 				System.out.println(" Se ha clickado el pokemon" + idPok + "del jugador" + idJug);
+			
 			//}
 		}
 
 		@Override
 		public void mousePressed(MouseEvent e) {
-			// TODO Auto-generated method stub
+			Panel_Pokemons_Inf_ChargedAttack.setBackground(Color.YELLOW);
 		}
 
 		@Override
 		public void mouseReleased(MouseEvent e) {
-			// TODO Auto-generated method stub
-			
+			Panel_Pokemons_Inf_ChargedAttack.setBackground(Color.GRAY);	
 		}
 
 		@Override
 		public void mouseEntered(MouseEvent e) {
-			
 		}
 
 		@Override
 		public void mouseExited(MouseEvent e) {
-			// TODO Auto-generated method stub
-			
 		}
 		}
 		
