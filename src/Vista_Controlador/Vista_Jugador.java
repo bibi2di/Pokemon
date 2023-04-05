@@ -21,6 +21,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Observable;
 import java.util.Observer;
+import java.util.concurrent.TimeUnit;
 
 @SuppressWarnings("deprecation")
 public class Vista_Jugador extends JFrame implements Observer{
@@ -284,6 +285,12 @@ public class Vista_Jugador extends JFrame implements Observer{
 				boolean perdido = (boolean)arrayBool[0];
 				if (perdido) {
 					System.out.println("El jugador: "+ idJug+ " ha perdido");
+					try {
+						TimeUnit.SECONDS.sleep(5);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 					this.setVisible(false);
 				}
 			}
