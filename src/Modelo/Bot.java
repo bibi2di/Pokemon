@@ -4,8 +4,11 @@ import java.util.Collection;
 
 public class Bot extends Jugador {
 
+	private boolean turno;
+	
 	public Bot(int pNumPoke, int id) {
 		super(pNumPoke,id);
+		turno = this.getTurno();
 
 	}
 	
@@ -39,7 +42,7 @@ public class Bot extends Jugador {
 				int numPok = this.tamainoLista();
 				int pokAtacado = (int)(Math.random()*(numPok));
 				pokAtacado++;
-				if (jugadorAtacado != id) { // esto desaparece cuando se adjudique el nº random de nobot
+				if (jugadorAtacado != this.getId()) { // esto desaparece cuando se adjudique el nº random de nobot
 					Pokemon pokDefensa = ListaJugadores.getListaJugadores().buscarJugador(jugadorAtacado).getPokemon(pokAtacado);
 					if (!pokAtaque.haAtacado() && !pokAtaque.seHaDebilitado() && !pokDefensa.seHaDebilitado()) {
 						CampoDeBatalla.getCampoBatalla().realizarAtaques(pokAtaque, pokDefensa);

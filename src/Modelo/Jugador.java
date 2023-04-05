@@ -11,9 +11,9 @@ import java.util.stream.Collectors;
 
 public class Jugador extends Observable {
 	
-	protected int id; /*Si no se pueden meter en visibilidad protected se mete como privado y getter protected*/
-	protected ArrayList<Pokemon> lPokemon; /*Si no se pueden meter en visibilidad protected se mete como privado y getter protected*/
-	protected boolean turno; /*Si no se pueden meter en visibilidad protected se mete como privado y getter protected*/
+	private int id; /*Si no se pueden meter en visibilidad protected se mete como privado y getter protected*/
+	private ArrayList<Pokemon> lPokemon; /*Si no se pueden meter en visibilidad protected se mete como privado y getter protected*/
+	private boolean turno; /*Si no se pueden meter en visibilidad protected se mete como privado y getter protected*/
 	private boolean bot;
 
 	/**
@@ -34,6 +34,9 @@ public class Jugador extends Observable {
 		
 	}
 
+	protected boolean getTurno() {
+		return this.turno;
+	}
 	
 	private Iterator<Pokemon> getIterador() {
 		return lPokemon.iterator();
