@@ -39,7 +39,6 @@ public class Panel_Pokemon extends JPanel implements Observer {
 	private JLabel lab_type;
 	private int idJug = -1;
 	private int idPok = -1;
-	private int vidaIni;
 	
 	public Panel_Pokemon(int nPok, int nJug) {
 		ListaJugadores.getListaJugadores().buscarJugador(nJug).getPokemon(nPok).addObserver(this);

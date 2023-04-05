@@ -26,7 +26,7 @@ import Modelo.Pokemon;
 
 //@SuppressWarnings("deprecation")
 public class Vista_Pokemon extends JPanel /*implements Observer */{
-	private Controler controler = null;
+	//private Controler controler = null;
 	private JPanel PanelPokemons;
 	private JPanel PanelPokemons_Vis;
 	private JPanel Panel_Pokemons_Inf_Health;
@@ -183,7 +183,7 @@ public class Vista_Pokemon extends JPanel /*implements Observer */{
 	*/
 	
 
-	private Controler getControler() {
+	/*private Controler getControler() {
 		if(controler == null) {
 			controler = new Controler();
 		}
@@ -203,7 +203,7 @@ public class Vista_Pokemon extends JPanel /*implements Observer */{
 				lab_Def.setText(String.valueOf(ListaJugadores.getListaJugadores().buscarJugador(nJug).getPokemon(numPok).getDefensa()));
 				lab_health.setText(String.valueOf(ListaJugadores.getListaJugadores().buscarJugador(nJug).getPokemon(numPok).getVida()));
 		}
-*/
+
 
 		@Override
 		public void mousePressed(MouseEvent e) {
@@ -231,5 +231,5 @@ public class Vista_Pokemon extends JPanel /*implements Observer */{
 			// TODO Auto-generated method stub
 			
 		}
-		}
+		}*/
 	}
