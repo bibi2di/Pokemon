@@ -14,15 +14,14 @@ public class Electrico extends Pokemon {
 	}
 
 	@Override
-	public boolean esEfectivo(String pTipo) {
-		System.out.println(pTipo);
-		System.out.println(pTipo.equals("Agua"));
-		return pTipo.equals("Agua");
+	public boolean recibeAtaqueEfectivo(String pTipo){
+		System.out.println("El pokemon de tipo: " + tipo + "recibe ataque de Pokemon: " + pTipo + "y es efectivo es: " + pTipo.equals("Planta"));
+		return pTipo.equals("Planta");
 	}
 
 	@Override
-	public boolean esPocoEfectivo(String pTipo) {
-		return pTipo.equals("Planta");
+	public boolean recibeAtaquePocoEfectivo(String pTipo) {
+		return pTipo.equals("Agua");
 	}
 
 }

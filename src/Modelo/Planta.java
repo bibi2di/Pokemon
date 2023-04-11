@@ -15,15 +15,14 @@ public class Planta extends Pokemon {
 	}
 
 	@Override
-	public boolean esEfectivo(String pTipo) {
-		System.out.println(pTipo);
-		System.out.println(pTipo.equals("Electrico"));
-		return pTipo.equals("Electrico");
+	public boolean recibeAtaqueEfectivo(String pTipo) {
+		System.out.println("El pokemon de tipo: " + tipo + "recibe ataque de Pokemon: " + pTipo + "y es efectivo es: " + pTipo.equals("Fuego"));
+		return pTipo.equals("Fuego");
 	}
 
 	@Override
-	public boolean esPocoEfectivo(String pTipo) {
-		return pTipo.equals("Fuego");
+	public boolean recibeAtaquePocoEfectivo(String pTipo) {
+		return pTipo.equals("Electrico");
 	}
 
 }

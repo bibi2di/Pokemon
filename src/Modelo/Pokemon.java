@@ -78,7 +78,7 @@ public abstract class Pokemon extends Observable {
 		int multiplicador = 1;
 		System.out.println("Tipo pokemon atacante: "+ pPokemon.tipo);
 		System.out.println("Tipo pokemon atacado: "+ this.tipo);
-		if(pPokemon.esEfectivo(this.tipo)) {
+		if(this.recibeAtaqueEfectivo(pPokemon.tipo)) {
 			multiplicador = 2;
 		}
 		/*else if(pPokemon.esPocoEfectivo(this.tipo)) {
@@ -135,7 +135,7 @@ public abstract class Pokemon extends Observable {
 		return euforico;
 	}*/
 	
-	public abstract boolean esEfectivo(String pTipo);
+	public abstract boolean recibeAtaqueEfectivo(String pTipo);
 	
-	public abstract boolean esPocoEfectivo(String pTipo);
+	public abstract boolean recibeAtaquePocoEfectivo(String pTipo);
 }
