@@ -36,10 +36,19 @@ public abstract class Pokemon extends Observable {
 		defensa = 3 + (int)(Math.random()*4+1); //11 + número aleatorio entre 1-4
 		vida = 200 + (int)(Math.random()*20+1); //200 + número aleatorio entre 1-20
 		vidaIni = vida;
-		int r = (int)(Math.random()*4); 
-		String nombre = new String[] {"Agua", "Fuego", "Planta", "Electrico"}[r]; //tipo aleatorio
 		yaHaAtacado = false;
-		tipo = nombre;
+		if (this instanceof Planta) {
+			tipo = "Planta";
+		}
+		else if (this instanceof Fuego) {
+			tipo = "Fuego";
+		}
+		else if (this instanceof Agua) {
+			tipo = "Agua";
+		}
+		else if(this instanceof Electrico) {
+			tipo = "Electrico";
+		}
 		setChanged();
 		notifyObservers(new Object [] {this.vida,this.defensa,this.ataque,this.tipo});
 		//System.out.println("Se han inicializado valores");
@@ -78,10 +87,10 @@ public abstract class Pokemon extends Observable {
 		int multiplicador = 1;
 		System.out.println("Tipo pokemon atacante: "+ pPokemon.tipo);
 		System.out.println("Tipo pokemon atacado: "+ this.tipo);
-		if(this.recibeAtaqueEfectivo(pPokemon.tipo)) {
+		if(pPokemon.recibeAtaqueEfectivo(this.tipo)) {
 			multiplicador = 2;
 		}
-		/*else if(pPokemon.esPocoEfectivo(this.tipo)) {
+		/*else if(pPokemon.recibirAtaquePocoEfectivo(this.tipo)) {
 			multiplicador = 0.5;
 		}*/
 		System.out.println(multiplicador);
