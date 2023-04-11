@@ -1,7 +1,7 @@
 package Modelo;
 public class Fuego extends Pokemon {
 
-	private String tipoEfectivo;
+	private String tipo;
 
 	/**
 	 * 
@@ -9,8 +9,17 @@ public class Fuego extends Pokemon {
 	 */
 	public Fuego(int i) {
 		super(i);
-		// TODO - implement Fuego.Fuego
-		throw new UnsupportedOperationException();
+		tipo = "Fuego";
+	}
+
+	@Override
+	public boolean esEfectivo(String pTipo) {
+		return pTipo.equals("Planta");
+	}
+
+	@Override
+	public boolean esPocoEfectivo(String pTipo) {
+		return pTipo.equals("Agua");
 	}
 
 }

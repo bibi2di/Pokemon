@@ -3,7 +3,7 @@ package Modelo;
 import java.util.Observable;
 
 @SuppressWarnings("deprecation")
-public /*abstract*/ class Pokemon extends Observable {
+public abstract class Pokemon extends Observable {
 
 	private int id;
 	private int ataque;
@@ -12,13 +12,12 @@ public /*abstract*/ class Pokemon extends Observable {
 	private int vidaIni;
 	private String tipo;
 	private boolean yaHaAtacado;
-	private String tipoEfectivo; 
 
 	/**
 	 * 
 	 * @param pTipo
 	 */
-	public Pokemon(int pId) {
+	protected Pokemon(int pId) {
 		// TODO - implement Pokemon.Pokemon
 		ataque = 0;
 		defensa = 0;
@@ -70,8 +69,16 @@ public /*abstract*/ class Pokemon extends Observable {
 	 * @param pTipo
 	 */
 	public void recibirAtaque(Pokemon pPokemon) {
-		int multiplicador = 1;
-		this.vida = this.vida -(pPokemon.ataque*multiplicador) - this.defensa;
+		double multiplicador = 1;
+		if(pPokemon.esEfectivo(this.tipo)) {
+			multiplicador = 2;
+			System.out.println("Mi ataque hace el doble de daño");
+		}
+		else if(pPokemon.esPocoEfectivo(this.tipo)) {
+			multiplicador = 0.5;
+			System.out.println("Mi ataque hace la mitad de daño");
+		}
+		this.vida = (int) (this.vida -(pPokemon.ataque*multiplicador) - this.defensa);
 		setChanged();
 		if (this.vida<0) {
 			this.vida = 0;
@@ -106,4 +113,7 @@ public /*abstract*/ class Pokemon extends Observable {
 		
 	}
 	
+	public abstract boolean esEfectivo(String pTipo);
+	
+	public abstract boolean esPocoEfectivo(String pTipo);
 }

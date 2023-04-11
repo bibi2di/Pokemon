@@ -18,15 +18,14 @@ public class PokemonFactory {
 	 * 
 	 * @param tipo
 	 */
-	public Pokemon create(int i) {
-		
-		Pokemon pokeAct = new Pokemon(i);
-		/*int r = (int)(Math.random()*5); 
+	public Pokemon create(int i, String tipo) {
+		int r = (int)(Math.random()*4); 
 		String nombre = new String[] {"Agua", "Fuego", "Planta", "Electrico"}[r]; //tipo aleatorio
-		if (nombre == "Agua") {Pokemon pokeAct = new Agua();}
-		else if (nombre == "Fuego") {Pokemon pokeAct = new Fuego();}
-		else if (nombre == "Planta") {Pokemon pokeAct = new Planta();}
-		else if (nombre == "Electrico") {Pokemon pokeAct = new Electrico();}*/
+		Pokemon pokeAct = null;
+		if (nombre == "Agua") {pokeAct = new Agua(i);}
+		else if (nombre == "Fuego") {pokeAct = new Fuego(i);}
+		else if (nombre == "Planta") {pokeAct = new Planta(i);}
+		else if (nombre == "Electrico") {pokeAct = new Electrico(i);}
 		return pokeAct;
 	}
 

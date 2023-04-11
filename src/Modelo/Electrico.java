@@ -1,7 +1,7 @@
 package Modelo;
 public class Electrico extends Pokemon {
 
-	private String tipoEfectivo;
+	private String tipo;
 
 	/**
 	 * 
@@ -9,8 +9,18 @@ public class Electrico extends Pokemon {
 	 */
 	public Electrico(int i) {
 		super(i);
-		// TODO - implement Electrico.Electrico
+		tipo = "Electrico";
 		
+	}
+
+	@Override
+	public boolean esEfectivo(String pTipo) {
+		return pTipo.equals("Agua");
+	}
+
+	@Override
+	public boolean esPocoEfectivo(String pTipo) {
+		return pTipo.equals("Planta");
 	}
 
 }
