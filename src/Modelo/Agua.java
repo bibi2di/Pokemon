@@ -15,6 +15,8 @@ public class Agua extends Pokemon {
 
 	@Override
 	public boolean esEfectivo(String pTipo) {
+		System.out.println(pTipo);
+		System.out.println(pTipo.equals("Fuego"));
 		return pTipo.equals("Fuego");
 	}
 

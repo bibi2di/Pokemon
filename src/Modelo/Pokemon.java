@@ -12,6 +12,8 @@ public abstract class Pokemon extends Observable {
 	private int vidaIni;
 	private String tipo;
 	private boolean yaHaAtacado;
+	private int euforia;
+	private int ataquesEuforiaAcumulados;
 
 	/**
 	 * 
@@ -69,16 +71,22 @@ public abstract class Pokemon extends Observable {
 	 * @param pTipo
 	 */
 	public void recibirAtaque(Pokemon pPokemon) {
-		double multiplicador = 1;
+		this.ataquesEuforiaAcumulados++;
+		//System.out.println("Ataques acumulados: " + ataquesEuforiaAcumulados);
+		//boolean euforia = this.estadoEuforia();
+		//System.out.println("Turnos de euforia: " + this.euforia);
+		int multiplicador = 1;
+		System.out.println("Tipo pokemon atacante: "+ pPokemon.tipo);
+		System.out.println("Tipo pokemon atacado: "+ this.tipo);
 		if(pPokemon.esEfectivo(this.tipo)) {
 			multiplicador = 2;
-			System.out.println("Mi ataque hace el doble de daño");
 		}
-		else if(pPokemon.esPocoEfectivo(this.tipo)) {
+		/*else if(pPokemon.esPocoEfectivo(this.tipo)) {
 			multiplicador = 0.5;
-			System.out.println("Mi ataque hace la mitad de daño");
-		}
-		this.vida = (int) (this.vida -(pPokemon.ataque*multiplicador) - this.defensa);
+		}*/
+		System.out.println(multiplicador);
+		this.vida = this.vida -(pPokemon.ataque*multiplicador) - this.defensa;
+		//euforia = this.estadoEuforia();
 		setChanged();
 		if (this.vida<0) {
 			this.vida = 0;
@@ -109,9 +117,23 @@ public abstract class Pokemon extends Observable {
 		this.yaHaAtacado = pHaAtacado;
 	}
 	
-	public void estadoEuforia() {
-		
-	}
+	/*public boolean estadoEuforia() {
+		euforia = (int) (Math.random()*5+3);
+		boolean euforico = false;
+		if (ataquesEuforiaAcumulados == euforia) {
+			this.ataque = this.ataque+100;
+			this.defensa = this.defensa+100;
+			euforico = true;
+			System.out.println("Esta euforico");
+		}
+		else if(ataquesEuforiaAcumulados>euforia) {
+			this.ataque = this.ataque-100;
+			this.defensa = this.defensa-100;
+			ataquesEuforiaAcumulados = 0;
+			System.out.println("Deja de estar euforico");
+		}
+		return euforico;
+	}*/
 	
 	public abstract boolean esEfectivo(String pTipo);
 	

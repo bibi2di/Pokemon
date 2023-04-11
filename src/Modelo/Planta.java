@@ -16,6 +16,8 @@ public class Planta extends Pokemon {
 
 	@Override
 	public boolean esEfectivo(String pTipo) {
+		System.out.println(pTipo);
+		System.out.println(pTipo.equals("Electrico"));
 		return pTipo.equals("Electrico");
 	}
 

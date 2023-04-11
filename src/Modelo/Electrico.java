@@ -15,6 +15,8 @@ public class Electrico extends Pokemon {
 
 	@Override
 	public boolean esEfectivo(String pTipo) {
+		System.out.println(pTipo);
+		System.out.println(pTipo.equals("Agua"));
 		return pTipo.equals("Agua");
 	}
 
