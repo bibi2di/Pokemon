@@ -12,7 +12,7 @@ public abstract class Pokemon extends Observable {
 	private int vidaIni;
 	private String tipo;
 	private boolean yaHaAtacado;
-	private int euforia;
+	private int euforia = (int) (Math.random()*5+3);
 	private int ataquesEuforiaAcumulados;
 
 	/**
@@ -81,24 +81,29 @@ public abstract class Pokemon extends Observable {
 	 */
 	public void recibirAtaque(Pokemon pPokemon) {
 		this.ataquesEuforiaAcumulados++;
-		//System.out.println("Ataques acumulados: " + ataquesEuforiaAcumulados);
-		//boolean euforia = this.estadoEuforia();
-		//System.out.println("Turnos de euforia: " + this.euforia);
-		int multiplicador = 1;
+		System.out.println("Ataques acumulados: " + ataquesEuforiaAcumulados);
+		boolean euforia = this.estadoEuforia();
+		System.out.println("Turnos de euforia: " + this.euforia);
+		double multiplicador = 1;
 		System.out.println("Tipo pokemon atacante: "+ pPokemon.tipo);
 		System.out.println("Tipo pokemon atacado: "+ this.tipo);
 		if(pPokemon.recibeAtaqueEfectivo(this.tipo)) {
 			multiplicador = 2;
 		}
-		/*else if(pPokemon.recibirAtaquePocoEfectivo(this.tipo)) {
+		else if(pPokemon.recibeAtaquePocoEfectivo(this.tipo)) {
 			multiplicador = 0.5;
-		}*/
+		}
 		System.out.println(multiplicador);
-		this.vida = this.vida -(pPokemon.ataque*multiplicador) - this.defensa;
-		//euforia = this.estadoEuforia();
+		this.vida = (int)(this.vida -(pPokemon.ataque*multiplicador) - this.defensa);
 		setChanged();
 		if (this.vida<0) {
 			this.vida = 0;
+		}
+		if(this.yaHaAtacado) {
+			this.ataque = this.ataque-100;
+			this.defensa = this.defensa-100;
+			ataquesEuforiaAcumulados = 0;
+			System.out.println("Deja de estar euforico");
 		}
 		notifyObservers(new int [] {this.vida,this.defensa,this.ataque});
 	}
@@ -124,10 +129,10 @@ public abstract class Pokemon extends Observable {
 	
 	public void haAtacadoYa (boolean pHaAtacado) {
 		this.yaHaAtacado = pHaAtacado;
+		System.out.println("Hola soy el pokemon: " + id + " y ya he atacado" );
 	}
 	
-	/*public boolean estadoEuforia() {
-		euforia = (int) (Math.random()*5+3);
+	public boolean estadoEuforia() {
 		boolean euforico = false;
 		if (ataquesEuforiaAcumulados == euforia) {
 			this.ataque = this.ataque+100;
@@ -135,14 +140,14 @@ public abstract class Pokemon extends Observable {
 			euforico = true;
 			System.out.println("Esta euforico");
 		}
-		else if(ataquesEuforiaAcumulados>euforia) {
+		/*else if(ataquesEuforiaAcumulados>euforia) {
 			this.ataque = this.ataque-100;
 			this.defensa = this.defensa-100;
 			ataquesEuforiaAcumulados = 0;
 			System.out.println("Deja de estar euforico");
-		}
+		}*/
 		return euforico;
-	}*/
+	}
 	
 	public abstract boolean recibeAtaqueEfectivo(String pTipo);
 	
