@@ -69,9 +69,9 @@ public class CampoDeBatalla extends Observable{
 	public boolean realizarAtaques(Pokemon pPokemonAtaca, Pokemon pPokemonAtacado){
 		boolean haRealizadoAtaque = false;
 		if (!pPokemonAtaca.seHaDebilitado() && !pPokemonAtacado.seHaDebilitado()) {
+			pPokemonAtaca.haAtacadoYa(true);
 			pPokemonAtacado.recibirAtaque(pPokemonAtaca);
 			haRealizadoAtaque = true;
-			pPokemonAtaca.haAtacadoYa(true);
 		}
 		setChanged();
 		notifyObservers();
