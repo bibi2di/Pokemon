@@ -86,8 +86,6 @@ public abstract class Pokemon extends Observable {
 		boolean euforia = this.estadoEuforia();
 		System.out.println("Turnos de euforia: " + this.euforia);
 		double multiplicador = 1;
-		System.out.println("Tipo pokemon atacante: "+ pPokemon.tipo);
-		System.out.println("Tipo pokemon atacado: "+ this.tipo);
 		if(pPokemon.recibeAtaqueEfectivo(this.tipo)) {
 			multiplicador = 2;
 		}
@@ -99,12 +97,12 @@ public abstract class Pokemon extends Observable {
 		if (this.vida<0) {
 			this.vida = 0;
 		}
-		/*if(pPokemon.estadoEuforia()) {
+		if(this.yaHaAtacado && (this.euforia==this.ataquesEuforiaAcumulados)) {
 			this.ataque = this.ataque-100;
 			this.defensa = this.defensa-100;
 			ataquesEuforiaAcumulados = 0;
 			System.out.println("Deja de estar euforico");
-		}*/
+		}
 		setChanged();
 		notifyObservers(new int [] {this.vida,this.defensa,this.ataque});
 	}
@@ -130,7 +128,9 @@ public abstract class Pokemon extends Observable {
 	
 	public void haAtacadoYa (boolean pHaAtacado) {
 		this.yaHaAtacado = pHaAtacado;
-		System.out.println("Hola soy el pokemon: " + id + " y ya he atacado" );
+		if (yaHaAtacado) {
+			System.out.println("Hola soy el pokemon: " + id + " y ya he atacado" );
+		}
 	}
 	
 	public boolean estadoEuforia() {

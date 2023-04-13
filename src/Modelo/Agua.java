@@ -15,7 +15,6 @@ public class Agua extends Pokemon {
 
 	@Override
 	public boolean recibeAtaqueEfectivo(String pTipo) {
-		System.out.println("El pokemon de tipo: " + tipo + "recibe ataque de Pokemon: " + pTipo + "y es efectivo es: " + pTipo.equals("Electrico"));
 		return pTipo.equals("Fuego");
 	}
 
