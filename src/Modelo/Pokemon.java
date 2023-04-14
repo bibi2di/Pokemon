@@ -14,7 +14,8 @@ public abstract class Pokemon extends Observable {
 	private boolean yaHaAtacado;
 	private int euforia = (int) (Math.random()*5+3);
 	private int ataquesEuforiaAcumulados;
-
+	private Evolucion strategy;
+	
 	/**
 	 * 
 	 * @param pTipo
@@ -49,6 +50,7 @@ public abstract class Pokemon extends Observable {
 		else if(this instanceof Electrico) {
 			tipo = "Electrico";
 		}
+		strategy = null;
 		setChanged();
 		notifyObservers(new Object [] {this.vida,this.defensa,this.ataque,this.tipo});
 		//System.out.println("Se han inicializado valores");
@@ -74,16 +76,24 @@ public abstract class Pokemon extends Observable {
 	public int getVida() {
 		return this.vida;
 	}
+	
+	public void setAtaque(int pAtaque) {
+		this.ataque = pAtaque;
+	}
+	
+	public void setDefensa (int pDefensa) {
+		this.defensa = pDefensa;
+	}
 
 	/**
 	 * 
 	 * @param pTipo
 	 */
 	public void recibirAtaque(Pokemon pPokemon) {
-		this.ataquesEuforiaAcumulados++;
+		/*this.ataquesEuforiaAcumulados++;
 		System.out.println("Ataques acumulados: " + ataquesEuforiaAcumulados);
 		boolean euforia = this.estadoEuforia();
-		System.out.println("Turnos de euforia: " + this.euforia);
+		System.out.println("Turnos de euforia: " + this.euforia);*/
 		double multiplicador = 1;
 		if(pPokemon.recibeAtaqueEfectivo(this.tipo)) {
 			multiplicador = 2;
@@ -93,6 +103,17 @@ public abstract class Pokemon extends Observable {
 		}
 		System.out.println(multiplicador);
 		this.vida = (int)(this.vida -(pPokemon.ataque*multiplicador) - this.defensa);
+		
+		double vidaRestante = (double)this.vida/this.vidaIni;
+		if (vidaRestante <=0.5 && (!(strategy instanceof Evolucion1))) {
+			this.cambiarEvolucion(new Evolucion1());
+			this.evolucionar();
+		}
+		if (vidaRestante <=0.2 && (!(strategy instanceof Evolucion2))) {
+			this.cambiarEvolucion(new Evolucion2());
+			this.evolucionar();
+		}
+		
 		if (this.vida<0) {
 			this.vida = 0;
 		}
@@ -110,7 +131,13 @@ public abstract class Pokemon extends Observable {
 	}
 	
 	public void evolucionar() {
-		
+		strategy.evolucionar(this);
+		setChanged();
+		notifyObservers(new Evolucion[] {this.strategy});
+	}
+	
+	public void cambiarEvolucion(Evolucion pEv) {
+		this.strategy = pEv;
 	}
 	
 	public boolean haAtacado () {
@@ -147,4 +174,5 @@ public abstract class Pokemon extends Observable {
 	public abstract boolean recibeAtaqueEfectivo(String pTipo);
 	
 	public abstract boolean recibeAtaquePocoEfectivo(String pTipo);
+	
 }
