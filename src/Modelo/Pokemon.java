@@ -105,7 +105,7 @@ public abstract class Pokemon extends Observable {
 		this.vida = (int)(this.vida -(pPokemon.ataque*multiplicador) - this.defensa);
 		
 		double vidaRestante = (double)this.vida/this.vidaIni;
-		if (vidaRestante <=0.5 && (!(strategy instanceof Evolucion1))) {
+		if (vidaRestante <=0.5 && (!(strategy instanceof Evolucion1)) && (!(strategy instanceof Evolucion2))) {
 			this.cambiarEvolucion(new Evolucion1());
 			this.evolucionar();
 		}
