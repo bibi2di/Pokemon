@@ -18,6 +18,9 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import Modelo.CampoDeBatalla;
+import Modelo.Evolucion;
+import Modelo.Evolucion1;
+import Modelo.Evolucion2;
 import Modelo.ListaJugadores;
 import Modelo.Pokemon;
 
@@ -151,17 +154,6 @@ public class Panel_Pokemon extends JPanel implements Observer {
 		// TODO Auto-generated method stub
 		//this.vidaIni = ListaJugadores.getListaJugadores().buscarJugador(idJug).getPokemon(idPok).getVidaIni();
 		if (arg0 instanceof Pokemon) {
-			if (arg1 instanceof Object []) {
-				Object[] objecArray = (Object []) arg1;
-				int vida = (Integer)objecArray[0];
-				int defensa = (Integer)objecArray[1];
-				int ataque = (Integer)objecArray[2];
-				String tipo = (String)objecArray[3];
-				lab_att.setText(String.valueOf(ataque));
-				lab_Def.setText(String.valueOf(defensa));
-				lab_health.setText(String.valueOf(vida));
-				//System.out.println("Observer actualizado");
-			}
 			if (arg1 instanceof int[]) {
 				int[] intArray = (int []) arg1;
 				int vida = (Integer)intArray[0];
@@ -178,6 +170,61 @@ public class Panel_Pokemon extends JPanel implements Observer {
 					lblChargedAttack.setText("DEBILITADO");
 					
 				}
+			}
+			else if (arg1 instanceof Evolucion[]) {
+				Evolucion[] evArray = (Evolucion[]) arg1;
+				Evolucion ev = evArray[0];
+				if (ev!= null) {
+					if (lab_type.getText().equals("Planta") && (ev instanceof Evolucion1)){
+						label_1.setIcon(new ImageIcon("sprites/Grass/1ivysaur.png"));
+					}
+					else if(lab_type.getText().equals("Planta") && (ev instanceof Evolucion2)) {
+						label_1.setIcon(new ImageIcon("sprites/Grass/2venusaur.png"));
+					}
+					else if(lab_type.getText().equals("Fuego") && (ev instanceof Evolucion1)) {
+						label_1.setIcon(new ImageIcon("sprites/Fire/1charmeleon.png"));
+					}
+					else if(lab_type.getText().equals("Fuego") && (ev instanceof Evolucion2)) {
+						label_1.setIcon(new ImageIcon("sprites/Fire/2charizard.png"));
+					}
+					else if(lab_type.getText().equals("Agua") && (ev instanceof Evolucion1)) {
+						label_1.setIcon(new ImageIcon("sprites/Water/1wartortle.png"));
+					}
+					else if(lab_type.getText().equals("Agua") && (ev instanceof Evolucion2)) {
+						label_1.setIcon(new ImageIcon("sprites/Water/2blastoise.png"));
+					}
+					else if(lab_type.getText().equals("Electrico") && (ev instanceof Evolucion1)) {
+						label_1.setIcon(new ImageIcon("sprites/Electric/1raichu.png"));
+					}
+					else if(lab_type.getText().equals("Electrico") && (ev instanceof Evolucion2)) {
+						label_1.setIcon(new ImageIcon("sprites/Electric/2raichu2.png"));
+					}
+				}
+			}
+			
+			else if (arg1 instanceof Object []) {
+				Object[] objecArray = (Object []) arg1;
+				int vida = (Integer)objecArray[0];
+				int defensa = (Integer)objecArray[1];
+				int ataque = (Integer)objecArray[2];
+				String tipo = (String)objecArray[3];
+				lab_att.setText(String.valueOf(ataque));
+				lab_Def.setText(String.valueOf(defensa));
+				lab_health.setText(String.valueOf(vida));
+				lab_type.setText(tipo);
+				if (tipo.equals("Planta")) {
+					label_1.setIcon(new ImageIcon("sprites/Grass/0bulbasaur.png"));
+				}
+				else if (tipo.equals("Fuego")) {
+					label_1.setIcon(new ImageIcon("sprites/Fire/0charmander.png"));
+				}
+				else if (tipo.equals("Agua")) {
+					label_1.setIcon(new ImageIcon("sprites/Water/0squirtle.png"));
+				}
+				else if(tipo.equals("Electrico")) {
+					label_1.setIcon(new ImageIcon("sprites/Electric/0pikachu.png"));
+				}
+				//System.out.println("Observer actualizado");
 			}
 		}
 	}
