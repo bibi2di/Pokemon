@@ -161,7 +161,7 @@ public abstract class Pokemon extends Observable {
 			euforico = true;
 			System.out.println("Esta euforico");
 		}
-		else if(this.yaHaAtacado && (this.euforia==this.ataquesEuforiaAcumulados)) {
+		else if(this.yaHaAtacado && (this.euforia>=this.ataquesEuforiaAcumulados)) {
 			this.ataque = this.ataque-100;
 			this.defensa = this.defensa-100;
 			ataquesEuforiaAcumulados = 0;
