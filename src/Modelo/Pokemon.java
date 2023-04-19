@@ -52,7 +52,7 @@ public abstract class Pokemon extends Observable {
 		}
 		strategy = null;
 		setChanged();
-		notifyObservers(new Object [] {this.vida,this.defensa,this.ataque,this.tipo});
+		notifyObservers(new Object [] {this.vida,this.defensa,this.ataque,this.tipo, this.vidaIni});
 		//System.out.println("Se han inicializado valores");
 		
 	}

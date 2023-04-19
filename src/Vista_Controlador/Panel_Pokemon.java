@@ -16,6 +16,7 @@ import java.util.Observer;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JProgressBar;
 
 import Modelo.CampoDeBatalla;
 import Modelo.Evolucion;
@@ -40,8 +41,11 @@ public class Panel_Pokemon extends JPanel implements Observer {
 	private JLabel lab_health;
 	private JLabel lblType;
 	private JLabel lab_type;
+	private JProgressBar progressBar; // Barra de progreso
 	private int idJug = -1;
 	private int idPok = -1;
+	private int primeraVida;
+	private boolean pVidaBool = false;
 	
 	public Panel_Pokemon(int nPok, int nJug) {
 		ListaJugadores.getListaJugadores().buscarJugador(nJug).getPokemon(nPok).addObserver(this);
@@ -94,9 +98,9 @@ public class Panel_Pokemon extends JPanel implements Observer {
 		Panel_Pokemons_Inf_ChargedAttack.setBackground(Color.GRAY);
 		return Panel_Pokemons_Inf_ChargedAttack;
 	}
-	public JLabel getLbl_Health_bar() {
-		lbl_Health_bar = new JLabel("Health");
-		return lbl_Health_bar;
+	public JProgressBar getLbl_Health_bar() {
+		progressBar = new JProgressBar();
+		return progressBar;
 	}
 	public JLabel getLblChargedAttack() {
 		lblChargedAttack = new JLabel("Charged Attack");
@@ -148,6 +152,10 @@ public class Panel_Pokemon extends JPanel implements Observer {
 		lab_type = new JLabel("Normal");
 		return lab_type;
 	}
+	private JProgressBar getProgressBar() {
+		progressBar = new JProgressBar();
+		return progressBar;
+	}
 	
 	@Override
 	public void update(Observable arg0, Object arg1) { /*Este panel es solo para los Pokemon*/
@@ -162,6 +170,16 @@ public class Panel_Pokemon extends JPanel implements Observer {
 				lab_att.setText(String.valueOf(ataque));
 				lab_Def.setText(String.valueOf(defensa));
 				lab_health.setText(String.valueOf(vida));
+				progressBar.setValue(vida);
+				double porcentajeVida = 0;
+				porcentajeVida = ((double) vida / (double) primeraVida);
+				if (porcentajeVida<=0.2) {
+					progressBar.setForeground(Color.RED);
+				}else if(porcentajeVida<=0.5) {
+					progressBar.setForeground(Color.ORANGE);
+				}
+				
+				
 				//System.out.println("Ataque realizado");
 				Panel_Pokemons_Inf_ChargedAttack.setBackground(Color.GRAY);
 				if(vida==0) {
@@ -225,6 +243,13 @@ public class Panel_Pokemon extends JPanel implements Observer {
 					label_1.setIcon(new ImageIcon("sprites/Electric/0pikachu.png"));
 				}
 				//System.out.println("Observer actualizado");
+				if(!pVidaBool) {
+					pVidaBool = true;
+					primeraVida = vida;
+					progressBar.setMaximum(vida);
+					progressBar.setValue(vida);
+					progressBar.setForeground(Color.GREEN);
+				}
 			}
 		}
 	}
