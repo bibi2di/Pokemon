@@ -45,6 +45,7 @@ public class Panel_Pokemon extends JPanel implements Observer {
 	private int idJug = -1;
 	private int idPok = -1;
 	private int primeraVida;
+	private int idPokAtacante = -1;
 	private boolean pVidaBool = false;
 	
 	public Panel_Pokemon(int nPok, int nJug) {
@@ -167,9 +168,11 @@ public class Panel_Pokemon extends JPanel implements Observer {
 				int vida = (Integer)intArray[0];
 				int defensaPokAtacado = (Integer)intArray[1];
 				int ataquePokAtacado = (Integer)intArray[2];
+				int idPokAtacante = (Integer)intArray[5] + 1;
 				lab_att.setText(String.valueOf(ataquePokAtacado));
 				lab_Def.setText(String.valueOf(defensaPokAtacado));
 				lab_health.setText(String.valueOf(vida));
+				this.idPokAtacante = idPokAtacante;
 				progressBar.setValue(vida);
 				double porcentajeVida = 0;
 				porcentajeVida = ((double) vida / (double) primeraVida);
@@ -187,6 +190,22 @@ public class Panel_Pokemon extends JPanel implements Observer {
 					Panel_Pokemons_Inf_ChargedAttack.setBackground(Color.RED);
 					lblChargedAttack.setText("DEBILITADO");
 					
+				}
+			}
+			else if (arg1 instanceof boolean[]) {
+				boolean[] boolArray = (boolean[])arg1;
+				boolean ataqueEuforico = boolArray[0];
+				System.out.println("Ha ejecutado el instanceof boolean[]");
+				System.out.println(" El ataqueEuforico es? " + ataqueEuforico);
+				if (ataqueEuforico) {
+					String ataqueS = lab_att.getText();
+					int ataque = Integer.parseInt(ataqueS);
+					String defensaS = lab_Def.getText();
+					int defensa = Integer.parseInt(defensaS);
+					ataque = ataque -100;
+					defensa = defensa-100;
+					lab_att.setText(String.valueOf(ataque));
+					lab_Def.setText(String.valueOf(defensa));
 				}
 			}
 			else if (arg1 instanceof Evolucion[]) {
@@ -267,6 +286,20 @@ public class Panel_Pokemon extends JPanel implements Observer {
 			//if(e.getSource().equals(this)) {
 				CampoDeBatalla.getCampoBatalla().sePuedeAtacar(idPok, idJug);
 				System.out.println(" Se ha clickado el pokemon" + idPok + "del jugador" + idJug);
+				System.out.println(" Id del pokemon atacante: " + idPokAtacante);
+				//ListaJugadores.getListaJugadores().buscarJugador(idJug).getPokemon(idPok).haAtacadoEuforico();
+				/*if (idPokAtacante!=-1) {
+					System.out.println("Entra en el if vista 1");
+					if (idJug==0) {
+						ListaJugadores.getListaJugadores().buscarJugador(1).getPokemon(idPokAtacante).haAtacadoEuforico();
+						System.out.println("Entra en el if vista 2 idJug==0");
+
+					}
+					else if (idJug==1){
+						ListaJugadores.getListaJugadores().buscarJugador(0).getPokemon(idPokAtacante).haAtacadoEuforico();
+						System.out.println("Entra en el if vista 2 idJug==1");
+					}
+				}*/
 				
 		}
 

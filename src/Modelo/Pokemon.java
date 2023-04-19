@@ -91,6 +91,12 @@ public abstract class Pokemon extends Observable {
 		this.defensa = pDefensa;
 	}
 	
+	public boolean haAtacadoEuforico() {
+		setChanged();
+		notifyObservers(new boolean[] {this.haAtacadoEuforico});
+		return this.haAtacadoEuforico;
+	}
+	
 
 	/**
 	 * 
@@ -142,7 +148,7 @@ public abstract class Pokemon extends Observable {
 			this.vida = 0;
 		}
 		setChanged();
-		notifyObservers(new int [] {this.vida,this.defensa,this.ataque,this.euforia,this.ataquesEuforiaAcumulados});
+		notifyObservers(new int [] {this.vida,this.defensa,this.ataque,this.euforia,this.ataquesEuforiaAcumulados, pPokemon.id});
 	}
 
 	public boolean seHaDebilitado() {
