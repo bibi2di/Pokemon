@@ -112,10 +112,10 @@ public abstract class Pokemon extends Observable {
 		System.out.println("El estado del pokemon es:" + pPokemon.stateEuforia);
 		if (pPokemon.stateEuforia instanceof EstadoEuforia) {
 			System.out.println("Entra en el if");
-			pPokemon.setHaAtacadoEuforico(true);
+			this.setHaAtacadoEuforico(true);
 		}
 		System.out.println("El pokemon ha atacado? "+ this.haAtacadoEuforico);
-
+		
 		
 		double vidaRestante = (double)this.vida/this.vidaIni;
 		if (vidaRestante <=0.5 && (!(stateEvo instanceof Evolucion1)) && (!(stateEvo instanceof Evolucion2))) {
@@ -131,17 +131,18 @@ public abstract class Pokemon extends Observable {
 		if (!euforico) {
 			this.estadoEuforia();
 		}
-		euforico = (this.stateEuforia instanceof EstadoEuforia);
-		if(euforico && pPokemon.haAtacadoEuforico) {
+		
+		if(this.haAtacadoEuforico) {
+			System.out.println("Entra en el if 2");
 			this.cambiarEstado(new EstadoNormal());
-			this.quitarEstadoEuforia();
+			this.quitarEstadoEuforia(pPokemon);
 		}
 		
 		if (this.vida<0) {
 			this.vida = 0;
 		}
 		setChanged();
-		notifyObservers(new int [] {this.vida,this.defensa,this.ataque});
+		notifyObservers(new int [] {this.vida,this.defensa,this.ataque,this.euforia,this.ataquesEuforiaAcumulados});
 	}
 
 	public boolean seHaDebilitado() {
@@ -188,10 +189,12 @@ public abstract class Pokemon extends Observable {
 		this.stateEuforia = pEst;
 	}
 	
-	public void quitarEstadoEuforia() {
-		this.ataque = this.ataque-100;
-		this.defensa = this.defensa-100;
+	public void quitarEstadoEuforia(Pokemon pPokemon) {
+		pPokemon.setAtaque(pPokemon.ataque-100);
+		pPokemon.setDefensa(pPokemon.defensa-100);
 		ataquesEuforiaAcumulados = 0;
+		pPokemon.haAtacadoEuforico = false;
+		/*FALTA NOTIFICARLO EN EL VISTA*/
 	}
 	
 	public abstract boolean recibeAtaqueEfectivo(String pTipo);

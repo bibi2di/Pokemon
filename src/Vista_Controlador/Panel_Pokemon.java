@@ -165,10 +165,10 @@ public class Panel_Pokemon extends JPanel implements Observer {
 			if (arg1 instanceof int[]) {
 				int[] intArray = (int []) arg1;
 				int vida = (Integer)intArray[0];
-				int defensa = (Integer)intArray[1];
-				int ataque = (Integer)intArray[2];
-				lab_att.setText(String.valueOf(ataque));
-				lab_Def.setText(String.valueOf(defensa));
+				int defensaPokAtacado = (Integer)intArray[1];
+				int ataquePokAtacado = (Integer)intArray[2];
+				lab_att.setText(String.valueOf(ataquePokAtacado));
+				lab_Def.setText(String.valueOf(defensaPokAtacado));
 				lab_health.setText(String.valueOf(vida));
 				progressBar.setValue(vida);
 				double porcentajeVida = 0;
