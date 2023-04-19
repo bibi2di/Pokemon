@@ -283,6 +283,11 @@ public class Vista_Jugador extends JFrame implements Observer{
 			if (arg instanceof boolean[]) {
 				boolean[] arrayBool = (boolean[])arg;
 				boolean perdido = (boolean)arrayBool[0];
+				if(!perdido) {
+					btn_Jugador_estado.setText("Ha Ganado");
+					System.out.println("HA GANADO JUGADOR "+idJug);
+					Panel_Jugador_Estado.setBackground(Color.YELLOW);
+				}
 				if (perdido) {
 					System.out.println("El jugador: "+ idJug+ " ha perdido");
 					try {
@@ -292,12 +297,8 @@ public class Vista_Jugador extends JFrame implements Observer{
 						e.printStackTrace();
 					}
 					this.setVisible(false);
-				}else {
-					btn_Jugador_estado.setText("Ha Ganado");
-					Panel_Jugador_Estado.setBackground(Color.YELLOW);
 				}
 			}
-		}
+		}		
 	}
-	
 }

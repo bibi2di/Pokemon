@@ -294,13 +294,11 @@ public class Pantalla_De_Inicio extends JFrame implements Observer{
 				int jugGana = ganador[0];
 				if(jugGana!=-1) {
 					System.out.println("Ha ganado el jugador: "+ jugGana);
-					try {
-						TimeUnit.SECONDS.sleep(5);
-					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-					System.exit(0);
+					
+					this.setVisible(false);
+					//System.exit(0);
+					
+					
 				}
 			}
 		}
