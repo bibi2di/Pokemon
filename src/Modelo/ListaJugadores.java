@@ -51,7 +51,7 @@ public class ListaJugadores extends Observable{
 			turnos[k] = buscarJugador(k).esSuTurno();
 		}
 		setChanged();
-		notifyObservers(new boolean[] {turnos[0],turnos[1]});
+		notifyObservers(turnos);
 	}
 
 	/**
