@@ -12,10 +12,11 @@ public abstract class Pokemon extends Observable {
 	private int vidaIni;
 	private String tipo;
 	private boolean yaHaAtacado;
-	private int euforia = (int) (Math.random()*5+3);
+	private int euforia = /*(int) (Math.random()*5+3);*/ 3;
 	private int ataquesEuforiaAcumulados;
-	private Evolucion strategy;
-	
+	private Evolucion stateEvo;
+	private Estado stateEuforia;
+	private boolean haAtacadoEuforico;
 	/**
 	 * 
 	 * @param pTipo
@@ -30,6 +31,10 @@ public abstract class Pokemon extends Observable {
 		//establecerValores();
 		this.id = pId;
 		
+	}
+	
+	public void setHaAtacadoEuforico(boolean pHaAtacadoEuforico) {
+		this.haAtacadoEuforico = pHaAtacadoEuforico;
 	}
 	
 	public void establecerValores() {
@@ -50,7 +55,8 @@ public abstract class Pokemon extends Observable {
 		else if(this instanceof Electrico) {
 			tipo = "Electrico";
 		}
-		strategy = null;
+		stateEvo = null;
+		stateEuforia = null;
 		setChanged();
 		notifyObservers(new Object [] {this.vida,this.defensa,this.ataque,this.tipo, this.vidaIni});
 		//System.out.println("Se han inicializado valores");
@@ -84,16 +90,16 @@ public abstract class Pokemon extends Observable {
 	public void setDefensa (int pDefensa) {
 		this.defensa = pDefensa;
 	}
+	
 
 	/**
 	 * 
 	 * @param pTipo
 	 */
 	public void recibirAtaque(Pokemon pPokemon) {
-		/*this.ataquesEuforiaAcumulados++;
-		System.out.println("Ataques acumulados: " + ataquesEuforiaAcumulados);
-		boolean euforia = this.estadoEuforia();
-		System.out.println("Turnos de euforia: " + this.euforia);*/
+		this.ataquesEuforiaAcumulados++;
+		System.out.println("Ataques acumulados: " + ataquesEuforiaAcumulados);	
+		System.out.println("Turnos de euforia: " + this.euforia);
 		double multiplicador = 1;
 		if(pPokemon.recibeAtaqueEfectivo(this.tipo)) {
 			multiplicador = 2;
@@ -103,15 +109,32 @@ public abstract class Pokemon extends Observable {
 		}
 		System.out.println(multiplicador);
 		this.vida = (int)(this.vida -(pPokemon.ataque*multiplicador) - this.defensa);
+		System.out.println("El estado del pokemon es:" + pPokemon.stateEuforia);
+		if (pPokemon.stateEuforia instanceof EstadoEuforia) {
+			System.out.println("Entra en el if");
+			pPokemon.setHaAtacadoEuforico(true);
+		}
+		System.out.println("El pokemon ha atacado? "+ this.haAtacadoEuforico);
+
 		
 		double vidaRestante = (double)this.vida/this.vidaIni;
-		if (vidaRestante <=0.5 && (!(strategy instanceof Evolucion1)) && (!(strategy instanceof Evolucion2))) {
+		if (vidaRestante <=0.5 && (!(stateEvo instanceof Evolucion1)) && (!(stateEvo instanceof Evolucion2))) {
 			this.cambiarEvolucion(new Evolucion1());
 			this.evolucionar();
 		}
-		if (vidaRestante <=0.2 && (!(strategy instanceof Evolucion2))) {
+		if (vidaRestante <=0.2 && (!(stateEvo instanceof Evolucion2))) {
 			this.cambiarEvolucion(new Evolucion2());
 			this.evolucionar();
+		}
+		
+		boolean euforico = (this.stateEuforia instanceof EstadoEuforia);
+		if (!euforico) {
+			this.estadoEuforia();
+		}
+		euforico = (this.stateEuforia instanceof EstadoEuforia);
+		if(euforico && pPokemon.haAtacadoEuforico) {
+			this.cambiarEstado(new EstadoNormal());
+			this.quitarEstadoEuforia();
 		}
 		
 		if (this.vida<0) {
@@ -131,13 +154,13 @@ public abstract class Pokemon extends Observable {
 	}
 	
 	public void evolucionar() {
-		strategy.evolucionar(this);
+		stateEvo.evolucionar(this);
 		setChanged();
-		notifyObservers(new Evolucion[] {this.strategy});
+		notifyObservers(new Evolucion[] {this.stateEvo});
 	}
 	
 	public void cambiarEvolucion(Evolucion pEv) {
-		this.strategy = pEv;
+		this.stateEvo = pEv;
 	}
 	
 	public boolean haAtacado () {
@@ -153,22 +176,22 @@ public abstract class Pokemon extends Observable {
 		}
 	}
 	
-	public boolean estadoEuforia() {
-		boolean euforico = false;
-		if (ataquesEuforiaAcumulados == euforia) {
-			this.ataque = this.ataque+100;
-			this.defensa = this.defensa+100;
-			euforico = true;
+	public void estadoEuforia() {
+		if (ataquesEuforiaAcumulados >= euforia) {
+			this.cambiarEstado(new EstadoEuforia());
+			stateEuforia.estadoEuforia(this);
 			System.out.println("Esta euforico");
 		}
-		else if(this.yaHaAtacado && (this.euforia>=this.ataquesEuforiaAcumulados)) {
-			this.ataque = this.ataque-100;
-			this.defensa = this.defensa-100;
-			ataquesEuforiaAcumulados = 0;
-			euforico = false;
-			System.out.println("Deja de estar euforico");
-		}
-		return euforico;
+	}
+	
+	public void cambiarEstado(Estado pEst) {
+		this.stateEuforia = pEst;
+	}
+	
+	public void quitarEstadoEuforia() {
+		this.ataque = this.ataque-100;
+		this.defensa = this.defensa-100;
+		ataquesEuforiaAcumulados = 0;
 	}
 	
 	public abstract boolean recibeAtaqueEfectivo(String pTipo);
