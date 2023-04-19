@@ -1,6 +1,7 @@
 package Vista_Controlador;
 
 import java.awt.EventQueue;
+import java.awt.Frame;
 
 import javax.swing.JFrame;
 import java.awt.BorderLayout;
@@ -10,6 +11,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Observable;
 import java.util.Observer;
+import java.util.concurrent.TimeUnit;
 
 import javax.swing.JLabel;
 import javax.swing.JButton;
@@ -44,6 +46,7 @@ public class Pantalla_De_Inicio extends JFrame implements Observer{
 	private JLabel label;
 	private Controler controler = null;
 	private JLabel lblError;
+	private JPanel Panel_Superior;
 
 	/**
 	 * Launch the application.
@@ -71,11 +74,12 @@ public class Pantalla_De_Inicio extends JFrame implements Observer{
 	public Pantalla_De_Inicio() {
 		setTitle("Pokemon");
 		getContentPane().setForeground(new Color(255, 255, 255));
-		setBounds(100, 100, 800, 300);
+		setBounds(100, 100, 800, 330);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		getContentPane().setLayout(new BorderLayout(0, 0));
 		getContentPane().add(getPanel_derecho(), BorderLayout.EAST);
 		getContentPane().add(getPanel_central(), BorderLayout.CENTER);
+		getContentPane().add(getPanel_Superior(), BorderLayout.NORTH);
 		setResizable(false);
 		ListaJugadores.getListaJugadores().addObserver(this);
 	}
@@ -94,7 +98,6 @@ public class Pantalla_De_Inicio extends JFrame implements Observer{
 			panel_central = new JPanel();
 			panel_central.setBackground(new Color(255, 255, 255));
 			panel_central.setForeground(new Color(255, 255, 255));
-			panel_central.add(getLblTienesQueMeter());
 			panel_central.add(getLabel());
 		}
 		return panel_central;
@@ -291,6 +294,12 @@ public class Pantalla_De_Inicio extends JFrame implements Observer{
 				int jugGana = ganador[0];
 				if(jugGana!=-1) {
 					System.out.println("Ha ganado el jugador: "+ jugGana);
+					try {
+						TimeUnit.SECONDS.sleep(5);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 					System.exit(0);
 				}
 			}
@@ -312,5 +321,11 @@ public class Pantalla_De_Inicio extends JFrame implements Observer{
 			VistaJug.setVisible(true);
 		}
 		*/
-
+	private JPanel getPanel_Superior() {
+		if (Panel_Superior == null) {
+			Panel_Superior = new JPanel();
+			Panel_Superior.add(getLblTienesQueMeter());
+		}
+		return Panel_Superior;
+	}
 }
