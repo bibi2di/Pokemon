@@ -292,6 +292,9 @@ public class Vista_Jugador extends JFrame implements Observer{
 						e.printStackTrace();
 					}
 					this.setVisible(false);
+				}else {
+					btn_Jugador_estado.setText("Ha Ganado");
+					Panel_Jugador_Estado.setBackground(Color.YELLOW);
 				}
 			}
 		}

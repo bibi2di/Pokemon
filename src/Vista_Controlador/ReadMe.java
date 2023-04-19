@@ -9,7 +9,6 @@ import javax.swing.JTextPane;
 import javax.swing.JPanel;
 
 public class ReadMe extends JFrame {
-	private JPanel Panel_Derecho;
 
 	/**
 	 * Launch the application.
@@ -35,13 +34,6 @@ public class ReadMe extends JFrame {
 		setBounds(100, 100, 800, 400);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setResizable(false);
-		getContentPane().add(getPanel_Derecho(), BorderLayout.WEST);
 
-	}
-	private JPanel getPanel_Derecho() {
-		if (Panel_Derecho == null) {
-			Panel_Derecho = new JPanel();
-		}
-		return Panel_Derecho;
 	}
 }
