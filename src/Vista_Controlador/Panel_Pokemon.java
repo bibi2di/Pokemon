@@ -202,10 +202,12 @@ public class Panel_Pokemon extends JPanel implements Observer {
 					int ataque = Integer.parseInt(ataqueS);
 					String defensaS = lab_Def.getText();
 					int defensa = Integer.parseInt(defensaS);
-					ataque = ataque -100;
-					defensa = defensa-100;
-					lab_att.setText(String.valueOf(ataque));
-					lab_Def.setText(String.valueOf(defensa));
+					if (ataque>=100 && defensa>=100) {
+						ataque = ataque -100;
+						defensa = defensa-100;
+						lab_att.setText(String.valueOf(ataque));
+						lab_Def.setText(String.valueOf(defensa));
+					}
 				}
 			}
 			else if (arg1 instanceof Evolucion[]) {
@@ -288,20 +290,15 @@ public class Panel_Pokemon extends JPanel implements Observer {
 				System.out.println(" Se ha clickado el pokemon" + idPok + "del jugador" + idJug);
 				System.out.println(" Id del pokemon atacante: " + idPokAtacante);
 				//ListaJugadores.getListaJugadores().buscarJugador(idJug).getPokemon(idPok).haAtacadoEuforico();
-				/*if (idPokAtacante!=-1) {
+				int cont = 0;
+				cont++;
+				if (cont==1) {
 					System.out.println("Entra en el if vista 1");
-					if (idJug==0) {
-						ListaJugadores.getListaJugadores().buscarJugador(1).getPokemon(idPokAtacante).haAtacadoEuforico();
-						System.out.println("Entra en el if vista 2 idJug==0");
-
-					}
-					else if (idJug==1){
-						ListaJugadores.getListaJugadores().buscarJugador(0).getPokemon(idPokAtacante).haAtacadoEuforico();
-						System.out.println("Entra en el if vista 2 idJug==1");
-					}
-				}*/
-				
+					ListaJugadores.getListaJugadores().buscarJugador(idJug).getPokemon(idPok).haAtacadoEuforico();
+				}
 		}
+			
+		
 
 		@Override
 		public void mousePressed(MouseEvent e) {

@@ -188,6 +188,8 @@ public abstract class Pokemon extends Observable {
 			this.cambiarEstado(new EstadoEuforia());
 			stateEuforia.estadoEuforia(this);
 			System.out.println("Esta euforico");
+			
+			
 		}
 	}
 	
@@ -196,11 +198,16 @@ public abstract class Pokemon extends Observable {
 	}
 	
 	public void quitarEstadoEuforia(Pokemon pPokemon) {
-		pPokemon.setAtaque(pPokemon.ataque-100);
-		pPokemon.setDefensa(pPokemon.defensa-100);
-		ataquesEuforiaAcumulados = 0;
-		pPokemon.haAtacadoEuforico = false;
+		if (pPokemon.ataque>=100 && pPokemon.defensa>=100) {
+			pPokemon.setAtaque(pPokemon.ataque-100);
+			pPokemon.setDefensa(pPokemon.defensa-100);
+			ataquesEuforiaAcumulados = 0;
+			pPokemon.setHaAtacadoEuforico(false);
+		}
 		/*FALTA NOTIFICARLO EN EL VISTA*/
+		System.out.println("Id del pokemon atacante: "+ pPokemon.id);
+		System.out.println("Ataque del pokemon atacante: " + pPokemon.ataque);
+		System.out.println("Defensa del pokemon atacante: " + pPokemon.defensa);
 	}
 	
 	public abstract boolean recibeAtaqueEfectivo(String pTipo);
