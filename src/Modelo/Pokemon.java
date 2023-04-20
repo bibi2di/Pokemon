@@ -198,7 +198,7 @@ public abstract class Pokemon extends Observable {
 			ataquesEuforiaAcumulados = 0;
 			pPokemon.setHaAtacadoEuforico(false);
 		}
-		/*FALTA NOTIFICARLO EN EL VISTA*/
+		/*NO SE POR QUE EN EL ESTADO DE EUFORIA EL VISTA CAMBIA CUANDO EL POKEMON EUFORICO RECIBE UN ATAQUE*/
 		System.out.println("Id del pokemon atacante: "+ pPokemon.id);
 		System.out.println("Ataque del pokemon atacante: " + pPokemon.ataque);
 		System.out.println("Defensa del pokemon atacante: " + pPokemon.defensa);
