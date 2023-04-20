@@ -12,7 +12,7 @@ public abstract class Pokemon extends Observable {
 	private int vidaIni;
 	private String tipo;
 	private boolean yaHaAtacado;
-	private int euforia = /*(int) (Math.random()*5+3);*/ 3;
+	private int euforia = (int) (Math.random()*5+3); 
 	private int ataquesEuforiaAcumulados;
 	private Evolucion stateEvo;
 	private Estado stateEuforia;
@@ -113,15 +113,10 @@ public abstract class Pokemon extends Observable {
 		else if(pPokemon.recibeAtaquePocoEfectivo(this.tipo)) {
 			multiplicador = 0.5;
 		}
-		System.out.println(multiplicador);
 		this.vida = (int)(this.vida -(pPokemon.ataque*multiplicador) - this.defensa);
-		System.out.println("El estado del pokemon es:" + pPokemon.stateEuforia);
 		if (pPokemon.stateEuforia instanceof EstadoEuforia) {
-			System.out.println("Entra en el if");
 			this.setHaAtacadoEuforico(true);
-		}
-		System.out.println("El pokemon ha atacado? "+ this.haAtacadoEuforico);
-		
+		}		
 		
 		double vidaRestante = (double)this.vida/this.vidaIni;
 		if (vidaRestante <=0.5 && (!(stateEvo instanceof Evolucion1)) && (!(stateEvo instanceof Evolucion2))) {
@@ -139,7 +134,6 @@ public abstract class Pokemon extends Observable {
 		}
 		
 		if(this.haAtacadoEuforico) {
-			System.out.println("Entra en el if 2");
 			this.cambiarEstado(new EstadoNormal());
 			this.quitarEstadoEuforia(pPokemon);
 		}
