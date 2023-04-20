@@ -292,8 +292,9 @@ public class Panel_Pokemon extends JPanel implements Observer {
 				//ListaJugadores.getListaJugadores().buscarJugador(idJug).getPokemon(idPok).haAtacadoEuforico();
 				int cont = 0;
 				cont++;
+				System.out.println("El valor de cont es" + cont);
 				if (cont==1) {
-					System.out.println("Entra en el if vista 1");
+					System.out.println("Entra en el if vista 1 y el id del jugador atacante es: " + idJug + " y el id del pokemon atacante es: " + idPok);
 					ListaJugadores.getListaJugadores().buscarJugador(idJug).getPokemon(idPok).haAtacadoEuforico();
 				}
 		}

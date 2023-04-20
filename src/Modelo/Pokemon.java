@@ -91,10 +91,9 @@ public abstract class Pokemon extends Observable {
 		this.defensa = pDefensa;
 	}
 	
-	public boolean haAtacadoEuforico() {
+	public void haAtacadoEuforico() {
 		setChanged();
-		notifyObservers(new boolean[] {this.haAtacadoEuforico});
-		return this.haAtacadoEuforico;
+		notifyObservers(new boolean[] {this.stateEuforia instanceof EstadoEuforia});
 	}
 	
 
@@ -198,7 +197,6 @@ public abstract class Pokemon extends Observable {
 			ataquesEuforiaAcumulados = 0;
 			pPokemon.setHaAtacadoEuforico(false);
 		}
-		/*NO SE POR QUE EN EL ESTADO DE EUFORIA EL VISTA CAMBIA CUANDO EL POKEMON EUFORICO RECIBE UN ATAQUE*/
 		System.out.println("Id del pokemon atacante: "+ pPokemon.id);
 		System.out.println("Ataque del pokemon atacante: " + pPokemon.ataque);
 		System.out.println("Defensa del pokemon atacante: " + pPokemon.defensa);
