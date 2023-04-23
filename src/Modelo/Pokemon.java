@@ -150,7 +150,7 @@ public abstract class Pokemon extends Observable {
 		System.out.println("Turnos de euforia: " + this.euforia);
 		
 		setChanged();
-		notifyObservers(new int [] {this.vida,this.defensa,this.ataque,this.euforia,this.ataquesEuforiaAcumulados, pPokemon.id});
+		notifyObservers(new int [] {this.vida,this.defensa,this.ataque,this.euforia,this.ataquesEuforiaAcumulados});
 	}
 
 	public boolean seHaDebilitado() {

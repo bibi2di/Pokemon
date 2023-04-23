@@ -45,7 +45,6 @@ public class Panel_Pokemon extends JPanel implements Observer {
 	private int idJug = -1;
 	private int idPok = -1;
 	private int primeraVida;
-	private int idPokAtacante = -1;
 	private int cont;
 	private boolean pVidaBool = false;
 	
@@ -169,11 +168,11 @@ public class Panel_Pokemon extends JPanel implements Observer {
 				int vida = (Integer)intArray[0];
 				int defensaPokAtacado = (Integer)intArray[1];
 				int ataquePokAtacado = (Integer)intArray[2];
-				int idPokAtacante = (Integer)intArray[5] + 1;
+				int turnosEuforiaTotales = (Integer)intArray[3];
+				int turnosEuforiaActuales = (Integer)intArray[4];
 				lab_att.setText(String.valueOf(ataquePokAtacado));
 				lab_Def.setText(String.valueOf(defensaPokAtacado));
 				lab_health.setText(String.valueOf(vida));
-				this.idPokAtacante = idPokAtacante;
 				progressBar.setValue(vida);
 				double porcentajeVida = 0;
 				porcentajeVida = ((double) vida / (double) primeraVida);
@@ -182,6 +181,8 @@ public class Panel_Pokemon extends JPanel implements Observer {
 				}else if(porcentajeVida<=0.5) {
 					progressBar.setForeground(Color.ORANGE);
 				}
+				double porcentajeEuforia = 0;
+				porcentajeEuforia = ((double) turnosEuforiaActuales / (double) turnosEuforiaTotales);
 				
 				
 				//System.out.println("Ataque realizado");
@@ -289,7 +290,6 @@ public class Panel_Pokemon extends JPanel implements Observer {
 			//if(e.getSource().equals(this)) {
 				CampoDeBatalla.getCampoBatalla().sePuedeAtacar(idPok, idJug);
 				System.out.println(" Se ha clickado el pokemon" + idPok + "del jugador" + idJug);
-				System.out.println(" Id del pokemon atacante: " + idPokAtacante);
 				//ListaJugadores.getListaJugadores().buscarJugador(idJug).getPokemon(idPok).haAtacadoEuforico();
 				cont++;
 				System.out.println("El valor de cont es" + cont);
