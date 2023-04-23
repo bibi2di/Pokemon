@@ -46,6 +46,7 @@ public class Panel_Pokemon extends JPanel implements Observer {
 	private int idPok = -1;
 	private int primeraVida;
 	private int idPokAtacante = -1;
+	private int cont;
 	private boolean pVidaBool = false;
 	
 	public Panel_Pokemon(int nPok, int nJug) {
@@ -290,12 +291,14 @@ public class Panel_Pokemon extends JPanel implements Observer {
 				System.out.println(" Se ha clickado el pokemon" + idPok + "del jugador" + idJug);
 				System.out.println(" Id del pokemon atacante: " + idPokAtacante);
 				//ListaJugadores.getListaJugadores().buscarJugador(idJug).getPokemon(idPok).haAtacadoEuforico();
-				int cont = 0;
 				cont++;
 				System.out.println("El valor de cont es" + cont);
-				if (cont==1) {
+				if (cont==1 && idJug!=1) /*El bot lo gestiona de otra manera*/ {
 					System.out.println("Entra en el if vista 1 y el id del jugador atacante es: " + idJug + " y el id del pokemon atacante es: " + idPok);
-					ListaJugadores.getListaJugadores().buscarJugador(idJug).getPokemon(idPok).haAtacadoEuforico();
+					ListaJugadores.getListaJugadores().buscarJugador(idJug).getPokemon(idPok).estaEuforico();
+				}
+				else if (cont==2) {
+					cont = 0;
 				}
 		}
 			

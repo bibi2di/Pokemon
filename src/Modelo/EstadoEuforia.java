@@ -6,8 +6,10 @@ public class EstadoEuforia implements Estado {
 	public void estadoEuforia(Pokemon pPokemon) {
 		int ataque = pPokemon.getAtaque();
 		int defensa = pPokemon.getDefensa();
-		pPokemon.setAtaque(ataque+100);
-		pPokemon.setDefensa(defensa+100);
+		if (ataque<100 && defensa<100) {
+			pPokemon.setAtaque(ataque+100);
+			pPokemon.setDefensa(defensa+100);
+		}
 	}
 
 }

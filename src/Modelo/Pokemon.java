@@ -12,7 +12,7 @@ public abstract class Pokemon extends Observable {
 	private int vidaIni;
 	private String tipo;
 	private boolean yaHaAtacado;
-	private int euforia = (int) (Math.random()*5+3); 
+	private int euforia = /*(int) (Math.random()*5+3)*/ 3; 
 	private int ataquesEuforiaAcumulados;
 	private Evolucion stateEvo;
 	private Estado stateEuforia;
@@ -91,9 +91,10 @@ public abstract class Pokemon extends Observable {
 		this.defensa = pDefensa;
 	}
 	
-	public void haAtacadoEuforico() {
+	public boolean estaEuforico() {
 		setChanged();
 		notifyObservers(new boolean[] {this.stateEuforia instanceof EstadoEuforia});
+		return this.stateEuforia instanceof EstadoEuforia;
 	}
 	
 
@@ -103,8 +104,6 @@ public abstract class Pokemon extends Observable {
 	 */
 	public void recibirAtaque(Pokemon pPokemon) {
 		this.ataquesEuforiaAcumulados++;
-		System.out.println("Ataques acumulados: " + ataquesEuforiaAcumulados);	
-		System.out.println("Turnos de euforia: " + this.euforia);
 		double multiplicador = 1;
 		if(pPokemon.recibeAtaqueEfectivo(this.tipo)) {
 			multiplicador = 2;
@@ -144,6 +143,11 @@ public abstract class Pokemon extends Observable {
 		if (this.ataquesEuforiaAcumulados>this.euforia) {
 			this.ataquesEuforiaAcumulados = this.euforia;
 		}
+		System.out.println("Id del pokemon atacante: "+ pPokemon.id);
+		System.out.println("Ataque del pokemon atacante: " + pPokemon.ataque);
+		System.out.println("Defensa del pokemon atacante: " + pPokemon.defensa);
+		System.out.println("Ataques acumulados: " + ataquesEuforiaAcumulados);	
+		System.out.println("Turnos de euforia: " + this.euforia);
 		
 		setChanged();
 		notifyObservers(new int [] {this.vida,this.defensa,this.ataque,this.euforia,this.ataquesEuforiaAcumulados, pPokemon.id});
@@ -199,12 +203,9 @@ public abstract class Pokemon extends Observable {
 		if (pPokemon.ataque>=100 && pPokemon.defensa>=100) {
 			pPokemon.setAtaque(pPokemon.ataque-100);
 			pPokemon.setDefensa(pPokemon.defensa-100);
-			ataquesEuforiaAcumulados = 0;
+			pPokemon.ataquesEuforiaAcumulados = 0;
 			pPokemon.setHaAtacadoEuforico(false);
 		}
-		System.out.println("Id del pokemon atacante: "+ pPokemon.id);
-		System.out.println("Ataque del pokemon atacante: " + pPokemon.ataque);
-		System.out.println("Defensa del pokemon atacante: " + pPokemon.defensa);
 	}
 	
 	public abstract boolean recibeAtaqueEfectivo(String pTipo);

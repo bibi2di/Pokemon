@@ -47,6 +47,10 @@ public class Bot extends Jugador {
 					if (!pokAtaque.haAtacado() && !pokAtaque.seHaDebilitado() && !pokDefensa.seHaDebilitado()) {
 						pokAtaque.haAtacadoYa(true);
 						CampoDeBatalla.getCampoBatalla().realizarAtaques(pokAtaque, pokDefensa);
+						if (pokAtaque.estaEuforico()) {
+							pokAtaque.cambiarEstado(new EstadoNormal());
+							pokDefensa.quitarEstadoEuforia(pokAtaque);
+						}
 						CampoDeBatalla.getCampoBatalla().eliminarBatalla();
 					}
 				}
