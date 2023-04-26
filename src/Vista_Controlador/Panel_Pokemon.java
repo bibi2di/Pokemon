@@ -31,7 +31,7 @@ public class Panel_Pokemon extends JPanel implements Observer {
 	private JPanel Panel_Pokemons_Inf_Health;
 	private JPanel Panel_Pokemons_Inf_ChargedAttack;
 	private JLabel lbl_Health_bar;
-	private JLabel lblChargedAttack;
+	private JProgressBar progCharBar;
 	private JLabel label_1;
 	private JLabel lblAtt;
 	private JLabel lab_att;
@@ -103,9 +103,9 @@ public class Panel_Pokemon extends JPanel implements Observer {
 		progressBar = new JProgressBar();
 		return progressBar;
 	}
-	public JLabel getLblChargedAttack() {
-		lblChargedAttack = new JLabel("Charged Attack");
-		return lblChargedAttack;
+	public JProgressBar getLblChargedAttack() {
+		progCharBar = new JProgressBar();
+		return progCharBar;
 	}
 	public JLabel getLabel_1() {
 		String imagenes[] = {"sprites/abra.png", "sprites/alakazam.png", "sprites/butterfree.png", "sprites/caterpie.png"
@@ -173,7 +173,11 @@ public class Panel_Pokemon extends JPanel implements Observer {
 				lab_att.setText(String.valueOf(ataquePokAtacado));
 				lab_Def.setText(String.valueOf(defensaPokAtacado));
 				lab_health.setText(String.valueOf(vida));
+				progCharBar.setValue(turnosEuforiaActuales);
 				progressBar.setValue(vida);
+				progCharBar.setMaximum(turnosEuforiaTotales);
+				progCharBar.setValue(turnosEuforiaActuales);
+				progCharBar.setForeground(Color.BLUE);
 				double porcentajeVida = 0;
 				porcentajeVida = ((double) vida / (double) primeraVida);
 				if (porcentajeVida<=0.2) {
@@ -190,7 +194,6 @@ public class Panel_Pokemon extends JPanel implements Observer {
 				if(vida==0) {
 					System.out.println("COLOR CAMBIADO PORQUE ESTÁ ELIMINADO");
 					Panel_Pokemons_Inf_ChargedAttack.setBackground(Color.RED);
-					lblChargedAttack.setText("DEBILITADO");
 					
 				}
 			}
@@ -209,6 +212,7 @@ public class Panel_Pokemon extends JPanel implements Observer {
 						defensa = defensa-100;
 						lab_att.setText(String.valueOf(ataque));
 						lab_Def.setText(String.valueOf(defensa));
+						progCharBar.setValue(0);
 					}
 				}
 			}
@@ -272,6 +276,7 @@ public class Panel_Pokemon extends JPanel implements Observer {
 					progressBar.setMaximum(vida);
 					progressBar.setValue(vida);
 					progressBar.setForeground(Color.GREEN);
+					
 				}
 			}
 		}

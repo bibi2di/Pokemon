@@ -50,6 +50,7 @@ public class Bot extends Jugador {
 						if (pokAtaque.estaEuforico()) {
 							pokAtaque.cambiarEstado(new EstadoNormal());
 							pokDefensa.quitarEstadoEuforia(pokAtaque);
+							pokAtaque.setAquesEuforiaAcumulados(0);
 						}
 						CampoDeBatalla.getCampoBatalla().eliminarBatalla();
 					}

@@ -12,7 +12,7 @@ public abstract class Pokemon extends Observable {
 	private int vidaIni;
 	private String tipo;
 	private boolean yaHaAtacado;
-	private int euforia = /*(int) (Math.random()*5+3)*/ 3; 
+	private int euforia = (int) (Math.random()*5+3); 
 	private int ataquesEuforiaAcumulados;
 	private Evolucion stateEvo;
 	private Estado stateEuforia;
@@ -31,6 +31,10 @@ public abstract class Pokemon extends Observable {
 		//establecerValores();
 		this.id = pId;
 		
+	}
+	
+	public void setAquesEuforiaAcumulados(int pAtaque) {
+		ataquesEuforiaAcumulados = pAtaque;
 	}
 	
 	public void setHaAtacadoEuforico(boolean pHaAtacadoEuforico) {
