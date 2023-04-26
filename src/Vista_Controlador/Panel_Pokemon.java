@@ -178,6 +178,8 @@ public class Panel_Pokemon extends JPanel implements Observer {
 				progCharBar.setMaximum(turnosEuforiaTotales);
 				progCharBar.setValue(turnosEuforiaActuales);
 				progCharBar.setForeground(Color.BLUE);
+				progCharBar.setString("Charged Attack");
+				progCharBar.setStringPainted(true);
 				double porcentajeVida = 0;
 				porcentajeVida = ((double) vida / (double) primeraVida);
 				if (porcentajeVida<=0.2) {
@@ -276,6 +278,8 @@ public class Panel_Pokemon extends JPanel implements Observer {
 					progressBar.setMaximum(vida);
 					progressBar.setValue(vida);
 					progressBar.setForeground(Color.GREEN);
+					progressBar.setString("Health");
+					progressBar.setStringPainted(true);
 					
 				}
 			}
