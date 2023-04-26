@@ -302,7 +302,7 @@ public class Panel_Pokemon extends JPanel implements Observer {
 				//ListaJugadores.getListaJugadores().buscarJugador(idJug).getPokemon(idPok).haAtacadoEuforico();
 				cont++;
 				System.out.println("El valor de cont es" + cont);
-				if (cont==1 && idJug!=1) /*El bot lo gestiona de otra manera*/ {
+				if (cont==1 && idJug!=1) /*El bot lo gestiona de otra manera*/{
 					System.out.println("Entra en el if vista 1 y el id del jugador atacante es: " + idJug + " y el id del pokemon atacante es: " + idPok);
 					ListaJugadores.getListaJugadores().buscarJugador(idJug).getPokemon(idPok).estaEuforico();
 				}

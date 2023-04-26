@@ -12,7 +12,7 @@ public abstract class Pokemon extends Observable {
 	private int vidaIni;
 	private String tipo;
 	private boolean yaHaAtacado;
-	private int euforia = (int) (Math.random()*5+3); 
+	private int euforia = /*(int) (Math.random()*5+3)*/3; 
 	private int ataquesEuforiaAcumulados;
 	private Evolucion stateEvo;
 	private Estado stateEuforia;
@@ -117,7 +117,7 @@ public abstract class Pokemon extends Observable {
 		}
 		this.vida = (int)(this.vida -(pPokemon.ataque*multiplicador) - this.defensa);
 		if (pPokemon.stateEuforia instanceof EstadoEuforia) {
-			this.setHaAtacadoEuforico(true);
+			pPokemon.setHaAtacadoEuforico(true);
 		}		
 		
 		double vidaRestante = (double)this.vida/this.vidaIni;
@@ -135,7 +135,7 @@ public abstract class Pokemon extends Observable {
 			this.estadoEuforia();
 		}
 		
-		if(this.haAtacadoEuforico) {
+		if(pPokemon.haAtacadoEuforico) {
 			this.cambiarEstado(new EstadoNormal());
 			this.quitarEstadoEuforia(pPokemon);
 		}
@@ -150,8 +150,6 @@ public abstract class Pokemon extends Observable {
 		System.out.println("Id del pokemon atacante: "+ pPokemon.id);
 		System.out.println("Ataque del pokemon atacante: " + pPokemon.ataque);
 		System.out.println("Defensa del pokemon atacante: " + pPokemon.defensa);
-		System.out.println("Ataques acumulados: " + ataquesEuforiaAcumulados);	
-		System.out.println("Turnos de euforia: " + this.euforia);
 		
 		setChanged();
 		notifyObservers(new int [] {this.vida,this.defensa,this.ataque,this.euforia,this.ataquesEuforiaAcumulados});
