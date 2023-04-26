@@ -95,7 +95,7 @@ public abstract class Pokemon extends Observable {
 		this.defensa = pDefensa;
 	}
 	
-	public boolean estaEuforico() { 
+	public boolean estaEuforico() { /*Aqui comprueba la euforia*/
 		setChanged();
 		notifyObservers(new boolean[] {this.stateEuforia instanceof EstadoEuforia});
 		return this.stateEuforia instanceof EstadoEuforia;
