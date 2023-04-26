@@ -119,7 +119,7 @@ public class Panel_Pokemon extends JPanel implements Observer {
 		label_1 = new JLabel("");
 		int r = (int)(Math.random()*21); 
 		String url = imagenes[r];
-		label_1.setIcon(new ImageIcon(url));
+		label_1.setIcon(new ImageIcon(Panel_Pokemon.class.getResource(url)));
 		label_1.addMouseListener(getControler());
 		return label_1;
 	}
@@ -226,7 +226,7 @@ public class Panel_Pokemon extends JPanel implements Observer {
 				Evolucion ev = evArray[0];
 				if (ev!= null) {
 					if (lab_type.getText().equals("Planta") && (ev instanceof Evolucion1)){
-						label_1.setIcon(new ImageIcon("sprites/Grass/1ivysaur.png"));
+						label_1.setIcon(new ImageIcon(Panel_Pokemon.class.getResource("/sprites/Grass/1ivysaur.png")));
 					}
 					else if(lab_type.getText().equals("Planta") && (ev instanceof Evolucion2)) {
 						label_1.setIcon(new ImageIcon("sprites/Grass/2venusaur.png"));
