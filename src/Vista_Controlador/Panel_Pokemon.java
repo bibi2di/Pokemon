@@ -107,6 +107,9 @@ public class Panel_Pokemon extends JPanel implements Observer {
 		progCharBar = new JProgressBar();
 		return progCharBar;
 	}
+	/*
+	 * new imageicon(Mainboard.class.getrecource("/...))
+	 */
 	public JLabel getLabel_1() {
 		String imagenes[] = {"sprites/abra.png", "sprites/alakazam.png", "sprites/butterfree.png", "sprites/caterpie.png"
 				,"sprites/dragonair.png", "sprites/dragonite.png", "sprites/dratini.png", "sprites/gastly.png", "sprites/gengar.png"

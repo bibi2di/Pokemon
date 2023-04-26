@@ -73,7 +73,8 @@ public class Pantalla_De_Inicio extends JFrame implements Observer{
 	 * Create the frame.
 	 */
 	public Pantalla_De_Inicio() {
-		setIconImage(Toolkit.getDefaultToolkit().getImage("sprites/pokebol.png"));
+		
+		setIconImage(Toolkit.getDefaultToolkit().getImage("/sprites/pokebol.png"));
 		setTitle("Pokemon");
 		getContentPane().setForeground(new Color(255, 255, 255));
 		setBounds(100, 100, 800, 330);
@@ -212,7 +213,8 @@ public class Pantalla_De_Inicio extends JFrame implements Observer{
 	private JLabel getLabel() {
 		if (label == null) {
 			label = new JLabel("");
-			label.setIcon(new ImageIcon("sprites/main.png"));
+			//new imageicon(Mainboard.class.getrecource("/...))
+			label.setIcon(new ImageIcon(Pantalla_De_Inicio.class.getResource("/sprites/main.png")));
 		}
 		return label;
 	}
