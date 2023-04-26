@@ -72,7 +72,7 @@ public class CampoDeBatalla extends Observable{
 			pPokemonAtaca.haAtacadoYa(true);
 			pPokemonAtacado.recibirAtaque(pPokemonAtaca);
 			haRealizadoAtaque = true;
-			if (pPokemonAtaca.estaEuforico()) { /*Cambia el estado si está euforico*/
+			if (pPokemonAtaca.estaEuforico()) { 
 				pPokemonAtaca.cambiarEstado(new EstadoNormal());
 				pPokemonAtacado.quitarEstadoEuforia(pPokemonAtaca);
 				pPokemonAtaca.setAquesEuforiaAcumulados(0);
