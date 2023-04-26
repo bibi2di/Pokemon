@@ -47,7 +47,7 @@ public class Bot extends Jugador {
 					if (!pokAtaque.haAtacado() && !pokAtaque.seHaDebilitado() && !pokDefensa.seHaDebilitado()) {
 						pokAtaque.haAtacadoYa(true);
 						CampoDeBatalla.getCampoBatalla().realizarAtaques(pokAtaque, pokDefensa);
-						if (pokAtaque.estaEuforico()) {
+						if (pokAtaque.estaEuforico()) { /*En el bot se gestiona aquí la euforia*/
 							pokAtaque.cambiarEstado(new EstadoNormal());
 							pokDefensa.quitarEstadoEuforia(pokAtaque);
 							pokAtaque.setAquesEuforiaAcumulados(0);
