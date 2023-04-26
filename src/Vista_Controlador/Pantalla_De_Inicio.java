@@ -22,6 +22,7 @@ import Modelo.ListaJugadores;
 import javax.swing.Action;
 import javax.swing.ImageIcon;
 import java.awt.Color;
+import java.awt.Toolkit;
 /*
  * alks ashdlsad
  */
@@ -72,6 +73,7 @@ public class Pantalla_De_Inicio extends JFrame implements Observer{
 	 * Create the frame.
 	 */
 	public Pantalla_De_Inicio() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage("/sprites/pokebol.png"));
 		setTitle("Pokemon");
 		getContentPane().setForeground(new Color(255, 255, 255));
 		setBounds(100, 100, 800, 330);

@@ -22,6 +22,7 @@ import java.awt.event.ActionListener;
 import java.util.Observable;
 import java.util.Observer;
 import java.util.concurrent.TimeUnit;
+import java.awt.Toolkit;
 
 @SuppressWarnings("deprecation")
 public class Vista_Jugador extends JFrame implements Observer{
@@ -71,6 +72,7 @@ public class Vista_Jugador extends JFrame implements Observer{
 	 * Create the frame.
 	 */
 	public Vista_Jugador(int nPok, int nJug, boolean turno) {
+		setIconImage(Toolkit.getDefaultToolkit().getImage("/sprites/pokebol.png"));
 		Vista_Pokemon Vista_Pok = new Vista_Pokemon(nPok, nJug);
 		idJug = nJug;
 		setTitle("Pokemon - Jugador "+nJug);
