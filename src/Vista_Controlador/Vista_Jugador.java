@@ -73,7 +73,7 @@ public class Vista_Jugador extends JFrame implements Observer{
 	 */
 	public Vista_Jugador(int nPok, int nJug, boolean turno) {
 		setIconImage(Toolkit.getDefaultToolkit().getImage("sprites/pokebol.png"));
-		Vista_Pokemon Vista_Pok = new Vista_Pokemon(nPok, nJug);
+		Vista_Pokemon Vista_Pok = new Vista_Pokemon(/*nPok, nJug*/);
 		idJug = nJug;
 		setTitle("Pokemon - Jugador "+nJug);
 		setBounds(100, 100, 800, 300);
