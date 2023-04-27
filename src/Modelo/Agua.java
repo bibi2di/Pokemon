@@ -10,7 +10,6 @@ public class Agua extends Pokemon {
 	public Agua(int i) {
 		super(i);
 		tipo = "Agua";
-		// TODO - implement Agua.Agua
 	}
 
 	@Override

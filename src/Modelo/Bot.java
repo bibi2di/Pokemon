@@ -1,7 +1,5 @@
 package Modelo;
 
-import java.util.Collection;
-
 public class Bot extends Jugador {
 
 	private boolean turno;
