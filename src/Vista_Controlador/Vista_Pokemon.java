@@ -29,7 +29,7 @@ public class Vista_Pokemon extends JPanel /*implements Observer */{
 	//private Controler controler = null;
 	private JPanel PanelPokemons;
 	private JPanel PanelPokemons_Vis;
-	private JPanel Panel_Pokemons_Inf_Health;
+	/*private JPanel Panel_Pokemons_Inf_Health;
 	private JPanel Panel_Pokemons_Inf_ChargedAttack;
 	private JLabel lbl_Health_bar;
 	private JLabel lblChargedAttack;
@@ -39,9 +39,9 @@ public class Vista_Pokemon extends JPanel /*implements Observer */{
 	private JLabel lblDef;
 	private JLabel lab_Def;
 	private JLabel lblHealth_1;
-	private JLabel lab_health;
 	private JLabel lblType;
-	private JLabel lab_type;
+	private JLabel lab_type;*/
+	private JLabel lab_health;
 	private JPanel Panel_Pokemons_Sup;
 	private JPanel Panel_Pokemons_Cen;
 	private JPanel Panel_Pokemons_Inf;
