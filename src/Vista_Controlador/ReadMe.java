@@ -4,12 +4,10 @@ import java.awt.EventQueue;
 import java.awt.Toolkit;
 
 import javax.swing.JFrame;
-import javax.swing.JComboBox;
-import java.awt.BorderLayout;
-import javax.swing.JTextPane;
-import javax.swing.JPanel;
 
 public class ReadMe extends JFrame {
+
+	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Launch the application.
@@ -32,7 +30,7 @@ public class ReadMe extends JFrame {
 	 */
 	public ReadMe() {
 		setTitle("Información del Juego");
-		setIconImage(Toolkit.getDefaultToolkit().getImage("sprites/pokebol.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(ReadMe.class.getResource("/sprites/pokebol.png")));
 		setBounds(100, 100, 800, 400);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setResizable(false);
