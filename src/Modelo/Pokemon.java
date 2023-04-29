@@ -12,7 +12,7 @@ public abstract class Pokemon extends Observable {
 	private int vidaIni;
 	private String tipo;
 	private boolean yaHaAtacado;
-	private int euforia = (int) (Math.random()*5+3); 
+	private int euforia = (int) (Math.random()*5+3); //Numero random entre 3 y 7
 	private int ataquesEuforiaAcumulados;
 	private Evolucion stateEvo;
 	private Estado stateEuforia;
@@ -191,7 +191,7 @@ public abstract class Pokemon extends Observable {
 		if (ataquesEuforiaAcumulados >= euforia) {
 			this.cambiarEstado(new EstadoEuforia());
 			stateEuforia.estadoEuforia(this);
-			System.out.println("Esta euforico");
+			//System.out.println("Esta euforico");
 			
 			
 		}
