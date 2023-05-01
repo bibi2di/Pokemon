@@ -59,32 +59,6 @@ public class Panel_Pokemon extends JPanel implements Observer {
 		return this.idPok;
 	}
 	
-	/*public JPanel getPanel_Pokemons_Sup() {
-		
-		Panel_Pokemons_Sup = new JPanel();
-		Panel_Pokemons_Sup.setLayout(new GridLayout(4, 2, 0, 0));
-		Panel_Pokemons_Sup.add(getLblAtt());
-		Panel_Pokemons_Sup.add(getLab_att());
-		Panel_Pokemons_Sup.add(getLblDef());
-		Panel_Pokemons_Sup.add(getLabel_2_1());
-		Panel_Pokemons_Sup.add(getLblHealth_1());
-		Panel_Pokemons_Sup.add(getLab_health());
-		Panel_Pokemons_Sup.add(getLblType());
-		Panel_Pokemons_Sup.add(getLab_type());
-		return Panel_Pokemons_Sup;
-	}
-	public JPanel getPanel_Pokemons_Cen() {
-		Panel_Pokemons_Cen = new JPanel();
-		Panel_Pokemons_Cen.add(getLabel_1());
-		return Panel_Pokemons_Cen;
-	}
-	public JPanel getPanel_Pokemons_Inf() {
-		Panel_Pokemons_Inf = new JPanel();
-		Panel_Pokemons_Inf.setLayout(new GridLayout(2, 1, 0, 0));
-		Panel_Pokemons_Inf.add(getPanel_Pokemons_Inf_Health());
-		Panel_Pokemons_Inf.add(getPanel_Pokemons_Inf_ChargedAttack());
-		return Panel_Pokemons_Inf;
-	}*/
 	
 	public JPanel getPanel_Pokemons_Inf_Health() {
 		Panel_Pokemons_Inf_Health = new JPanel();
@@ -333,10 +307,4 @@ public class Panel_Pokemon extends JPanel implements Observer {
 		}
 		}
 		
-		
-		public void atributos(int numPok, int nJug) {
-				//lab_att.setText(String.valueOf(ListaJugadores.getListaJugadores().buscarJugador(nJug).getPokemon(numPok).getAtaque()));
-				//lab_Def.setText(String.valueOf(ListaJugadores.getListaJugadores().buscarJugador(nJug).getPokemon(numPok).getDefensa()));
-				//lab_health.setText(String.valueOf(ListaJugadores.getListaJugadores().buscarJugador(nJug).getPokemon(numPok).getVida()));
-		}
 }
