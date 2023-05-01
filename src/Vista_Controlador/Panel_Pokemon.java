@@ -111,15 +111,7 @@ public class Panel_Pokemon extends JPanel implements Observer {
 	 * new imageicon(Mainboard.class.getrecource("/...))
 	 */
 	public JLabel getLabel_1() {
-		String imagenes[] = {"sprites/abra.png", "sprites/alakazam.png", "sprites/butterfree.png", "sprites/caterpie.png"
-				,"sprites/dragonair.png", "sprites/dragonite.png", "sprites/dratini.png", "sprites/gastly.png", "sprites/gengar.png"
-				,"sprites/geodude.png", "sprites/golem.png", "sprites/graveler.png", "sprites/haunter.png", "sprites/kadabra.png",
-				"sprites/machamp.png", "sprites/machoke.png", "sprites/machop.png", "sprites/metapod.png", "sprites/pidgeot.png",
-				"sprites/pidgeotto.png", "sprites/pidgey.png"};
 		label_1 = new JLabel("");
-		int r = (int)(Math.random()*21); 
-		String url = imagenes[r];
-		label_1.setIcon(new ImageIcon(Panel_Pokemon.class.getResource(url)));
 		label_1.addMouseListener(getControler());
 		return label_1;
 	}
