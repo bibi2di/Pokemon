@@ -215,7 +215,31 @@ public class Panel_Pokemon extends JPanel implements Observer {
 					else if(lab_type.getText().equals("Electrico") && (ev instanceof Evolucion2)) {
 						label_1.setIcon(new ImageIcon(getClass().getResource("/spritesElectric/2raichu2.png")));
 					}
+					else if(lab_type.getText().equals("Bicho") && (ev instanceof Evolucion1)) {
+						label_1.setIcon(new ImageIcon(getClass().getResource("/sprites/metapod.png")));
+					}
+					else if(lab_type.getText().equals("Bicho") && (ev instanceof Evolucion2)) {
+						label_1.setIcon(new ImageIcon(getClass().getResource("/sprites/butterfree.png")));
 				}
+					else if(lab_type.getText().equals("Psiquico") && (ev instanceof Evolucion1)) {
+						label_1.setIcon(new ImageIcon(getClass().getResource("/sprites/kadabra.png")));
+					}
+					else if(lab_type.getText().equals("Psiquico") && (ev instanceof Evolucion2)) {
+						label_1.setIcon(new ImageIcon(getClass().getResource("/sprites/alakazam.png")));
+				}
+					else if(lab_type.getText().equals("Roca") && (ev instanceof Evolucion1)) {
+						label_1.setIcon(new ImageIcon(getClass().getResource("/sprites/graveler.png")));
+					}
+					else if(lab_type.getText().equals("Roca") && (ev instanceof Evolucion2)) {
+						label_1.setIcon(new ImageIcon(getClass().getResource("/sprites/golem.png")));
+				}
+					else if(lab_type.getText().equals("Volador") && (ev instanceof Evolucion1)) {
+						label_1.setIcon(new ImageIcon(getClass().getResource("/sprites/pidgeot.png")));
+					}
+					else if(lab_type.getText().equals("Volador") && (ev instanceof Evolucion2)) {
+						label_1.setIcon(new ImageIcon(getClass().getResource("/sprites/pidgeotto.png")));
+				}
+			}
 			}
 			
 			else if (arg1 instanceof Object []) {
@@ -239,6 +263,18 @@ public class Panel_Pokemon extends JPanel implements Observer {
 				}
 				else if(tipo.equals("Electrico")) {
 					label_1.setIcon(new ImageIcon(getClass().getResource("/spritesElectric/0pikachu.png")));
+				}
+				else if(tipo.equals("Bicho")) {
+					label_1.setIcon(new ImageIcon(getClass().getResource("/sprites/caterpie.png")));
+				}
+				else if(tipo.equals("Psiquico")) {
+					label_1.setIcon(new ImageIcon(getClass().getResource("/sprites/abra.png")));
+				}
+				else if(tipo.equals("Roca")) {
+					label_1.setIcon(new ImageIcon(getClass().getResource("/sprites/geodude.png")));
+				}
+				else if(tipo.equals("Volador")) {
+					label_1.setIcon(new ImageIcon(getClass().getResource("/sprites/pidgey.png")));
 				}
 				//System.out.println("Observer actualizado");
 				if(!pVidaBool) {

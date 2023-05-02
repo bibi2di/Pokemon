@@ -1,7 +1,7 @@
 package Modelo;
 public class Agua extends Pokemon {
 
-	private String tipo;
+	//private String tipo;
 
 	/**
 	 * 
@@ -9,7 +9,7 @@ public class Agua extends Pokemon {
 	 */
 	public Agua(int i) {
 		super(i);
-		tipo = "Agua";
+		//tipo = "Agua";
 	}
 
 	@Override

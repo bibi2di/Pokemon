@@ -1,25 +1,22 @@
 package Modelo;
-public class Fuego extends Pokemon {
-
-	//private String tipo;
+public class Roca extends Pokemon {
 
 	/**
 	 * 
 	 * @param pTipoEfectivo
 	 */
-	public Fuego(int i) {
+	public Roca(int i) {
 		super(i);
-		//tipo = "Fuego";
 	}
 
 	@Override
 	public boolean recibeAtaqueEfectivo(String pTipo) {
-		return pTipo.equals("Planta");
+		return pTipo.equals("Volador");
 	}
 
 	@Override
 	public boolean recibeAtaquePocoEfectivo(String pTipo) {
-		return pTipo.equals("Agua");
+		return (pTipo.equals("Agua") || pTipo.equals("Planta"));
 	}
 
 }

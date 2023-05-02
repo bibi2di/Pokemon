@@ -2,7 +2,7 @@ package Modelo;
 
 public class Planta extends Pokemon {
 
-	private String tipo;
+	//private String tipo;
 
 	/**
 	 * 
@@ -11,7 +11,7 @@ public class Planta extends Pokemon {
 	public Planta(int i) {
 		// TODO - implement Planta.Planta
 		super(i);
-		tipo = "Planta";
+		//tipo = "Planta";
 	}
 
 	@Override

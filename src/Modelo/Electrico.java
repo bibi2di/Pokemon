@@ -1,7 +1,7 @@
 package Modelo;
 public class Electrico extends Pokemon {
 
-	private String tipo;
+	//private String tipo;
 
 	/**
 	 * 
@@ -9,7 +9,7 @@ public class Electrico extends Pokemon {
 	 */
 	public Electrico(int i) {
 		super(i);
-		tipo = "Electrico";
+		//tipo = "Electrico";
 		
 	}
 
