@@ -107,7 +107,9 @@ public abstract class Pokemon extends Observable {
 	 * @param pTipo
 	 */
 	public void recibirAtaque(Pokemon pPokemon) {
-		this.ataquesEuforiaAcumulados++;
+		if (this.ataquesEuforiaAcumulados<this.euforia) {
+			this.ataquesEuforiaAcumulados++;
+		}
 		double multiplicador = 1;
 		if(pPokemon.recibeAtaqueEfectivo(this.tipo)) {
 			multiplicador = 2;
@@ -144,9 +146,9 @@ public abstract class Pokemon extends Observable {
 			this.vida = 0;
 		}
 		
-		if (this.ataquesEuforiaAcumulados>this.euforia) {
+		/*if (this.ataquesEuforiaAcumulados>this.euforia) {
 			this.ataquesEuforiaAcumulados = this.euforia;
-		}
+		}*/
 		System.out.println("Id del pokemon atacante: "+ pPokemon.id);
 		System.out.println("Ataque del pokemon atacante: " + pPokemon.ataque);
 		System.out.println("Defensa del pokemon atacante: " + pPokemon.defensa);
