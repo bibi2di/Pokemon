@@ -127,7 +127,7 @@ public class Vista_Jugador extends JFrame implements Observer{
 	private JLabel getLabel() {
 		String fotoEntr = "";
 		int r = (int)(Math.random()*6); 
-		fotoEntr = "sprites/trainer"+r+".png";
+		fotoEntr = "/sprites/trainer"+r+".png";
 		label = new JLabel("");
 		label.setHorizontalAlignment(SwingConstants.CENTER);
 		
