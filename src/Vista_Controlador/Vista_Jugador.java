@@ -293,7 +293,7 @@ public class Vista_Jugador extends JFrame implements Observer{
 				if (perdido) {
 					System.out.println("El jugador: "+ idJug+ " ha perdido");
 					try {
-						TimeUnit.SECONDS.sleep(5);
+						TimeUnit.SECONDS.sleep(2);
 					} catch (InterruptedException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
