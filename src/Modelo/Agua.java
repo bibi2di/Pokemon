@@ -1,15 +1,12 @@
 package Modelo;
 public class Agua extends Pokemon {
 
-	//private String tipo;
-
 	/**
 	 * 
 	 * @param pTipoEfectivo
 	 */
 	public Agua(int i) {
 		super(i);
-		//tipo = "Agua";
 	}
 
 	@Override
