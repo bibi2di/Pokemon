@@ -192,28 +192,28 @@ public class Panel_Pokemon extends JPanel implements Observer {
 				Evolucion ev = evArray[0];
 				if (ev!= null) {
 					if (lab_type.getText().equals("Planta") && (ev instanceof Evolucion1)){
-						label_1.setIcon(new ImageIcon("sprites/Grass/1ivysaur.png"));
+						label_1.setIcon(new ImageIcon(getClass().getResource("/spritesGrass/1ivysaur.png")));
 					}
 					else if(lab_type.getText().equals("Planta") && (ev instanceof Evolucion2)) {
-						label_1.setIcon(new ImageIcon("sprites/Grass/2venusaur.png"));
+						label_1.setIcon(new ImageIcon(getClass().getResource("/spritesGrass/2venusaur.png")));
 					}
 					else if(lab_type.getText().equals("Fuego") && (ev instanceof Evolucion1)) {
-						label_1.setIcon(new ImageIcon("sprites/Fire/1charmeleon.png"));
+						label_1.setIcon(new ImageIcon(getClass().getResource("/spritesFire/1charmeleon.png")));
 					}
 					else if(lab_type.getText().equals("Fuego") && (ev instanceof Evolucion2)) {
-						label_1.setIcon(new ImageIcon("sprites/Fire/2charizard.png"));
+						label_1.setIcon(new ImageIcon(getClass().getResource("/spritesFire/2charizard.png")));
 					}
 					else if(lab_type.getText().equals("Agua") && (ev instanceof Evolucion1)) {
-						label_1.setIcon(new ImageIcon("sprites/Water/1wartortle.png"));
+						label_1.setIcon(new ImageIcon(getClass().getResource("/spritesWater/1wartortle.png")));
 					}
 					else if(lab_type.getText().equals("Agua") && (ev instanceof Evolucion2)) {
-						label_1.setIcon(new ImageIcon("sprites/Water/2blastoise.png"));
+						label_1.setIcon(new ImageIcon(getClass().getResource("/spritesWater/2blastoise.png")));
 					}
 					else if(lab_type.getText().equals("Electrico") && (ev instanceof Evolucion1)) {
-						label_1.setIcon(new ImageIcon("sprites/Electric/1raichu.png"));
+						label_1.setIcon(new ImageIcon(getClass().getResource("/spritesElectric/1raichu.png")));
 					}
 					else if(lab_type.getText().equals("Electrico") && (ev instanceof Evolucion2)) {
-						label_1.setIcon(new ImageIcon("sprites/Electric/2raichu2.png"));
+						label_1.setIcon(new ImageIcon(getClass().getResource("/spritesElectric/2raichu2.png")));
 					}
 				}
 			}
@@ -229,16 +229,16 @@ public class Panel_Pokemon extends JPanel implements Observer {
 				lab_health.setText(String.valueOf(vida));
 				lab_type.setText(tipo);
 				if (tipo.equals("Planta")) {
-					label_1.setIcon(new ImageIcon("sprites/Grass/0bulbasaur.png"));
+					label_1.setIcon(new ImageIcon(getClass().getResource("/spritesGrass/0bulbasaur.png")));
 				}
 				else if (tipo.equals("Fuego")) {
-					label_1.setIcon(new ImageIcon("sprites/Fire/0charmander.png"));
+					label_1.setIcon(new ImageIcon(getClass().getResource("/spritesFire/0charmander.png")));
 				}
 				else if (tipo.equals("Agua")) {
-					label_1.setIcon(new ImageIcon("sprites/Water/0squirtle.png"));
+					label_1.setIcon(new ImageIcon(getClass().getResource("/spritesWater/0squirtle.png")));
 				}
 				else if(tipo.equals("Electrico")) {
-					label_1.setIcon(new ImageIcon("sprites/Electric/0pikachu.png"));
+					label_1.setIcon(new ImageIcon(getClass().getResource("/spritesElectric/0pikachu.png")));
 				}
 				//System.out.println("Observer actualizado");
 				if(!pVidaBool) {
