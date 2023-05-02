@@ -3,11 +3,7 @@ package Vista_Controlador;
  * A
  */
 
-import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.Observable;
@@ -27,10 +23,14 @@ import Modelo.Pokemon;
 
 @SuppressWarnings("deprecation")
 public class Panel_Pokemon extends JPanel implements Observer {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Controler controler;
 	private JPanel Panel_Pokemons_Inf_Health;
 	private JPanel Panel_Pokemons_Inf_ChargedAttack;
-	private JLabel lbl_Health_bar;
+	
 	private JProgressBar progCharBar;
 	private JLabel label_1;
 	private JLabel lblAtt;
@@ -122,11 +122,11 @@ public class Panel_Pokemon extends JPanel implements Observer {
 		lab_type = new JLabel("Normal");
 		return lab_type;
 	}
-	private JProgressBar getProgressBar() {
+	/*private JProgressBar getProgressBar() {
 		progressBar = new JProgressBar();
 		return progressBar;
 	}
-	
+	*/
 	@Override
 	public void update(Observable arg0, Object arg1) { /*Este panel es solo para los Pokemon*/
 		// TODO Auto-generated method stub
@@ -156,8 +156,8 @@ public class Panel_Pokemon extends JPanel implements Observer {
 				}else if(porcentajeVida<=0.5) {
 					progressBar.setForeground(Color.ORANGE);
 				}
-				double porcentajeEuforia = 0;
-				porcentajeEuforia = ((double) turnosEuforiaActuales / (double) turnosEuforiaTotales);
+				//double porcentajeEuforia = 0;
+				//porcentajeEuforia = ((double) turnosEuforiaActuales / (double) turnosEuforiaTotales);
 				
 				
 				//System.out.println("Ataque realizado");

@@ -1,9 +1,6 @@
 package Modelo;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
 import java.util.Observable;
 import java.util.stream.Collectors;
 
@@ -37,11 +34,6 @@ public class Jugador extends Observable {
 	protected boolean getTurno() {
 		return this.turno;
 	}
-	
-	private Iterator<Pokemon> getIterador() {
-		return lPokemon.iterator();
-	}
-	
 	/*public ArrayList<Integer> getAtaques()
 	{
 		ArrayList<Integer> ataques = new ArrayList<>();

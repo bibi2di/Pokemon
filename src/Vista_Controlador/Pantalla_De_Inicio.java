@@ -1,8 +1,6 @@
 package Vista_Controlador;
 
 import java.awt.EventQueue;
-import java.awt.Frame;
-
 import javax.swing.JFrame;
 import java.awt.BorderLayout;
 import javax.swing.JPanel;
@@ -11,15 +9,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Observable;
 import java.util.Observer;
-import java.util.concurrent.TimeUnit;
-
 import javax.swing.JLabel;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 
 import Modelo.ListaJugadores;
 
-import javax.swing.Action;
 import javax.swing.ImageIcon;
 import java.awt.Color;
 import java.awt.Toolkit;
@@ -29,6 +24,10 @@ import java.awt.Toolkit;
 @SuppressWarnings("deprecation")
 
 public class Pantalla_De_Inicio extends JFrame implements Observer{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel Panel_derecho;
 	private JPanel panel_central;
 	private JPanel Panel_derecho_sup;
@@ -260,10 +259,10 @@ public class Pantalla_De_Inicio extends JFrame implements Observer{
 				readme.setVisible(true);
 			}
 		}
-		public void ganador() {
+		/*public void ganador() {
 			ListaJugadores.getListaJugadores().jugadorGanador();
 		}
-		
+		*/
 		// hacer llamada de jugadorGanador -> int
 	}
 	@Override

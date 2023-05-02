@@ -1,13 +1,12 @@
 package Modelo;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Observable;
 import java.util.stream.Collectors; 
 
 
+@SuppressWarnings("deprecation")
 public class ListaJugadores extends Observable{
 
 	private static ListaJugadores miListaJugadores;

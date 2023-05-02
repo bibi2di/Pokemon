@@ -10,6 +10,7 @@ public class Bot extends Jugador {
 
 	}
 	
+	@SuppressWarnings("deprecation")
 	public void setTurno(boolean pTurno) {
 		this.turno = pTurno;
 

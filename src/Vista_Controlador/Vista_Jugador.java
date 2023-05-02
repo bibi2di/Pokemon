@@ -5,18 +5,15 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import java.awt.Color;
-import javax.swing.BoxLayout;
 import java.awt.BorderLayout;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
 
-import Modelo.CampoDeBatalla;
 import Modelo.Jugador;
 import Modelo.ListaJugadores;
 
-import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Observable;
@@ -26,6 +23,7 @@ import java.awt.Toolkit;
 
 @SuppressWarnings("deprecation")
 public class Vista_Jugador extends JFrame implements Observer{
+	private static final long serialVersionUID = 1L;
 	private JPanel Panel_Jugador;
 	private JPanel Panel_Jugador_Estado;
 	private JButton btn_Jugador_estado;

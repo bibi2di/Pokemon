@@ -1,8 +1,8 @@
 package Modelo;
 
-import java.lang.reflect.Array;
 import java.util.Observable;
 
+@SuppressWarnings("deprecation")
 public class CampoDeBatalla extends Observable{
 	
 	private static CampoDeBatalla miCampoDeBatalla;
