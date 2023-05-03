@@ -234,10 +234,10 @@ public class Panel_Pokemon extends JPanel implements Observer {
 						label_1.setIcon(new ImageIcon(getClass().getResource("/sprites/golem.png")));
 				}
 					else if(lab_type.getText().equals("Volador") && (ev instanceof Evolucion1)) {
-						label_1.setIcon(new ImageIcon(getClass().getResource("/sprites/pidgeot.png")));
+						label_1.setIcon(new ImageIcon(getClass().getResource("/sprites/pidgeotto.png")));
 					}
 					else if(lab_type.getText().equals("Volador") && (ev instanceof Evolucion2)) {
-						label_1.setIcon(new ImageIcon(getClass().getResource("/sprites/pidgeotto.png")));
+						label_1.setIcon(new ImageIcon(getClass().getResource("/sprites/pidgeot.png")));
 				}
 			}
 			}
