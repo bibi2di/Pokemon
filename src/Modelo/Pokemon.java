@@ -125,11 +125,13 @@ public abstract class Pokemon extends Observable {
 		double multiplicador = 1;
 		if(pPokemon.recibeAtaqueEfectivo(this.tipo)) {
 			multiplicador = 2;
+			System.out.println("¡Es muy efectivo!");
 		}
 		else if(pPokemon.recibeAtaquePocoEfectivo(this.tipo)) {
 			multiplicador = 0.5;
+			System.out.println("No es muy efectivo...");
 		}
-		this.vida = (int)(this.vida -(pPokemon.ataque*multiplicador) - this.defensa);
+		this.vida = (int)(this.vida -(pPokemon.ataque*multiplicador - this.defensa));
 		if (pPokemon.stateEuforia instanceof EstadoEuforia) {
 			pPokemon.setHaAtacadoEuforico(true);
 		}		
