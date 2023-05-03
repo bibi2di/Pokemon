@@ -22,7 +22,7 @@ public class PokemonFactory {
 		int r = (int)(Math.random()*8); 
 		String nombre = new String[] {"Agua", "Fuego", "Planta", "Electrico", "Bicho", "Volador", "Psiquico", "Roca"}[r]; //tipo aleatorio
 		Pokemon pokeAct = null;
-		System.out.println("El tipo de Pokemon es: " + nombre);
+		//System.out.println("El tipo de Pokemon es: " + nombre);
 		if (nombre == "Agua") {pokeAct = new Agua(i);}
 		else if (nombre == "Fuego") {pokeAct = new Fuego(i);}
 		else if (nombre == "Planta") {pokeAct = new Planta(i);}

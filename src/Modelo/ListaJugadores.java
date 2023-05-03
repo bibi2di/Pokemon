@@ -104,7 +104,6 @@ public class ListaJugadores extends Observable{
 		//Finalmente, elegimos un jugador al azar y le ponemos el turno a true
 		jug = this.buscarJugador(turno);
 		jug.setTurno(true);
-		System.out.println("El turno es de "+ jug.getId());
 		}
 		//setChanged();
 		//notifyObservers(new Object[] {jug});

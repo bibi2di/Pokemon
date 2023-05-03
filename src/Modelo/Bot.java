@@ -18,7 +18,7 @@ public class Bot extends Jugador {
 		notifyObservers(new Object[] {pTurno}); 
 		//poner en verde
 		
-		System.out.println("Ha cambiado el turno a" + pTurno);
+		//System.out.println("Ha cambiado el turno a" + pTurno);
 		if (this.turno) {
 			ataquedeBot();
 			

@@ -111,11 +111,9 @@ public class Vista_Jugador extends JFrame implements Observer{
 		if (btn_Jugador_estado == null) {
 			if (turno == false) {
 				btn_Jugador_estado = new JButton("Espera");
-				System.out.println("Me toca esperar");
 				}
 			else
 				{btn_Jugador_estado = new JButton("Ataca");
-				System.out.println("Me toca atacar");
 				}
 			btn_Jugador_estado.setBorderPainted( false );
 			btn_Jugador_estado.addActionListener(getControler());
@@ -183,7 +181,6 @@ public class Vista_Jugador extends JFrame implements Observer{
 				boolean perdido = (boolean)arrayBool[0];
 				if(!perdido) {
 					btn_Jugador_estado.setText("Ha Ganado");
-					System.out.println("HA GANADO JUGADOR "+idJug);
 					Panel_Jugador_Estado.setBackground(Color.YELLOW);
 				}
 				if (perdido) {

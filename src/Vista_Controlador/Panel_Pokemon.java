@@ -303,12 +303,12 @@ public class Panel_Pokemon extends JPanel implements Observer {
 		public void mouseClicked(MouseEvent e) {
 			//if(e.getSource().equals(this)) {
 				CampoDeBatalla.getCampoBatalla().sePuedeAtacar(idPok, idJug);
-				System.out.println(" Se ha clickado el pokemon" + idPok + "del jugador" + idJug);
+				//System.out.println(" Se ha clickado el pokemon" + idPok + "del jugador" + idJug);
 				//ListaJugadores.getListaJugadores().buscarJugador(idJug).getPokemon(idPok).haAtacadoEuforico();
 				cont++;
-				System.out.println("El valor de cont es" + cont);
+				//System.out.println("El valor de cont es" + cont);
 				if (cont==1 && idJug!=1) /*El bot lo gestiona de otra manera*/{
-					System.out.println("Entra en el if vista 1 y el id del jugador atacante es: " + idJug + " y el id del pokemon atacante es: " + idPok);
+					//System.out.println("Entra en el if vista 1 y el id del jugador atacante es: " + idJug + " y el id del pokemon atacante es: " + idPok);
 					ListaJugadores.getListaJugadores().buscarJugador(idJug).getPokemon(idPok).estaEuforico();
 				}
 				else if (cont==2) {
