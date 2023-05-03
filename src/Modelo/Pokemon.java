@@ -131,7 +131,9 @@ public abstract class Pokemon extends Observable {
 			multiplicador = 0.5;
 			System.out.println("No es muy efectivo...");
 		}
-		this.vida = (int)(this.vida -(pPokemon.ataque*multiplicador - this.defensa));
+		int ataqueTotal = (int)(pPokemon.ataque*multiplicador - this.defensa);
+		if (ataqueTotal < 0) {ataqueTotal = 0;}
+		this.vida = (int)(this.vida - ataqueTotal);
 		if (pPokemon.stateEuforia instanceof EstadoEuforia) {
 			pPokemon.setHaAtacadoEuforico(true);
 		}		

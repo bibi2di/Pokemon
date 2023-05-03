@@ -16,7 +16,7 @@ public class Roca extends Pokemon {
 
 	@Override
 	public boolean recibeAtaquePocoEfectivo(String pTipo) {
-		return (pTipo.equals("Agua") || pTipo.equals("Planta"));
+		return (pTipo.equals("Psiquico"));
 	}
 
 }
