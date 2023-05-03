@@ -11,12 +11,12 @@ public class Fuego extends Pokemon {
 
 	@Override
 	public boolean recibeAtaqueEfectivo(String pTipo) {
-		return pTipo.equals("Planta");
+		return pTipo.equals("Planta") || pTipo.equals("Bicho");
 	}
 
 	@Override
 	public boolean recibeAtaquePocoEfectivo(String pTipo) {
-		return pTipo.equals("Agua");
+		return pTipo.equals("Agua") || pTipo.equals("Roca");
 	}
 
 }

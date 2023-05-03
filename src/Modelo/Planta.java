@@ -14,12 +14,12 @@ public class Planta extends Pokemon {
 
 	@Override
 	public boolean recibeAtaqueEfectivo(String pTipo) {
-		return pTipo.equals("Electrico");
+		return pTipo.equals("Electrico") || pTipo.equals("Roca");
 	}
 
 	@Override
 	public boolean recibeAtaquePocoEfectivo(String pTipo) {
-		return pTipo.equals("Fuego");
+		return pTipo.equals("Fuego") || pTipo.equals("Volador") || pTipo.equals("Bicho");
 	}
 
 }

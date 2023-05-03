@@ -12,7 +12,7 @@ public class Electrico extends Pokemon {
 
 	@Override
 	public boolean recibeAtaqueEfectivo(String pTipo){
-		return pTipo.equals("Agua");
+		return pTipo.equals("Agua") || pTipo.equals("Volador");
 	}
 
 	@Override

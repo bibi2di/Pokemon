@@ -11,7 +11,7 @@ public class Agua extends Pokemon {
 
 	@Override
 	public boolean recibeAtaqueEfectivo(String pTipo) {
-		return pTipo.equals("Fuego");
+		return pTipo.equals("Fuego") || pTipo.equals("Roca");
 	}
 
 	@Override
