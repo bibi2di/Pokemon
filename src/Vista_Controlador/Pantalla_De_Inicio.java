@@ -180,7 +180,6 @@ public class Pantalla_De_Inicio extends JFrame implements Observer{
 	private JTextField getTxtNpokemosn() {
 		if (txtNpokemosn == null) {
 			txtNpokemosn = new JTextField();
-			txtNpokemosn.setEditable(false);
 			txtNpokemosn.setText("3");
 			txtNpokemosn.setColumns(10);
 		}
