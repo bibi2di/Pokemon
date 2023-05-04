@@ -13,8 +13,7 @@ import javax.swing.JTextPane;
 public class ReadMe extends JFrame {
 
 	private static final long serialVersionUID = 1L;
-	private JPanel panel_central;
-	private JLabel lblNewLabel;
+	private JTextPane txtpnX;
 
 	/**
 	 * Launch the application.
@@ -41,20 +40,17 @@ public class ReadMe extends JFrame {
 		setBounds(100, 100, 800, 400);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setResizable(false);
-		getContentPane().add(getLblNewLabel(), BorderLayout.NORTH);
-		getContentPane().add(getPanel_central(), BorderLayout.WEST);
+		getContentPane().setLayout(null);
+		getContentPane().add(getTxtpnX());
 
 	}
-	private JPanel getPanel_central() {
-		if (panel_central == null) {
-			panel_central = new JPanel();
+	private JTextPane getTxtpnX() {
+		if (txtpnX == null) {
+			txtpnX = new JTextPane();
+			txtpnX.setEditable(false);
+			txtpnX.setText("");
+			txtpnX.setBounds(0, 0, 800, 363);
 		}
-		return panel_central;
-	}
-	private JLabel getLblNewLabel() {
-		if (lblNewLabel == null) {
-			lblNewLabel = new JLabel("Instrucciones del Juego:");
-		}
-		return lblNewLabel;
+		return txtpnX;
 	}
 }
