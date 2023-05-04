@@ -187,59 +187,68 @@ public class Panel_Pokemon extends JPanel implements Observer {
 					}
 				}
 			}
-			else if (arg1 instanceof Evolucion[]) {
-				Evolucion[] evArray = (Evolucion[]) arg1;
-				Evolucion ev = evArray[0];
-				if (ev!= null) {
-					if (lab_type.getText().equals("Planta") && (ev instanceof Evolucion1)){
+			else if (arg1 instanceof String[]) {
+				String[] evArray = (String[]) arg1;
+				String evolucion = evArray[0];
+				if (evolucion == "1") {
+					if (lab_type.getText().equals("Planta")){
 						label_1.setIcon(new ImageIcon(getClass().getResource("/spritesGrass/1ivysaur.png")));
 					}
-					else if(lab_type.getText().equals("Planta") && (ev instanceof Evolucion2)) {
-						label_1.setIcon(new ImageIcon(getClass().getResource("/spritesGrass/2venusaur.png")));
-					}
-					else if(lab_type.getText().equals("Fuego") && (ev instanceof Evolucion1)) {
+					else if(lab_type.getText().equals("Fuego")) {
 						label_1.setIcon(new ImageIcon(getClass().getResource("/spritesFire/1charmeleon.png")));
-					}
-					else if(lab_type.getText().equals("Fuego") && (ev instanceof Evolucion2)) {
-						label_1.setIcon(new ImageIcon(getClass().getResource("/spritesFire/2charizard.png")));
-					}
-					else if(lab_type.getText().equals("Agua") && (ev instanceof Evolucion1)) {
+						}
+					else if(lab_type.getText().equals("Agua")) {
 						label_1.setIcon(new ImageIcon(getClass().getResource("/spritesWater/1wartortle.png")));
 					}
-					else if(lab_type.getText().equals("Agua") && (ev instanceof Evolucion2)) {
-						label_1.setIcon(new ImageIcon(getClass().getResource("/spritesWater/2blastoise.png")));
-					}
-					else if(lab_type.getText().equals("Electrico") && (ev instanceof Evolucion1)) {
+					else if(lab_type.getText().equals("Electrico")) {
 						label_1.setIcon(new ImageIcon(getClass().getResource("/spritesElectric/1raichu.png")));
 					}
-					else if(lab_type.getText().equals("Electrico") && (ev instanceof Evolucion2)) {
-						label_1.setIcon(new ImageIcon(getClass().getResource("/spritesElectric/2raichu2.png")));
-					}
-					else if(lab_type.getText().equals("Bicho") && (ev instanceof Evolucion1)) {
+					else if(lab_type.getText().equals("Bicho")) {
 						label_1.setIcon(new ImageIcon(getClass().getResource("/sprites/metapod.png")));
 					}
-					else if(lab_type.getText().equals("Bicho") && (ev instanceof Evolucion2)) {
-						label_1.setIcon(new ImageIcon(getClass().getResource("/sprites/butterfree.png")));
-				}
-					else if(lab_type.getText().equals("Psiquico") && (ev instanceof Evolucion1)) {
+					else if(lab_type.getText().equals("Psiquico")) {
 						label_1.setIcon(new ImageIcon(getClass().getResource("/sprites/kadabra.png")));
 					}
-					else if(lab_type.getText().equals("Psiquico") && (ev instanceof Evolucion2)) {
-						label_1.setIcon(new ImageIcon(getClass().getResource("/sprites/alakazam.png")));
-				}
-					else if(lab_type.getText().equals("Roca") && (ev instanceof Evolucion1)) {
+					else if(lab_type.getText().equals("Roca")) {
 						label_1.setIcon(new ImageIcon(getClass().getResource("/sprites/graveler.png")));
 					}
-					else if(lab_type.getText().equals("Roca") && (ev instanceof Evolucion2)) {
-						label_1.setIcon(new ImageIcon(getClass().getResource("/sprites/golem.png")));
-				}
-					else if(lab_type.getText().equals("Volador") && (ev instanceof Evolucion1)) {
+					else if(lab_type.getText().equals("Volador")) {
 						label_1.setIcon(new ImageIcon(getClass().getResource("/sprites/pidgeotto.png")));
 					}
-					else if(lab_type.getText().equals("Volador") && (ev instanceof Evolucion2)) {
+				}
+				else if (evolucion == "2") {
+					if(lab_type.getText().equals("Planta")) {
+						label_1.setIcon(new ImageIcon(getClass().getResource("/spritesGrass/2venusaur.png")));
+					}
+					
+					else if(lab_type.getText().equals("Fuego")) {
+						label_1.setIcon(new ImageIcon(getClass().getResource("/spritesFire/2charizard.png")));
+					}
+					
+					else if(lab_type.getText().equals("Agua")) {
+						label_1.setIcon(new ImageIcon(getClass().getResource("/spritesWater/2blastoise.png")));
+					}
+					
+					else if(lab_type.getText().equals("Electrico")) {
+						label_1.setIcon(new ImageIcon(getClass().getResource("/spritesElectric/2raichu2.png")));
+					}
+					
+					else if(lab_type.getText().equals("Bicho")) {
+						label_1.setIcon(new ImageIcon(getClass().getResource("/sprites/butterfree.png")));
+				}
+					
+					else if(lab_type.getText().equals("Psiquico")) {
+						label_1.setIcon(new ImageIcon(getClass().getResource("/sprites/alakazam.png")));
+				}
+					
+					else if(lab_type.getText().equals("Roca")) {
+						label_1.setIcon(new ImageIcon(getClass().getResource("/sprites/golem.png")));
+				}
+					
+					else if(lab_type.getText().equals("Volador")) {
 						label_1.setIcon(new ImageIcon(getClass().getResource("/sprites/pidgeot.png")));
 				}
-			}
+				}
 			}
 			
 			else if (arg1 instanceof Object []) {

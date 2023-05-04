@@ -184,8 +184,11 @@ public abstract class Pokemon extends Observable {
 	
 	public void evolucionar() {
 		stateEvo.evolucionar(this);
+		String evolucion = null;
+		if (stateEvo instanceof Evolucion1) {evolucion = "1";}
+		else if (stateEvo instanceof Evolucion2){evolucion = "2";}
 		setChanged();
-		notifyObservers(new Evolucion[] {this.stateEvo});
+		notifyObservers(new String[] {evolucion}); //quitar dependencia - enviar integer (0,1,2)
 	}
 	
 	public void cambiarEvolucion(Evolucion pEv) {
