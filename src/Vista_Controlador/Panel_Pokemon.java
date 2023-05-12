@@ -15,9 +15,6 @@ import javax.swing.JPanel;
 import javax.swing.JProgressBar;
 
 import Modelo.CampoDeBatalla;
-import Modelo.Evolucion;
-import Modelo.Evolucion1;
-import Modelo.Evolucion2;
 import Modelo.ListaJugadores;
 import Modelo.Pokemon;
 
