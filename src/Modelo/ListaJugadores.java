@@ -3,6 +3,7 @@ package Modelo;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Observable;
+import java.util.function.Consumer;
 import java.util.stream.Collectors; 
 
 
@@ -27,7 +28,6 @@ public class ListaJugadores extends Observable{
 	private Iterator<Jugador> getIterador() {
 		return lJugadores.iterator();
 	}
-
 	
 	/**
 	 * 

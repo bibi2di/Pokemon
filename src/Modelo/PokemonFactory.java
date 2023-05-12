@@ -19,8 +19,8 @@ public class PokemonFactory {
 	 * @param tipo
 	 */
 	public Pokemon create(int i) {
-		int r = (int)(Math.random()*9); 
-		String nombre = new String[] {"Agua", "Fuego", "Planta", "Electrico", "Bicho", "Volador", "Psiquico", "Roca", "Fantasma"}[r]; //tipo aleatorio
+		int r = (int)(Math.random()*/*18*/12); 
+		String nombre = new String[] {"Agua", "Fuego", "Planta", "Electrico", "Bicho", "Volador", "Psiquico", "Roca", "Fantasma", "Lucha", /*"Acero", */"Dragon",/* "Hada", "Siniestro", "Normal",*/ "Veneno"/*, "Tierra", "Hielo"*/ }[r]; //tipo aleatorio
 		Pokemon pokeAct = null;
 		//System.out.println("El tipo de Pokemon es: " + nombre);
 		if (nombre == "Agua") {pokeAct = new Agua(i);}
@@ -32,6 +32,15 @@ public class PokemonFactory {
 		else if (nombre == "Psiquico") {pokeAct = new Psiquico(i);}
 		else if (nombre == "Roca") {pokeAct = new Roca(i);}
 		else if (nombre == "Fantasma") {pokeAct = new Fantasma(i);}
+		else if (nombre == "Lucha") {pokeAct = new Lucha(i);}
+		else if (nombre == "Acero") {pokeAct = new Acero(i);}
+		else if (nombre == "Dragon") {pokeAct = new Dragon(i);}
+		else if (nombre == "Hada") {pokeAct = new Hada(i);}
+		else if (nombre == "Siniestro") {pokeAct = new Siniestro(i);}
+		else if (nombre == "Normal") {pokeAct = new Normal(i);}
+		else if (nombre == "Veneno") {pokeAct = new Veneno(i);}
+		else if (nombre == "Tierra") {pokeAct = new Tierra(i);}
+		else if (nombre == "Hielo") {pokeAct = new Hielo(i);}
 		return pokeAct;
 	}
 

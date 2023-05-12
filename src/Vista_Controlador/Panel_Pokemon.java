@@ -216,7 +216,16 @@ public class Panel_Pokemon extends JPanel implements Observer {
 						label_1.setIcon(new ImageIcon(getClass().getResource("/sprites/pidgeotto.png")));
 					}
 					else if(lab_type.getText().equals("Fantasma")) {
-						label_1.setIcon(new ImageIcon(getClass().getResource("/spritesFantasma/Mismagius.png")));		
+						label_1.setIcon(new ImageIcon(getClass().getResource("/spritesFantasma/Melenaleteo.png")));		
+					}
+					else if(lab_type.getText().equals("Veneno")) {
+						label_1.setIcon(new ImageIcon(getClass().getResource("/sprites/haunter.png")));		
+					}
+					else if(lab_type.getText().equals("Lucha")) {
+						label_1.setIcon(new ImageIcon(getClass().getResource("/sprites/machoke.png")));		
+					}
+					else if(lab_type.getText().equals("Dragon")) {
+						label_1.setIcon(new ImageIcon(getClass().getResource("/sprites/dragonair.png")));		
 					}
 				}
 				else if (evolucion == "2") {
@@ -251,9 +260,18 @@ public class Panel_Pokemon extends JPanel implements Observer {
 					else if(lab_type.getText().equals("Volador")) {
 						label_1.setIcon(new ImageIcon(getClass().getResource("/sprites/pidgeot.png")));
 				}
-				else if(lab_type.getText().equals("Fantasma")) {
+					else if(lab_type.getText().equals("Fantasma")) {
 						label_1.setIcon(new ImageIcon(getClass().getResource("/spritesFantasma/Mismagius.png")));		
 				}
+					else if(lab_type.getText().equals("Veneno")) {
+						label_1.setIcon(new ImageIcon(getClass().getResource("/sprites/gengar.png")));
+				}
+					else if(lab_type.getText().equals("Lucha")) {
+						label_1.setIcon(new ImageIcon(getClass().getResource("/sprites/machamp.png")));
+				}
+					else if(lab_type.getText().equals("Dragon")) {
+						label_1.setIcon(new ImageIcon(getClass().getResource("/sprites/dragonite.png")));
+					}
 				}
 			}
 			
@@ -293,6 +311,15 @@ public class Panel_Pokemon extends JPanel implements Observer {
 				}
 				else if(tipo.equals("Fantasma")) {
 					label_1.setIcon(new ImageIcon(getClass().getResource("/spritesFantasma/Misdreavus.png")));		
+				}
+				else if(tipo.equals("Veneno")) {
+					label_1.setIcon(new ImageIcon(getClass().getResource("/sprites/gastly.png")));
+				}
+				else if(tipo.equals("Lucha")) {
+					label_1.setIcon(new ImageIcon(getClass().getResource("/sprites/machop.png")));
+				}
+				else if(tipo.equals("Dragon")) {
+					label_1.setIcon(new ImageIcon(getClass().getResource("/sprites/dratini.png")));
 				}
 				//System.out.println("Observer actualizado");
 				if(!pVidaBool) {
