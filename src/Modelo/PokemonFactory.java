@@ -19,8 +19,8 @@ public class PokemonFactory {
 	 * @param tipo
 	 */
 	public Pokemon create(int i) {
-		int r = (int)(Math.random()*/*18*/12); 
-		String nombre = new String[] {"Agua", "Fuego", "Planta", "Electrico", "Bicho", "Volador", "Psiquico", "Roca", "Fantasma", "Lucha", /*"Acero", */"Dragon",/* "Hada", "Siniestro", "Normal",*/ "Veneno"/*, "Tierra", "Hielo"*/ }[r]; //tipo aleatorio
+		int r = (int)(Math.random()*/*18*/13); 
+		String nombre = new String[] {"Agua", "Fuego", "Planta", "Electrico", "Bicho", "Volador", "Psiquico", "Roca", "Fantasma", "Lucha", "Acero", "Dragon",/* "Hada", "Siniestro", "Normal",*/ "Veneno"/*, "Tierra", "Hielo"*/ }[r]; //tipo aleatorio
 		Pokemon pokeAct = null;
 		//System.out.println("El tipo de Pokemon es: " + nombre);
 		if (nombre == "Agua") {pokeAct = new Agua(i);}

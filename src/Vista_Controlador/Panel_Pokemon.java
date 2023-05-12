@@ -227,6 +227,9 @@ public class Panel_Pokemon extends JPanel implements Observer {
 					else if(lab_type.getText().equals("Dragon")) {
 						label_1.setIcon(new ImageIcon(getClass().getResource("/sprites/dragonair.png")));		
 					}
+					else if(lab_type.getText().equals("Acero")) {
+						label_1.setIcon(new ImageIcon(getClass().getResource("/spritesAcero/Metang.png")));
+					}
 				}
 				else if (evolucion == "2") {
 					if(lab_type.getText().equals("Planta")) {
@@ -271,6 +274,9 @@ public class Panel_Pokemon extends JPanel implements Observer {
 				}
 					else if(lab_type.getText().equals("Dragon")) {
 						label_1.setIcon(new ImageIcon(getClass().getResource("/sprites/dragonite.png")));
+					}
+					else if(lab_type.getText().equals("Acero")) {
+						label_1.setIcon(new ImageIcon(getClass().getResource("/spritesAcero/Metagross.png")));
 					}
 				}
 			}
@@ -320,6 +326,9 @@ public class Panel_Pokemon extends JPanel implements Observer {
 				}
 				else if(tipo.equals("Dragon")) {
 					label_1.setIcon(new ImageIcon(getClass().getResource("/sprites/dratini.png")));
+				}
+				else if(tipo.equals("Acero")) {
+					label_1.setIcon(new ImageIcon(getClass().getResource("/spritesAcero/Beldum.png")));
 				}
 				//System.out.println("Observer actualizado");
 				if(!pVidaBool) {
