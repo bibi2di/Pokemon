@@ -215,6 +215,9 @@ public class Panel_Pokemon extends JPanel implements Observer {
 					else if(lab_type.getText().equals("Volador")) {
 						label_1.setIcon(new ImageIcon(getClass().getResource("/sprites/pidgeotto.png")));
 					}
+					else if(lab_type.getText().equals("Fantasma")) {
+						label_1.setIcon(new ImageIcon(getClass().getResource("/spritesFantasma/Mismagius.png")));		
+					}
 				}
 				else if (evolucion == "2") {
 					if(lab_type.getText().equals("Planta")) {
@@ -247,6 +250,9 @@ public class Panel_Pokemon extends JPanel implements Observer {
 					
 					else if(lab_type.getText().equals("Volador")) {
 						label_1.setIcon(new ImageIcon(getClass().getResource("/sprites/pidgeot.png")));
+				}
+				else if(lab_type.getText().equals("Fantasma")) {
+						label_1.setIcon(new ImageIcon(getClass().getResource("/spritesFantasma/Mismagius.png")));		
 				}
 				}
 			}
@@ -284,6 +290,9 @@ public class Panel_Pokemon extends JPanel implements Observer {
 				}
 				else if(tipo.equals("Volador")) {
 					label_1.setIcon(new ImageIcon(getClass().getResource("/sprites/pidgey.png")));
+				}
+				else if(tipo.equals("Fantasma")) {
+					label_1.setIcon(new ImageIcon(getClass().getResource("/spritesFantasma/Misdreavus.png")));		
 				}
 				//System.out.println("Observer actualizado");
 				if(!pVidaBool) {
