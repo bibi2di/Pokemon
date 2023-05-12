@@ -71,6 +71,9 @@ public abstract class Pokemon extends Observable {
 		else if (this instanceof Volador) {
 			tipo = "Volador";
 		}
+		else if (this instanceof Fantasma) {
+			tipo = "Fantasma";
+		}
 		stateEvo = null;
 		stateEuforia = null;
 		setChanged();
