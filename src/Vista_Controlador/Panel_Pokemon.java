@@ -227,6 +227,21 @@ public class Panel_Pokemon extends JPanel implements Observer {
 					else if(lab_type.getText().equals("Acero")) {
 						label_1.setIcon(new ImageIcon(getClass().getResource("/spritesAcero/Metang.png")));
 					}
+					else if(lab_type.getText().equals("Siniestro")) {
+						label_1.setIcon(new ImageIcon(getClass().getResource("/spritesSiniestro/Zweilous.png")));
+				}
+					else if(lab_type.getText().equals("Hada")) {
+						label_1.setIcon(new ImageIcon(getClass().getResource("/spritesHada/Marill.png")));
+				}
+					else if(lab_type.getText().equals("Tierra")) {
+						label_1.setIcon(new ImageIcon(getClass().getResource("/spritesTierra/Rhydon.png")));
+				}
+					else if(lab_type.getText().equals("Hielo")) {
+						label_1.setIcon(new ImageIcon(getClass().getResource("/spritesHielo/Ninetales_de_Alola.png")));
+				}
+					else if(lab_type.getText().equals("Normal")) {
+						label_1.setIcon(new ImageIcon(getClass().getResource("/spritesNormal/Jigglypuff.png")));
+				}
 				}
 				else if (evolucion == "2") {
 					if(lab_type.getText().equals("Planta")) {
@@ -271,11 +286,26 @@ public class Panel_Pokemon extends JPanel implements Observer {
 				}
 					else if(lab_type.getText().equals("Dragon")) {
 						label_1.setIcon(new ImageIcon(getClass().getResource("/sprites/dragonite.png")));
-					}
+				}
 					else if(lab_type.getText().equals("Acero")) {
 						label_1.setIcon(new ImageIcon(getClass().getResource("/spritesAcero/Metagross.png")));
-					}
 				}
+					else if(lab_type.getText().equals("Siniestro")) {
+						label_1.setIcon(new ImageIcon(getClass().getResource("/spritesSiniestro/Hydreigon.png")));
+				}
+					else if(lab_type.getText().equals("Hada")) {
+						label_1.setIcon(new ImageIcon(getClass().getResource("/spritesHada/Azumarill.png")));
+				}
+					else if(lab_type.getText().equals("Tierra")) {
+						label_1.setIcon(new ImageIcon(getClass().getResource("/spritesTierra/Rhyperior.png")));
+				}
+					else if(lab_type.getText().equals("Hielo")) {
+						label_1.setIcon(new ImageIcon(getClass().getResource("/spritesHielo/Ninetales_de_Alola_variocolor.png")));
+				}
+					else if(lab_type.getText().equals("Normal")) {
+						label_1.setIcon(new ImageIcon(getClass().getResource("/spritesNormal/Wigglytuff.png")));
+				}
+			}
 			}
 			
 			else if (arg1 instanceof Object []) {
@@ -326,6 +356,21 @@ public class Panel_Pokemon extends JPanel implements Observer {
 				}
 				else if(tipo.equals("Acero")) {
 					label_1.setIcon(new ImageIcon(getClass().getResource("/spritesAcero/Beldum.png")));
+				}
+				else if(tipo.equals("Siniestro")) {
+					label_1.setIcon(new ImageIcon(getClass().getResource("/spritesSiniestro/Deino.png")));
+				}
+				else if(tipo.equals("Hada")) {
+					label_1.setIcon(new ImageIcon(getClass().getResource("/spritesHada/Azurill.png")));
+				}
+				else if(tipo.equals("Tierra")) {
+					label_1.setIcon(new ImageIcon(getClass().getResource("/spritesTierra/Rhyhorn.png")));
+				}
+				else if(tipo.equals("Hielo")) {
+					label_1.setIcon(new ImageIcon(getClass().getResource("/spritesHielo/Vulpix_de_Alola.png")));
+				}
+				else if(tipo.equals("Normal")) {
+					label_1.setIcon(new ImageIcon(getClass().getResource("/spritesNormal/Igglybuff.png")));
 				}
 				//System.out.println("Observer actualizado");
 				if(!pVidaBool) {

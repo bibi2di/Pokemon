@@ -212,7 +212,7 @@ public class Pantalla_De_Inicio extends JFrame implements Observer{
 		if (label == null) {
 			label = new JLabel("");
 			//new imageicon(Mainboard.class.getrecource("/...))
-			label.setIcon(new ImageIcon(Pantalla_De_Inicio.class.getResource("/sprites/main.png")));
+			label.setIcon(new ImageIcon(Pantalla_De_Inicio.class.getResource("/sprites/Pokemon.gif")));
 		}
 		return label;
 	}

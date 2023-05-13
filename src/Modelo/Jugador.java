@@ -30,7 +30,6 @@ public class Jugador extends Observable {
 		}
 		
 	}
-
 	protected boolean getTurno() {
 		return this.turno;
 	}
@@ -51,7 +50,7 @@ public class Jugador extends Observable {
 		return this.id;
 	}
 	
-	public void setTurno(boolean pTurno) {
+	public void setTurno(boolean pTurno, int longitud) {
 		this.turno = pTurno;
 		setChanged();
 		notifyObservers(new Object[] {pTurno});

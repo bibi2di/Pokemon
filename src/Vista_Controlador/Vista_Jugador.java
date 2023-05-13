@@ -183,7 +183,7 @@ public class Vista_Jugador extends JFrame implements Observer{
 					btn_Jugador_estado.setText("Ha Ganado");
 					Panel_Jugador_Estado.setBackground(Color.YELLOW);
 				}
-				if (perdido) {
+				if (perdido && this.isVisible()== true) {
 					System.out.println("El jugador: "+ idJug+ " ha perdido");
 					try {
 						TimeUnit.SECONDS.sleep(2);

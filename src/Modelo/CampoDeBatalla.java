@@ -21,6 +21,10 @@ public class CampoDeBatalla extends Observable{
 		return miCampoDeBatalla;
 	}
 	
+	public Pokemon[] getBatalla() {
+		return this.batalla;
+	}
+	
 	public boolean sePuedeAtacar(int nPok, int nJug) {
 		//TODO Falta comprobar si es el turno del Jugador
 		//System.out.println("jugador "+nJug);

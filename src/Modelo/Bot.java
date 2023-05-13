@@ -11,7 +11,7 @@ public class Bot extends Jugador {
 	}
 	
 	@SuppressWarnings("deprecation")
-	public void setTurno(boolean pTurno) {
+	public void setTurno(boolean pTurno, int longitud) {
 		this.turno = pTurno;
 
 		setChanged();
@@ -20,7 +20,7 @@ public class Bot extends Jugador {
 		
 		//System.out.println("Ha cambiado el turno a" + pTurno);
 		if (this.turno) {
-			ataquedeBot();
+			ataquedeBot(longitud);
 			
 			// atacarBot elige atacante aleatorio que no sea this
 			ListaJugadores.getListaJugadores().asignarTurnoAleatoriamente();
@@ -31,13 +31,13 @@ public class Bot extends Jugador {
 	
 	}
 	
-	private void ataquedeBot(){
+	private void ataquedeBot(int longitud){
 		{
 			for(int i=1;i<=this.tamainoLista();i++) {
 				Pokemon pokAtaque= this.getPokemon(i);
 				/*int numJug = ListaJugadores.getListaJugadores().tamainoLista();
 				int jugadorAtac = (int)(Math.random()*(numJug));*/
-				int jugadorAtacado = 0; // aki tendríamos que hacer una adjudicación con random && !bot
+				int jugadorAtacado = (int)(Math.random()*(longitud)); // aki tendríamos que hacer una adjudicación con random && !bot
 				int numPok = this.tamainoLista();
 				int pokAtacado = (int)(Math.random()*(numPok));
 				pokAtacado++;
