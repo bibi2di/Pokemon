@@ -12,6 +12,12 @@ import java.util.Observer;
 import javax.swing.JLabel;
 import javax.swing.JButton;
 import javax.swing.JTextField;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import java.io.InputStream;
+
+
 
 import Modelo.ListaJugadores;
 
@@ -47,6 +53,8 @@ public class Pantalla_De_Inicio extends JFrame implements Observer{
 	private Controler controler = null;
 	private JLabel lblError;
 	private JPanel Panel_Superior;
+	private static Clip clip1;
+	private static Clip clip2;
 
 	/**
 	 * Launch the application.
@@ -57,6 +65,11 @@ public class Pantalla_De_Inicio extends JFrame implements Observer{
 				try {
 					Pantalla_De_Inicio frame = new Pantalla_De_Inicio();
 					frame.setVisible(true);
+				    InputStream inputStream = Pantalla_De_Inicio.class.getResourceAsStream( "/Musica/Pokemon.wav");
+				    AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(inputStream);
+				    clip1 = AudioSystem.getClip();
+				    clip1.open(audioInputStream);
+				    clip1.start();
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -290,6 +303,17 @@ public class Pantalla_De_Inicio extends JFrame implements Observer{
 					VistaJug.setVisible(true);
 				}
 				this.setVisible(false);
+				clip1.close();
+				try {
+					InputStream inputStream2 = Pantalla_De_Inicio.class.getResourceAsStream( "/Musica/BatallaPokemon.wav");
+				    AudioInputStream audioInputStream2 = AudioSystem.getAudioInputStream(inputStream2);
+				    clip2 = AudioSystem.getClip();
+				    clip2.open(audioInputStream2);
+				    clip2.start();
+				}
+				catch (Exception e) {
+					e.printStackTrace();
+				}
 			}
 			if (arg instanceof int[]) {
 				int[] ganador = (int[])arg;
@@ -299,7 +323,6 @@ public class Pantalla_De_Inicio extends JFrame implements Observer{
 					
 					this.setVisible(false);
 					//System.exit(0);
-					
 					
 				}
 			}

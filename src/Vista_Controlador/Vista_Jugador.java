@@ -7,6 +7,7 @@ import javax.swing.JPanel;
 import java.awt.Color;
 import java.awt.BorderLayout;
 import javax.swing.JLabel;
+import javax.sound.sampled.Clip;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
@@ -48,6 +49,7 @@ public class Vista_Jugador extends JFrame implements Observer{
 	private JLabel lab_type;*/
 	private int idJug;
 	private Controler controler = null;
+	private static Clip clip;
 
 
 	/**
