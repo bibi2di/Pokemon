@@ -24,7 +24,7 @@ public class Bot extends Jugador {
 		//System.out.println("Ha cambiado el turno a" + pTurno);
 		if (this.turno) {
 			//ataquedeBot();
-			ataquedeBotInteligente();
+			 ataquedeBot();
 			// atacarBot elige atacante aleatorio que no sea this
 			ListaJugadores.getListaJugadores().asignarTurnoAleatoriamente();
 
@@ -61,7 +61,7 @@ public class Bot extends Jugador {
 		}
 	}
 	
-	private void ataquedeBotInteligente(){
+	/*private void ataquedeBotInteligente(){
 		ArrayList<String> tipos = (ArrayList<String>) (this.getListaPok().stream().map(p -> p.getTipo()).collect(Collectors.toList()));
 		int idJug = ListaJugadores.getListaJugadores().pokemonEfectivo(tipos);
 		System.out.println("Soy el jugador: " + this.getId());
@@ -80,6 +80,6 @@ public class Bot extends Jugador {
 				}
 				CampoDeBatalla.getCampoBatalla().eliminarBatalla();
 			}
-		}
+		}*/
 	}
 }

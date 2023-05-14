@@ -145,7 +145,7 @@ public class Jugador extends Observable {
 		return lPokemon.size();
 	}
 	
-	public int numPokEfectivos (ArrayList<String> tipos) {
+	/*public int numPokEfectivos (ArrayList<String> tipos) {
 		int num = 0;
 		for (String t: tipos) {
 			for (Pokemon p: lPokemon) {
@@ -155,8 +155,8 @@ public class Jugador extends Observable {
 			}
 		}
 		return num;
-	}
-	
+	}*/
+	//Mejor public HashMap<String,Integer> que por cada tipo guarde el id de todos los Pokemon que son efectivos
 	protected ArrayList<Pokemon> getListaPok(){
 		return this.lPokemon;
 	}

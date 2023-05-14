@@ -138,7 +138,7 @@ public class ListaJugadores extends Observable{
 		return lJugadores.size();
 	}
 	
-	public int pokemonEfectivo(ArrayList<String> tipos){ /*Mejor hacerlo con Java8*/
+	/*public int pokemonEfectivo(ArrayList<String> tipos){
 		int max = 0;
 		int idMax = 0;
 		int num = 0;
@@ -150,5 +150,6 @@ public class ListaJugadores extends Observable{
 			}
 		}
 		return idMax;
-	}
+	}*/
+	// Mejor devolver un HashMap<Integer,HashMap<String,Integer>> y que por cada jugador devuelva un HashMap<String,Integer>
 }
