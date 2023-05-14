@@ -1,6 +1,7 @@
 package Modelo;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Observable;
 import java.util.function.Consumer;
@@ -98,12 +99,12 @@ public class ListaJugadores extends Observable{
 		while (itr.hasNext())
 		{
 			jug = itr.next();
-			jug.setTurno(false, this.tamainoLista());
+			jug.setTurno(false);
 			jug.resetearPokemon();
 		}
 		//Finalmente, elegimos un jugador al azar y le ponemos el turno a true
 		jug = this.buscarJugador(turno);
-		jug.setTurno(true, this.tamainoLista());
+		jug.setTurno(true);
 		}
 		//setChanged();
 		//notifyObservers(new Object[] {jug});
@@ -135,5 +136,19 @@ public class ListaJugadores extends Observable{
 	
 	public int tamainoLista() {
 		return lJugadores.size();
+	}
+	
+	public int pokemonEfectivo(ArrayList<String> tipos){ /*Mejor hacerlo con Java8*/
+		int max = 0;
+		int idMax = 0;
+		int num = 0;
+		for (Jugador j: lJugadores) {
+			num = j.numPokEfectivos(tipos);
+			if (num> max) {
+			    idMax = j.getId();
+				max = num;
+			}
+		}
+		return idMax;
 	}
 }

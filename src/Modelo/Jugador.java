@@ -1,7 +1,9 @@
 package Modelo;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.Observable;
+import java.util.Queue;
 import java.util.stream.Collectors;
 
 @SuppressWarnings("deprecation")
@@ -50,7 +52,7 @@ public class Jugador extends Observable {
 		return this.id;
 	}
 	
-	public void setTurno(boolean pTurno, int longitud) {
+	public void setTurno(boolean pTurno) {
 		this.turno = pTurno;
 		setChanged();
 		notifyObservers(new Object[] {pTurno});
@@ -141,6 +143,22 @@ public class Jugador extends Observable {
 	}
 	public int tamainoLista () {
 		return lPokemon.size();
+	}
+	
+	public int numPokEfectivos (ArrayList<String> tipos) {
+		int num = 0;
+		for (String t: tipos) {
+			for (Pokemon p: lPokemon) {
+				if (p.recibeAtaquePocoEfectivo(t) && !p.seHaDebilitado()) {
+					num++;				
+				}
+			}
+		}
+		return num;
+	}
+	
+	protected ArrayList<Pokemon> getListaPok(){
+		return this.lPokemon;
 	}
 
 }

@@ -37,6 +37,10 @@ public abstract class Pokemon extends Observable {
 		ataquesEuforiaAcumulados = pAtaque;
 	}
 	
+	public String getTipo () {
+		return this.tipo;
+	}
+	
 	public void setHaAtacadoEuforico(boolean pHaAtacadoEuforico) {
 		this.haAtacadoEuforico = pHaAtacadoEuforico;
 	}

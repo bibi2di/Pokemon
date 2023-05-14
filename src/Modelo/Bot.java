@@ -1,5 +1,8 @@
 package Modelo;
 
+import java.util.ArrayList;
+import java.util.stream.Collectors;
+
 public class Bot extends Jugador {
 
 	private boolean turno;
@@ -11,7 +14,7 @@ public class Bot extends Jugador {
 	}
 	
 	@SuppressWarnings("deprecation")
-	public void setTurno(boolean pTurno, int longitud) {
+	public void setTurno(boolean pTurno) {
 		this.turno = pTurno;
 
 		setChanged();
@@ -20,8 +23,8 @@ public class Bot extends Jugador {
 		
 		//System.out.println("Ha cambiado el turno a" + pTurno);
 		if (this.turno) {
-			ataquedeBot(longitud);
-			
+			//ataquedeBot();
+			ataquedeBotInteligente();
 			// atacarBot elige atacante aleatorio que no sea this
 			ListaJugadores.getListaJugadores().asignarTurnoAleatoriamente();
 
@@ -31,13 +34,13 @@ public class Bot extends Jugador {
 	
 	}
 	
-	private void ataquedeBot(int longitud){
+	private void ataquedeBot(){
 		{
 			for(int i=1;i<=this.tamainoLista();i++) {
 				Pokemon pokAtaque= this.getPokemon(i);
 				/*int numJug = ListaJugadores.getListaJugadores().tamainoLista();
 				int jugadorAtac = (int)(Math.random()*(numJug));*/
-				int jugadorAtacado = (int)(Math.random()*(longitud)); // aki tendríamos que hacer una adjudicación con random && !bot
+				int jugadorAtacado = (int)(Math.random()*(ListaJugadores.getListaJugadores().tamainoLista())); // aki tendríamos que hacer una adjudicación con random && !bot
 				int numPok = this.tamainoLista();
 				int pokAtacado = (int)(Math.random()*(numPok));
 				pokAtacado++;
@@ -57,6 +60,26 @@ public class Bot extends Jugador {
 			}
 		}
 	}
-
 	
+	private void ataquedeBotInteligente(){
+		ArrayList<String> tipos = (ArrayList<String>) (this.getListaPok().stream().map(p -> p.getTipo()).collect(Collectors.toList()));
+		int idJug = ListaJugadores.getListaJugadores().pokemonEfectivo(tipos);
+		System.out.println("Soy el jugador: " + this.getId());
+		System.out.println("El id del jugador al que ataco es: " + idJug + " y el número de Pokemons efectivos q tiene es: " + ListaJugadores.getListaJugadores().buscarJugador(idJug).numPokEfectivos(tipos) );
+		if (idJug != this.getId()) {
+			for (int i=1;i<=this.tamainoLista();i++) {
+				Pokemon pokAtaque = this.getPokemon(i);
+				Pokemon pokDefensa = ListaJugadores.getListaJugadores().buscarJugador(idJug).getPokemon(i);
+				if (!pokDefensa.seHaDebilitado() && !pokAtaque.seHaDebilitado()) {
+					CampoDeBatalla.getCampoBatalla().realizarAtaques(pokAtaque,pokDefensa);
+				}
+				if (pokAtaque.estaEuforico()) { 
+					pokAtaque.cambiarEstado(new EstadoNormal());
+					pokDefensa.quitarEstadoEuforia(pokAtaque);
+					pokAtaque.setAquesEuforiaAcumulados(0);
+				}
+				CampoDeBatalla.getCampoBatalla().eliminarBatalla();
+			}
+		}
+	}
 }

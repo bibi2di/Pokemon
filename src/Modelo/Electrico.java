@@ -17,7 +17,7 @@ public class Electrico extends Pokemon {
 
 	@Override
 	public boolean recibeAtaquePocoEfectivo(String pTipo) {
-		return pTipo.equals("Planta");
+		return pTipo.equals("Planta") || pTipo.equals("Tierra");
 	}
 
 }
