@@ -49,12 +49,7 @@ public class Bot extends Jugador {
 					Pokemon pokDefensa = ListaJugadores.getListaJugadores().buscarJugador(jugadorAtacado).getPokemon(pokAtacado);
 					if (!pokAtaque.haAtacado() && !pokAtaque.seHaDebilitado() && !pokDefensa.seHaDebilitado()) {
 						pokAtaque.haAtacadoYa(true);
-						CampoDeBatalla.getCampoBatalla().realizarAtaques(pokAtaque, pokDefensa);
-						if (pokAtaque.estaEuforico()) { /*aqui gestiona el bot la euforia*/
-							pokAtaque.cambiarEstado(new EstadoNormal());
-							pokAtaque.quitarEstadoEuforia(pokAtaque);
-							pokAtaque.setAquesEuforiaAcumulados(0);
-						}
+						CampoDeBatalla.getCampoBatalla().realizarAtaques(pokAtaque, pokDefensa);						
 						CampoDeBatalla.getCampoBatalla().eliminarBatalla();
 					}
 				}

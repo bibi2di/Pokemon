@@ -182,10 +182,7 @@ public abstract class Pokemon extends Observable {
 			this.evolucionar();
 		}
 		
-		/*boolean euforico = (pPokemon.stateEuforia  instanceof EstadoEuforia) ;
-		if (!euforico) {*/
 		this.estadoEuforia();
-		//}
 		
 		if(pPokemon.haAtacadoEuforico) {
 			this.cambiarEstado(new EstadoNormal());
@@ -195,14 +192,7 @@ public abstract class Pokemon extends Observable {
 		if (this.vida<0) {
 			this.vida = 0;
 		}
-		
-		/*if (this.ataquesEuforiaAcumulados>this.euforia) {
-			this.ataquesEuforiaAcumulados = this.euforia;
-		}*/
-		//System.out.println("Id del pokemon atacante: "+ pPokemon.id);
-		//System.out.println("Ataque del pokemon atacante: " + pPokemon.ataque);
-		//System.out.println("Defensa del pokemon atacante: " + pPokemon.defensa);
-		
+			
 		setChanged();
 		notifyObservers(new int [] {this.vida,this.defensa,this.ataque,this.euforia,this.ataquesEuforiaAcumulados});
 	}
