@@ -310,6 +310,7 @@ public class Pantalla_De_Inicio extends JFrame implements Observer{
 				    AudioInputStream audioInputStream2 = AudioSystem.getAudioInputStream(inputStream2);
 				    clip2 = AudioSystem.getClip();
 				    clip2.open(audioInputStream2);
+				    clip2.loop(Clip.LOOP_CONTINUOUSLY);
 				    clip2.start();
 				}
 				catch (Exception e) {
