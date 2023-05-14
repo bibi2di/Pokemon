@@ -1,6 +1,7 @@
 package Modelo;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Observable;
 import java.util.Queue;
@@ -145,17 +146,23 @@ public class Jugador extends Observable {
 		return lPokemon.size();
 	}
 	
-	/*public int numPokEfectivos (ArrayList<String> tipos) {
-		int num = 0;
+	/*public HashMap<String,ArrayList<Integer>> pokEfectivos (ArrayList<String> tipos) {
+		HashMap<String,ArrayList<Integer>> mapaPok = new HashMap<>();
 		for (String t: tipos) {
+			ArrayList<Integer> idPok = new ArrayList<>();
 			for (Pokemon p: lPokemon) {
 				if (p.recibeAtaquePocoEfectivo(t) && !p.seHaDebilitado()) {
-					num++;				
+					idPok.add(p.getId());
 				}
 			}
+			if (idPok.size()==0) {
+				idPok.add(-1);
+			}
+			mapaPok.put(t, idPok);
 		}
-		return num;
+		return mapaPok;
 	}*/
+
 	//Mejor public HashMap<String,Integer> que por cada tipo guarde el id de todos los Pokemon que son efectivos
 	protected ArrayList<Pokemon> getListaPok(){
 		return this.lPokemon;

@@ -1,6 +1,7 @@
 package Modelo;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.stream.Collectors;
 
 public class Bot extends Jugador {
@@ -24,7 +25,7 @@ public class Bot extends Jugador {
 		//System.out.println("Ha cambiado el turno a" + pTurno);
 		if (this.turno) {
 			//ataquedeBot();
-			 ataquedeBot();
+			ataquedeBot();
 			// atacarBot elige atacante aleatorio que no sea this
 			ListaJugadores.getListaJugadores().asignarTurnoAleatoriamente();
 
@@ -51,7 +52,7 @@ public class Bot extends Jugador {
 						CampoDeBatalla.getCampoBatalla().realizarAtaques(pokAtaque, pokDefensa);
 						if (pokAtaque.estaEuforico()) { /*aqui gestiona el bot la euforia*/
 							pokAtaque.cambiarEstado(new EstadoNormal());
-							pokDefensa.quitarEstadoEuforia(pokAtaque);
+							pokAtaque.quitarEstadoEuforia(pokAtaque);
 							pokAtaque.setAquesEuforiaAcumulados(0);
 						}
 						CampoDeBatalla.getCampoBatalla().eliminarBatalla();
@@ -62,24 +63,19 @@ public class Bot extends Jugador {
 	}
 	
 	/*private void ataquedeBotInteligente(){
+		int id = this.getId();
 		ArrayList<String> tipos = (ArrayList<String>) (this.getListaPok().stream().map(p -> p.getTipo()).collect(Collectors.toList()));
-		int idJug = ListaJugadores.getListaJugadores().pokemonEfectivo(tipos);
+		HashMap<Integer,HashMap<String,ArrayList<Integer>>> mapaJug = ListaJugadores.getListaJugadores().pokemonEfectivoMayor(tipos,id);
 		System.out.println("Soy el jugador: " + this.getId());
-		System.out.println("El id del jugador al que ataco es: " + idJug + " y el número de Pokemons efectivos q tiene es: " + ListaJugadores.getListaJugadores().buscarJugador(idJug).numPokEfectivos(tipos) );
-		if (idJug != this.getId()) {
-			for (int i=1;i<=this.tamainoLista();i++) {
-				Pokemon pokAtaque = this.getPokemon(i);
-				Pokemon pokDefensa = ListaJugadores.getListaJugadores().buscarJugador(idJug).getPokemon(i);
-				if (!pokDefensa.seHaDebilitado() && !pokAtaque.seHaDebilitado()) {
-					CampoDeBatalla.getCampoBatalla().realizarAtaques(pokAtaque,pokDefensa);
-				}
-				if (pokAtaque.estaEuforico()) { 
-					pokAtaque.cambiarEstado(new EstadoNormal());
-					pokDefensa.quitarEstadoEuforia(pokAtaque);
-					pokAtaque.setAquesEuforiaAcumulados(0);
-				}
-				CampoDeBatalla.getCampoBatalla().eliminarBatalla();
+		
+		for (int idJug: mapaJug.keySet()) {
+			HashMap<String,ArrayList<Integer>> mapaPok = mapaJug.get(idJug);
+			for(Pokemon pok: this.getListaPok()) {
+				System.out.println("El id del jugador al que ataco es: " + idJug + " y el número de Pokemons efectivos q tiene es: " + ListaJugadores.getListaJugadores().buscarJugador(idJug).pokEfectivos(tipos).get(pok.getTipo()).size() );
+				int idPok = mapaPok.get(pok.getTipo()).get(0);
+				Pokemon pokDefensa = ListaJugadores.getListaJugadores().buscarJugador(idJug).getPokemon(idPok);
+				CampoDeBatalla.getCampoBatalla().realizarAtaques(pok, pokDefensa);
 			}
-		}*/
-	}
+		}
+	}*/
 }

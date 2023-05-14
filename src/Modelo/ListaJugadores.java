@@ -138,18 +138,47 @@ public class ListaJugadores extends Observable{
 		return lJugadores.size();
 	}
 	
-	/*public int pokemonEfectivo(ArrayList<String> tipos){
-		int max = 0;
-		int idMax = 0;
-		int num = 0;
+	/*public HashMap<Integer,HashMap<String,ArrayList<Integer>>> pokemonEfectivo(ArrayList<String> tipos, int id){
+		HashMap<Integer,HashMap<String,ArrayList<Integer>>> mapaJug = new HashMap<>();
 		for (Jugador j: lJugadores) {
-			num = j.numPokEfectivos(tipos);
-			if (num> max) {
-			    idMax = j.getId();
-				max = num;
+			if (j.getId() != id) {
+				System.out.println(j.pokEfectivos(tipos));
+				mapaJug.put(j.getId(), j.pokEfectivos(tipos));
 			}
 		}
-		return idMax;
+		return mapaJug;
+	}
+	
+	public HashMap<Integer,HashMap<String,ArrayList<Integer>>> pokemonEfectivoMayor(ArrayList<String> tipos, int id){
+		HashMap<Integer,HashMap<String,ArrayList<Integer>>> mapaJug = this.pokemonEfectivo(tipos,id);
+		HashMap<Integer,HashMap<String,ArrayList<Integer>>> mapaJugMayor = new HashMap<>();
+		ArrayList<Integer> cantPokemonEfectivos = new ArrayList<>();
+		for (Jugador j: lJugadores) {
+			cantPokemonEfectivos.add(0);
+		}
+		int max = 0;
+		int idMax = -1;
+		int cont = 0;
+		for (Jugador j: lJugadores) {
+			HashMap<String,ArrayList<Integer>> mapaPok = mapaJug.get(j.getId());
+			for(String t: tipos) {
+				ArrayList<Integer> numPok = mapaPok.get(t);
+				int cant = 0;
+				cant = cant + numPok.size();
+				cantPokemonEfectivos.add(j.getId(), cant);
+			}
+		}
+		for (int numPokEfectivos: cantPokemonEfectivos){
+			if (max<numPokEfectivos) {
+				idMax = cont;
+				max = numPokEfectivos;
+			}
+			cont++;
+		}
+		HashMap<String,ArrayList<Integer>> mapaPokMayor = new HashMap<>();
+		mapaPokMayor = mapaJug.get(idMax);
+		mapaJugMayor.put(idMax, mapaPokMayor);
+		return mapaJugMayor;
 	}*/
 	// Mejor devolver un HashMap<Integer,HashMap<String,Integer>> y que por cada jugador devuelva un HashMap<String,Integer>
 }

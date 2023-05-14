@@ -182,10 +182,10 @@ public abstract class Pokemon extends Observable {
 			this.evolucionar();
 		}
 		
-		boolean euforico = (pPokemon.stateEuforia instanceof EstadoEuforia);
-		if (!euforico) {
-			this.estadoEuforia();
-		}
+		/*boolean euforico = (pPokemon.stateEuforia  instanceof EstadoEuforia) ;
+		if (!euforico) {*/
+		this.estadoEuforia();
+		//}
 		
 		if(pPokemon.haAtacadoEuforico) {
 			this.cambiarEstado(new EstadoNormal());
