@@ -192,7 +192,7 @@ public abstract class Pokemon extends Observable {
 		if (this.vida<0) {
 			this.vida = 0;
 		}
-			
+		/*Cambios*/	
 		setChanged();
 		notifyObservers(new int [] {this.vida,this.defensa,this.ataque,this.euforia,this.ataquesEuforiaAcumulados});
 	}
