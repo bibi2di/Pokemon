@@ -183,9 +183,10 @@ public abstract class Pokemon extends Observable {
 		}
 		
 		this.estadoEuforia();
+		//if (pPokemon.haAtacadoEuforico) {
 		this.quitarEstadoEuforia(pPokemon);
-		
-		
+		//}
+
 		if (this.vida<0) {
 			this.vida = 0;
 		}

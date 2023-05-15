@@ -155,8 +155,6 @@ public class Panel_Pokemon extends JPanel implements Observer {
 				}
 				//double porcentajeEuforia = 0;
 				//porcentajeEuforia = ((double) turnosEuforiaActuales / (double) turnosEuforiaTotales);
-				
-				
 				//System.out.println("Ataque realizado");
 				Panel_Pokemons_Inf_ChargedAttack.setBackground(Color.GRAY);
 				if(vida==0) {
@@ -183,6 +181,20 @@ public class Panel_Pokemon extends JPanel implements Observer {
 						progCharBar.setValue(0);
 					}
 				}
+				if (idJug != -1) { /*Para los bot*/
+					String ataqueS = lab_att.getText();
+					int ataque = Integer.parseInt(ataqueS);
+					String defensaS = lab_Def.getText();
+					int defensa = Integer.parseInt(defensaS);
+					if (ataque>=100 && defensa>=100) {
+						ataque = ataque -100;
+						defensa = defensa-100;
+						lab_att.setText(String.valueOf(ataque));
+						lab_Def.setText(String.valueOf(defensa));
+						progCharBar.setValue(0);
+					}
+				}
+		
 			}
 			else if (arg1 instanceof String[]) {
 				String[] evArray = (String[]) arg1;

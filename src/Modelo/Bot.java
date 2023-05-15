@@ -49,7 +49,7 @@ public class Bot extends Jugador {
 					Pokemon pokDefensa = ListaJugadores.getListaJugadores().buscarJugador(jugadorAtacado).getPokemon(pokAtacado);
 					if (!pokAtaque.haAtacado() && !pokAtaque.seHaDebilitado() && !pokDefensa.seHaDebilitado()) {
 						pokAtaque.haAtacadoYa(true); 
-						CampoDeBatalla.getCampoBatalla().realizarAtaques(pokAtaque, pokDefensa);						
+						CampoDeBatalla.getCampoBatalla().realizarAtaques(pokAtaque, pokDefensa);
 						CampoDeBatalla.getCampoBatalla().eliminarBatalla();
 					}
 				}
