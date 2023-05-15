@@ -183,11 +183,8 @@ public abstract class Pokemon extends Observable {
 		}
 		
 		this.estadoEuforia();
+		this.quitarEstadoEuforia(pPokemon);
 		
-		if(pPokemon.haAtacadoEuforico) {
-			this.cambiarEstado(new EstadoNormal());
-			this.quitarEstadoEuforia(pPokemon);
-		}
 		
 		if (this.vida<0) {
 			this.vida = 0;
@@ -247,6 +244,7 @@ public abstract class Pokemon extends Observable {
 	
 	public void quitarEstadoEuforia(Pokemon pPokemon) {
 		if (pPokemon.ataque>=100 && pPokemon.defensa>=100) {
+			this.cambiarEstado(new EstadoNormal());
 			pPokemon.setAtaque(pPokemon.ataque-100);
 			pPokemon.setDefensa(pPokemon.defensa-100);
 			pPokemon.ataquesEuforiaAcumulados = 0;

@@ -8,12 +8,12 @@ public class Psiquico extends Pokemon {
 	
 	@Override
 	public boolean recibeAtaqueEfectivo(String pTipo) {
-		return /*pTipo.equals("Lucha");*/ false;
+		return pTipo.equals("Lucha") || pTipo.equals("Veneno");
 	}
 
 	@Override
 	public boolean recibeAtaquePocoEfectivo(String pTipo) {
-		return pTipo.equals("Bicho") || pTipo.equals("Psiquico");
+		return pTipo.equals("Bicho") || pTipo.equals("Siniestro") || pTipo.equals("Acero");
 	}
 
 }

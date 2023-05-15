@@ -10,12 +10,12 @@ public class Bicho extends Pokemon {
 	
 	@Override
 	public boolean recibeAtaqueEfectivo(String pTipo){
-		return pTipo.equals("Planta") || pTipo.equals("Psiquico");
+		return pTipo.equals("Planta") || pTipo.equals("Psiquico") || pTipo.equals("Siniestro");
 	}
 
 	@Override
 	public boolean recibeAtaquePocoEfectivo(String pTipo) {
-		return pTipo.equals("Fuego") || pTipo.equals("Volador") || pTipo.equals("Roca");
+		return pTipo.equals("Fuego") || pTipo.equals("Volador") || pTipo.equals("Roca") || pTipo.equals("Lucha") || pTipo.equals("Veneno") || pTipo.equals("Fantasma") || pTipo.equals("Acero") || pTipo.equals("Hada") ;
 	}
 
 }

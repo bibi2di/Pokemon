@@ -9,14 +9,12 @@ public class Veneno extends Pokemon {
 
 	@Override
 	public boolean recibeAtaqueEfectivo(String pTipo) {
-		// TODO Auto-generated method stub
-		return false;
+		return pTipo.equals("Planta") || pTipo.equals("Hada");
 	}
 
 	@Override
 	public boolean recibeAtaquePocoEfectivo(String pTipo) {
-		// TODO Auto-generated method stub
-		return false;
+		return pTipo.equals("Tierra") || pTipo.equals("Roca") || pTipo.equals("Fantasma") || pTipo.equals("Acero");
 	}
 
 }

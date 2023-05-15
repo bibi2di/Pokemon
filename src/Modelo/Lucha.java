@@ -8,14 +8,12 @@ public class Lucha extends Pokemon {
 
 	@Override
 	public boolean recibeAtaqueEfectivo(String pTipo) {
-		// TODO Auto-generated method stub
-		return false;
+		return pTipo.equals("Roca") || pTipo.equals("Acero") || pTipo.equals("Siniestro") || pTipo.equals("Normal") || pTipo.equals("Hielo");
 	}
 
 	@Override
 	public boolean recibeAtaquePocoEfectivo(String pTipo) {
-		// TODO Auto-generated method stub
-		return false;
+		return  pTipo.equals("Hada") || pTipo.equals("Psiquico") || pTipo.equals("Fantasma") || pTipo.equals("Volador");
 	}
 
 }

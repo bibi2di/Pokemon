@@ -9,14 +9,12 @@ public class Dragon extends Pokemon {
 
 	@Override
 	public boolean recibeAtaqueEfectivo(String pTipo) {
-		// TODO Auto-generated method stub
-		return false;
+		return pTipo.equals("Dragon");
 	}
 
 	@Override
 	public boolean recibeAtaquePocoEfectivo(String pTipo) {
-		// TODO Auto-generated method stub
-		return false;
+		return pTipo.equals("Hada") || pTipo.equals("Hielo") || pTipo.equals("Acero");
 	}
 
 }

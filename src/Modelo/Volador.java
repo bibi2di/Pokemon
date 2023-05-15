@@ -10,12 +10,12 @@ public class Volador extends Pokemon {
 
 	@Override
 	public boolean recibeAtaqueEfectivo(String pTipo) {
-		return (pTipo.equals("Planta") || pTipo.equals("Bicho"));
+		return (pTipo.equals("Planta") || pTipo.equals("Bicho") || pTipo.equals("Lucha"));
 	}
 
 	@Override
 	public boolean recibeAtaquePocoEfectivo(String pTipo) {
-		return pTipo.equals("Roca") || pTipo.equals("Electrico");
+		return pTipo.equals("Roca") || pTipo.equals("Electrico") || pTipo.equals("Acero");
 	}
 
 }

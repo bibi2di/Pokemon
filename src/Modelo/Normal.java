@@ -9,14 +9,12 @@ public class Normal extends Pokemon {
 
 	@Override
 	public boolean recibeAtaqueEfectivo(String pTipo) {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
 	public boolean recibeAtaquePocoEfectivo(String pTipo) {
-		// TODO Auto-generated method stub
-		return false;
+		return pTipo.equals("Roca") || pTipo.equals("Acero") || pTipo.equals("Fantasma");
 	}
 
 }

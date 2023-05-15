@@ -9,14 +9,12 @@ public class Hielo extends Pokemon {
 
 	@Override
 	public boolean recibeAtaqueEfectivo(String pTipo) {
-		// TODO Auto-generated method stub
-		return false;
+		return pTipo.equals("Tierra") || pTipo.equals("Planta") || pTipo.equals("Dragon") || pTipo.equals("Volador");
 	}
 
 	@Override
 	public boolean recibeAtaquePocoEfectivo(String pTipo) {
-		// TODO Auto-generated method stub
-		return false;
+		return pTipo.equals("Agua") || pTipo.equals("Fuego") || pTipo.equals("Acero") || pTipo.equals("Roca");
 	}
 
 }

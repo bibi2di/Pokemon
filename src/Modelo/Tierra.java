@@ -9,14 +9,12 @@ public class Tierra extends Pokemon {
 
 	@Override
 	public boolean recibeAtaqueEfectivo(String pTipo) {
-		// TODO Auto-generated method stub
-		return false;
+		return pTipo.equals("Electrico") || pTipo.equals("Roca") || pTipo.equals("Fuego") || pTipo.equals("Veneno") || pTipo.equals("Acero");
 	}
 
 	@Override
 	public boolean recibeAtaquePocoEfectivo(String pTipo) {
-		// TODO Auto-generated method stub
-		return false;
+		return pTipo.equals("Planta") || pTipo.equals("Bicho") || pTipo.equals("Volador");
 	}
 
 }

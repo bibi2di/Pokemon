@@ -9,14 +9,12 @@ public class Hada extends Pokemon {
 
 	@Override
 	public boolean recibeAtaqueEfectivo(String pTipo) {
-		// TODO Auto-generated method stub
-		return false;
+		return pTipo.equals("Dragon") || pTipo.equals("Lucha") || pTipo.equals("Siniestro");
 	}
 
 	@Override
 	public boolean recibeAtaquePocoEfectivo(String pTipo) {
-		// TODO Auto-generated method stub
-		return false;
+		return pTipo.equals("Acero") || pTipo.equals("Veneno") || pTipo.equals("Fuego");
 	}
 
 }
