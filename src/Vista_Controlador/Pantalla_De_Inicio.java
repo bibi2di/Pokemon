@@ -65,10 +65,11 @@ public class Pantalla_De_Inicio extends JFrame implements Observer{
 				try {
 					Pantalla_De_Inicio frame = new Pantalla_De_Inicio();
 					frame.setVisible(true);
-				    InputStream inputStream = Pantalla_De_Inicio.class.getResourceAsStream( "/Musica/Pokemon.wav");
+				    InputStream inputStream = Pantalla_De_Inicio.class.getResourceAsStream( "/Musica/pokemoneusk.wav");
 				    AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(inputStream);
 				    clip1 = AudioSystem.getClip();
 				    clip1.open(audioInputStream);
+				    clip1.loop(Clip.LOOP_CONTINUOUSLY);
 				    clip1.start();
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -309,6 +310,7 @@ public class Pantalla_De_Inicio extends JFrame implements Observer{
 				    AudioInputStream audioInputStream2 = AudioSystem.getAudioInputStream(inputStream2);
 				    clip2 = AudioSystem.getClip();
 				    clip2.open(audioInputStream2);
+				    clip2.loop(Clip.LOOP_CONTINUOUSLY);
 				    clip2.start();
 				}
 				catch (Exception e) {
