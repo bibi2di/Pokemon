@@ -156,6 +156,7 @@ public abstract class Pokemon extends Observable {
 		if (this.ataquesEuforiaAcumulados<this.euforia) {
 			this.ataquesEuforiaAcumulados++;
 		}
+		pPokemon.haAtacadoYa(true);
 		double multiplicador = 1;
 		if(pPokemon.recibeAtaqueEfectivo(this.tipo)) {
 			multiplicador = 2;

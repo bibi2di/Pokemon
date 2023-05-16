@@ -49,7 +49,6 @@ public class CampoDeBatalla extends Observable{
 				if (!batalla[0].haAtacado() && !batalla[0].seHaDebilitado() && !batalla[1].seHaDebilitado()) {
 					//si el pokemon atacante no ha atacado y ninguno esta debilitado -> ataca
 					//System.out.println("Ha entrado en el if 4. Va a atacar");
-					batalla[0].haAtacadoYa(true);
 					realizarAtaques(batalla[0], batalla[1]);
 					eliminarBatalla();
 					sePuedeAtacar=true;
@@ -73,13 +72,10 @@ public class CampoDeBatalla extends Observable{
 	public boolean realizarAtaques(Pokemon pPokemonAtaca, Pokemon pPokemonAtacado){
 		boolean haRealizadoAtaque = false;
 		if (!pPokemonAtaca.seHaDebilitado() && !pPokemonAtacado.seHaDebilitado()) {
-			pPokemonAtaca.haAtacadoYa(true);
 			pPokemonAtacado.recibirAtaque(pPokemonAtaca);
 			haRealizadoAtaque = true;
-			if (pPokemonAtaca.estaEuforico()) { /*Comprobar los ataques de euforia acumulados*/
-				pPokemonAtaca.cambiarEstado(new EstadoNormal());
+			if (pPokemonAtaca.estaEuforico()) { 				
 				pPokemonAtacado.quitarEstadoEuforia(pPokemonAtaca);
-				pPokemonAtaca.setAquesEuforiaAcumulados(0);
 			}
 		}
 		setChanged();
