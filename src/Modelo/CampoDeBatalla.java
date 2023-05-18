@@ -39,18 +39,9 @@ public class CampoDeBatalla extends Observable{
 		}	
 		if(batalla[0]!=null && batalla[1]!=null) {
 				//si ambos pokemons son aptos, entra
-				if (!batalla[0].haAtacado() && !batalla[0].seHaDebilitado() && !batalla[1].seHaDebilitado()) {
-					//si el pokemon atacante no ha atacado y ninguno esta debilitado -> ataca
-					realizarAtaques(batalla[0], batalla[1]);
-					eliminarBatalla();
-					sePuedeAtacar=true;
-				}
-				else 
-				{
-					//si el pokemon ha atacado con anterioridad, reestablece los valores
-					eliminarBatalla();
-				}
-			}
+				sePuedeAtacar = realizarAtaques(batalla[0], batalla[1]);
+				eliminarBatalla();
+		}
 		this.terminarTurno(jugadorAtacante);
 		
 		setChanged();
