@@ -26,9 +26,6 @@ public class CampoDeBatalla extends Observable{
 	}
 	
 	public boolean sePuedeAtacar(int nPok, int nJug) {
-		//TODO Falta comprobar si es el turno del Jugador
-		//System.out.println("jugador "+nJug);
-		//System.out.println("pokemon "+nPok);
 		Pokemon pPok = ListaJugadores.getListaJugadores().buscarJugador(nJug).getPokemon(nPok);
 		boolean sePuedeAtacar = false;
 		
@@ -36,19 +33,14 @@ public class CampoDeBatalla extends Observable{
 		if(ListaJugadores.getListaJugadores().buscarJugador(nJug).esSuTurno() && batalla[0]==null) {
 			batalla[0]=pPok; //se introduce 
 			jugadorAtacante = nJug;
-			//System.out.println("Ha entrado en el if 1. El jugador atacante es "+ jugadorAtacante);
 		//metemos el jugador atacado y su pokemon en batalla[1]
 		}else if (!ListaJugadores.getListaJugadores().buscarJugador(nJug).esSuTurno() && batalla[1] == null){
 			batalla[1]=pPok;
-			//jugadorAtacado = nJug;
-			//System.out.println("Ha entrado en el if 2. El id del jugador atacante es "+ jugadorAtacante + "Y el jugador atacado "+ jugadorAtacado);
-		}
-		
+		}	
 		if(batalla[0]!=null && batalla[1]!=null) {
 				//si ambos pokemons son aptos, entra
 				if (!batalla[0].haAtacado() && !batalla[0].seHaDebilitado() && !batalla[1].seHaDebilitado()) {
 					//si el pokemon atacante no ha atacado y ninguno esta debilitado -> ataca
-					//System.out.println("Ha entrado en el if 4. Va a atacar");
 					realizarAtaques(batalla[0], batalla[1]);
 					eliminarBatalla();
 					sePuedeAtacar=true;
@@ -56,8 +48,7 @@ public class CampoDeBatalla extends Observable{
 				else 
 				{
 					//si el pokemon ha atacado con anterioridad, reestablece los valores
-					batalla[0] = null;
-					batalla[1] = null;
+					eliminarBatalla();
 				}
 			}
 		this.terminarTurno(jugadorAtacante);

@@ -196,15 +196,10 @@ public abstract class Pokemon extends Observable {
 	}
 
 	public boolean seHaDebilitado() {
-		boolean debilitado = false;
-		if (vida == 0)
-			debilitado = true;
-		return debilitado;
-		/*setChanged();
-		notifyObservers(new Object[] {debilitado});*/
+		return vida==0;
 	}
 	
-	public void evolucionar() {
+	private void evolucionar() {
 		stateEvo.evolucionar(this);
 		String evolucion = null;
 		if (stateEvo instanceof Evolucion1) {evolucion = "1";}
@@ -213,34 +208,27 @@ public abstract class Pokemon extends Observable {
 		notifyObservers(new String[] {evolucion}); //quitar dependencia - enviar integer (0,1,2)
 	}
 	
-	public void cambiarEvolucion(Evolucion pEv) {
+	private void cambiarEvolucion(Evolucion pEv) {
 		this.stateEvo = pEv;
 	}
 	
 	public boolean haAtacado () {
-		//System.out.println("El pokemon " + this.id + " ya ha atacado");
 		return this.yaHaAtacado;
 		
 	}
 	
 	public void haAtacadoYa (boolean pHaAtacado) {
 		this.yaHaAtacado = pHaAtacado;
-		if (yaHaAtacado) {
-			//System.out.println("Hola soy el pokemon: " + id + " y ya he atacado" );
-		}
 	}
 	
-	public void estadoEuforia() {
+	private void estadoEuforia() {
 		if (ataquesEuforiaAcumulados >= euforia) {
 			this.cambiarEstado(new EstadoEuforia());
-			stateEuforia.estadoEuforia(this);
-			//System.out.println("Esta euforico");
-			
-			
+			stateEuforia.estadoEuforia(this);			
 		}
 	}
 	
-	public void cambiarEstado(Estado pEst) {
+	private void cambiarEstado(Estado pEst) {
 		this.stateEuforia = pEst;
 	}
 	
