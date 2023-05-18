@@ -201,121 +201,121 @@ public class Panel_Pokemon extends JPanel implements Observer {
 				String evolucion = evArray[0];
 				if (evolucion == "1") {
 					if (lab_type.getText().equals("Planta")){
-						label_1.setIcon(new ImageIcon(getClass().getResource("/spritesGrass/1ivysaur.png")));
+						label_1.setIcon(new ImageIcon(Panel_Pokemon.class.getResource("/spritesGrass/1ivysaur.png")));
 					}
 					else if(lab_type.getText().equals("Fuego")) {
-						label_1.setIcon(new ImageIcon(getClass().getResource("/spritesFire/1charmeleon.png")));
+						label_1.setIcon(new ImageIcon(Panel_Pokemon.class.getResource("/spritesFire/1charmeleon.png")));
 						}
 					else if(lab_type.getText().equals("Agua")) {
-						label_1.setIcon(new ImageIcon(getClass().getResource("/spritesWater/1wartortle.png")));
+						label_1.setIcon(new ImageIcon(Panel_Pokemon.class.getResource("/spritesWater/1wartortle.png")));
 					}
 					else if(lab_type.getText().equals("Electrico")) {
-						label_1.setIcon(new ImageIcon(getClass().getResource("/spritesElectric/1raichu.png")));
+						label_1.setIcon(new ImageIcon(Panel_Pokemon.class.getResource("/spritesElectric/1raichu.png")));
 					}
 					else if(lab_type.getText().equals("Bicho")) {
-						label_1.setIcon(new ImageIcon(getClass().getResource("/sprites/metapod.png")));
+						label_1.setIcon(new ImageIcon(Panel_Pokemon.class.getResource("/sprites/metapod.png")));
 					}
 					else if(lab_type.getText().equals("Psiquico")) {
-						label_1.setIcon(new ImageIcon(getClass().getResource("/sprites/kadabra.png")));
+						label_1.setIcon(new ImageIcon(Panel_Pokemon.class.getResource("/sprites/kadabra.png")));
 					}
 					else if(lab_type.getText().equals("Roca")) {
-						label_1.setIcon(new ImageIcon(getClass().getResource("/sprites/graveler.png")));
+						label_1.setIcon(new ImageIcon(Panel_Pokemon.class.getResource("/sprites/graveler.png")));
 					}
 					else if(lab_type.getText().equals("Volador")) {
-						label_1.setIcon(new ImageIcon(getClass().getResource("/sprites/pidgeotto.png")));
+						label_1.setIcon(new ImageIcon(Panel_Pokemon.class.getResource("/sprites/pidgeotto.png")));
 					}
 					else if(lab_type.getText().equals("Fantasma")) {
-						label_1.setIcon(new ImageIcon(getClass().getResource("/spritesFantasma/Melenaleteo.png")));		
+						label_1.setIcon(new ImageIcon(Panel_Pokemon.class.getResource("/spritesFantasma/Melenaleteo.png")));		
 					}
 					else if(lab_type.getText().equals("Veneno")) {
-						label_1.setIcon(new ImageIcon(getClass().getResource("/sprites/haunter.png")));		
+						label_1.setIcon(new ImageIcon(Panel_Pokemon.class.getResource("/sprites/haunter.png")));		
 					}
 					else if(lab_type.getText().equals("Lucha")) {
-						label_1.setIcon(new ImageIcon(getClass().getResource("/sprites/machoke.png")));		
+						label_1.setIcon(new ImageIcon(Panel_Pokemon.class.getResource("/sprites/machoke.png")));		
 					}
 					else if(lab_type.getText().equals("Dragon")) {
-						label_1.setIcon(new ImageIcon(getClass().getResource("/sprites/dragonair.png")));		
+						label_1.setIcon(new ImageIcon(Panel_Pokemon.class.getResource("/sprites/dragonair.png")));		
 					}
 					else if(lab_type.getText().equals("Acero")) {
-						label_1.setIcon(new ImageIcon(getClass().getResource("/spritesAcero/Metang.png")));
+						label_1.setIcon(new ImageIcon(Panel_Pokemon.class.getResource("/spritesAcero/Metang.png")));
 					}
 					else if(lab_type.getText().equals("Siniestro")) {
-						label_1.setIcon(new ImageIcon(getClass().getResource("/spritesSiniestro/Zweilous.png")));
+						label_1.setIcon(new ImageIcon(Panel_Pokemon.class.getResource("/spritesSiniestro/Zweilous.png")));
 				}
 					else if(lab_type.getText().equals("Hada")) {
-						label_1.setIcon(new ImageIcon(getClass().getResource("/spritesHada/Marill.png")));
+						label_1.setIcon(new ImageIcon(Panel_Pokemon.class.getResource("/spritesHada/Marill.png")));
 				}
 					else if(lab_type.getText().equals("Tierra")) {
-						label_1.setIcon(new ImageIcon(getClass().getResource("/spritesTierra/Rhydon.png")));
+						label_1.setIcon(new ImageIcon(Panel_Pokemon.class.getResource("/spritesTierra/Rhydon.png")));
 				}
 					else if(lab_type.getText().equals("Hielo")) {
-						label_1.setIcon(new ImageIcon(getClass().getResource("/spritesHielo/Ninetales_de_Alola.png")));
+						label_1.setIcon(new ImageIcon(Panel_Pokemon.class.getResource("/spritesHielo/Ninetales_de_Alola.png")));
 				}
 					else if(lab_type.getText().equals("Normal")) {
-						label_1.setIcon(new ImageIcon(getClass().getResource("/spritesNormal/Jigglypuff.png")));
+						label_1.setIcon(new ImageIcon(Panel_Pokemon.class.getResource("/spritesNormal/Jigglypuff.png")));
 				}
 				}
 				else if (evolucion == "2") {
 					if(lab_type.getText().equals("Planta")) {
-						label_1.setIcon(new ImageIcon(getClass().getResource("/spritesGrass/2venusaur.png")));
+						label_1.setIcon(new ImageIcon(Panel_Pokemon.class.getResource("/spritesGrass/2venusaur.png")));
 					}
 					
 					else if(lab_type.getText().equals("Fuego")) {
-						label_1.setIcon(new ImageIcon(getClass().getResource("/spritesFire/2charizard.png")));
+						label_1.setIcon(new ImageIcon(Panel_Pokemon.class.getResource("/spritesFire/2charizard.png")));
 					}
 					
 					else if(lab_type.getText().equals("Agua")) {
-						label_1.setIcon(new ImageIcon(getClass().getResource("/spritesWater/2blastoise.png")));
+						label_1.setIcon(new ImageIcon(Panel_Pokemon.class.getResource("/spritesWater/2blastoise.png")));
 					}
 					
 					else if(lab_type.getText().equals("Electrico")) {
-						label_1.setIcon(new ImageIcon(getClass().getResource("/spritesElectric/2raichu2.png")));
+						label_1.setIcon(new ImageIcon(Panel_Pokemon.class.getResource("/spritesElectric/2raichu2.png")));
 					}
 					
 					else if(lab_type.getText().equals("Bicho")) {
-						label_1.setIcon(new ImageIcon(getClass().getResource("/sprites/butterfree.png")));
+						label_1.setIcon(new ImageIcon(Panel_Pokemon.class.getResource("/sprites/butterfree.png")));
 				}
 					
 					else if(lab_type.getText().equals("Psiquico")) {
-						label_1.setIcon(new ImageIcon(getClass().getResource("/sprites/alakazam.png")));
+						label_1.setIcon(new ImageIcon(Panel_Pokemon.class.getResource("/sprites/alakazam.png")));
 				}
 					
 					else if(lab_type.getText().equals("Roca")) {
-						label_1.setIcon(new ImageIcon(getClass().getResource("/sprites/golem.png")));
+						label_1.setIcon(new ImageIcon(Panel_Pokemon.class.getResource("/sprites/golem.png")));
 				}
 					
 					else if(lab_type.getText().equals("Volador")) {
-						label_1.setIcon(new ImageIcon(getClass().getResource("/sprites/pidgeot.png")));
+						label_1.setIcon(new ImageIcon(Panel_Pokemon.class.getResource("/sprites/pidgeot.png")));
 				}
 					else if(lab_type.getText().equals("Fantasma")) {
-						label_1.setIcon(new ImageIcon(getClass().getResource("/spritesFantasma/Mismagius.png")));		
+						label_1.setIcon(new ImageIcon(Panel_Pokemon.class.getResource("/spritesFantasma/Mismagius.png")));		
 				}
 					else if(lab_type.getText().equals("Veneno")) {
-						label_1.setIcon(new ImageIcon(getClass().getResource("/sprites/gengar.png")));
+						label_1.setIcon(new ImageIcon(Panel_Pokemon.class.getResource("/sprites/gengar.png")));
 				}
 					else if(lab_type.getText().equals("Lucha")) {
-						label_1.setIcon(new ImageIcon(getClass().getResource("/sprites/machamp.png")));
+						label_1.setIcon(new ImageIcon(Panel_Pokemon.class.getResource("/sprites/machamp.png")));
 				}
 					else if(lab_type.getText().equals("Dragon")) {
-						label_1.setIcon(new ImageIcon(getClass().getResource("/sprites/dragonite.png")));
+						label_1.setIcon(new ImageIcon(Panel_Pokemon.class.getResource("/sprites/dragonite.png")));
 				}
 					else if(lab_type.getText().equals("Acero")) {
-						label_1.setIcon(new ImageIcon(getClass().getResource("/spritesAcero/Metagross.png")));
+						label_1.setIcon(new ImageIcon(Panel_Pokemon.class.getResource("/spritesAcero/Metagross.png")));
 				}
 					else if(lab_type.getText().equals("Siniestro")) {
-						label_1.setIcon(new ImageIcon(getClass().getResource("/spritesSiniestro/Hydreigon.png")));
+						label_1.setIcon(new ImageIcon(Panel_Pokemon.class.getResource("/spritesSiniestro/Hydreigon.png")));
 				}
 					else if(lab_type.getText().equals("Hada")) {
-						label_1.setIcon(new ImageIcon(getClass().getResource("/spritesHada/Azumarill.png")));
+						label_1.setIcon(new ImageIcon(Panel_Pokemon.class.getResource("/spritesHada/Azumarill.png")));
 				}
 					else if(lab_type.getText().equals("Tierra")) {
-						label_1.setIcon(new ImageIcon(getClass().getResource("/spritesTierra/Rhyperior.png")));
+						label_1.setIcon(new ImageIcon(Panel_Pokemon.class.getResource("/spritesTierra/Rhyperior.png")));
 				}
 					else if(lab_type.getText().equals("Hielo")) {
-						label_1.setIcon(new ImageIcon(getClass().getResource("/spritesHielo/Ninetales_de_Alola_variocolor.png")));
+						label_1.setIcon(new ImageIcon(Panel_Pokemon.class.getResource("/spritesHielo/Ninetales_de_Alola_variocolor.png")));
 				}
 					else if(lab_type.getText().equals("Normal")) {
-						label_1.setIcon(new ImageIcon(getClass().getResource("/spritesNormal/Wigglytuff.png")));
+						label_1.setIcon(new ImageIcon(Panel_Pokemon.class.getResource("/spritesNormal/Wigglytuff.png")));
 				}
 			}
 			}
@@ -331,58 +331,58 @@ public class Panel_Pokemon extends JPanel implements Observer {
 				lab_health.setText(String.valueOf(vida));
 				lab_type.setText(tipo);
 				if (tipo.equals("Planta")) {
-					label_1.setIcon(new ImageIcon(getClass().getResource("/spritesGrass/0bulbasaur.png")));
+					label_1.setIcon(new ImageIcon(Panel_Pokemon.class.getResource("/spritesGrass/0bulbasaur.png")));
 				}
 				else if (tipo.equals("Fuego")) {
-					label_1.setIcon(new ImageIcon(getClass().getResource("/spritesFire/0charmander.png")));
+					label_1.setIcon(new ImageIcon(Panel_Pokemon.class.getResource("/spritesFire/0charmander.png")));
 				}
 				else if (tipo.equals("Agua")) {
-					label_1.setIcon(new ImageIcon(getClass().getResource("/spritesWater/0squirtle.png")));
+					label_1.setIcon(new ImageIcon(Panel_Pokemon.class.getResource("/spritesWater/0squirtle.png")));
 				}
 				else if(tipo.equals("Electrico")) {
-					label_1.setIcon(new ImageIcon(getClass().getResource("/spritesElectric/0pikachu.png")));
+					label_1.setIcon(new ImageIcon(Panel_Pokemon.class.getResource("/spritesElectric/0pikachu.png")));
 				}
 				else if(tipo.equals("Bicho")) {
-					label_1.setIcon(new ImageIcon(getClass().getResource("/sprites/caterpie.png")));
+					label_1.setIcon(new ImageIcon(Panel_Pokemon.class.getResource("/sprites/caterpie.png")));
 				}
 				else if(tipo.equals("Psiquico")) {
-					label_1.setIcon(new ImageIcon(getClass().getResource("/sprites/abra.png")));
+					label_1.setIcon(new ImageIcon(Panel_Pokemon.class.getResource("/sprites/abra.png")));
 				}
 				else if(tipo.equals("Roca")) {
-					label_1.setIcon(new ImageIcon(getClass().getResource("/sprites/geodude.png")));
+					label_1.setIcon(new ImageIcon(Panel_Pokemon.class.getResource("/sprites/geodude.png")));
 				}
 				else if(tipo.equals("Volador")) {
-					label_1.setIcon(new ImageIcon(getClass().getResource("/sprites/pidgey.png")));
+					label_1.setIcon(new ImageIcon(Panel_Pokemon.class.getResource("/sprites/pidgey.png")));
 				}
 				else if(tipo.equals("Fantasma")) {
-					label_1.setIcon(new ImageIcon(getClass().getResource("/spritesFantasma/Misdreavus.png")));		
+					label_1.setIcon(new ImageIcon(Panel_Pokemon.class.getResource("/spritesFantasma/Misdreavus.png")));		
 				}
 				else if(tipo.equals("Veneno")) {
-					label_1.setIcon(new ImageIcon(getClass().getResource("/sprites/gastly.png")));
+					label_1.setIcon(new ImageIcon(Panel_Pokemon.class.getResource("/sprites/gastly.png")));
 				}
 				else if(tipo.equals("Lucha")) {
-					label_1.setIcon(new ImageIcon(getClass().getResource("/sprites/machop.png")));
+					label_1.setIcon(new ImageIcon(Panel_Pokemon.class.getResource("/sprites/machop.png")));
 				}
 				else if(tipo.equals("Dragon")) {
-					label_1.setIcon(new ImageIcon(getClass().getResource("/sprites/dratini.png")));
+					label_1.setIcon(new ImageIcon(Panel_Pokemon.class.getResource("/sprites/dratini.png")));
 				}
 				else if(tipo.equals("Acero")) {
-					label_1.setIcon(new ImageIcon(getClass().getResource("/spritesAcero/Beldum.png")));
+					label_1.setIcon(new ImageIcon(Panel_Pokemon.class.getResource("/spritesAcero/Beldum.png")));
 				}
 				else if(tipo.equals("Siniestro")) {
-					label_1.setIcon(new ImageIcon(getClass().getResource("/spritesSiniestro/Deino.png")));
+					label_1.setIcon(new ImageIcon(Panel_Pokemon.class.getResource("/spritesSiniestro/Deino.png")));
 				}
 				else if(tipo.equals("Hada")) {
-					label_1.setIcon(new ImageIcon(getClass().getResource("/spritesHada/Azurill.png")));
+					label_1.setIcon(new ImageIcon(Panel_Pokemon.class.getResource("/spritesHada/Azurill.png")));
 				}
 				else if(tipo.equals("Tierra")) {
-					label_1.setIcon(new ImageIcon(getClass().getResource("/spritesTierra/Rhyhorn.png")));
+					label_1.setIcon(new ImageIcon(Panel_Pokemon.class.getResource("/spritesTierra/Rhyhorn.png")));
 				}
 				else if(tipo.equals("Hielo")) {
-					label_1.setIcon(new ImageIcon(getClass().getResource("/spritesHielo/Vulpix_de_Alola.png")));
+					label_1.setIcon(new ImageIcon(Panel_Pokemon.class.getResource("/spritesHielo/Vulpix_de_Alola.png")));
 				}
 				else if(tipo.equals("Normal")) {
-					label_1.setIcon(new ImageIcon(getClass().getResource("/spritesNormal/Igglybuff.png")));
+					label_1.setIcon(new ImageIcon(Panel_Pokemon.class.getResource("/spritesNormal/Igglybuff.png")));
 				}
 				//System.out.println("Observer actualizado");
 				if(!pVidaBool) {
